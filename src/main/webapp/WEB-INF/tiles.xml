@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!--Trang 404-->
+    <definition name="404" template="/WEB-INF/layouts/404.jsp"/>
+
+    <!--index-layout-->
+    <definition name="index-layout" template="/WEB-INF/layouts/index.jsp">
+        <put-attribute name="title" value="Thiết bị điên AVHH"/>
+        <put-attribute name="header" value="/WEB-INF/basefragments/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/basefragments/footer.jsp"/>
+    </definition>
+
+    <!-- Base Define -->
+    <definition name="base-layout" extends="index-layout">
+        <put-attribute name="header" value="/WEB-INF/basefragments/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="banner" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/basefragments/footer.jsp"/>
+    </definition>
+
+    <!-- slide-layout-->
+    <definition name="slide-layout" extends="index-layout">
+        <put-attribute name="header" value="/WEB-INF/basefragments/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="banner" value="/WEB-INF/basefragments/banner.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/basefragments/footer.jsp"/>
+    </definition>
+
+    <!--Trang Chu-->
+    <definition name="trang-chu" extends="slide-layout">
+        <put-attribute name="title" value="Thiết bị điện Hà Nội"/>
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/trang_chu.jsp"/>
+    </definition>
+
+    <!--Gioi Thieu-->
+    <definition name="gioi-thieu" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/gioi_thieu.jsp"/>
+    </definition>
+
+    <definition name="chi-tiet-gioi-thieu" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/chi_tiet_gioi_thieu.jsp"/>
+    </definition>
+
+    <!--Lien He-->
+    <definition name="lien-he" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/lien_he.jsp"/>
+    </definition>
+
+    <!--Tin Tuc-->
+<!--    <definition name="tin-tuc" extends="base-layout">-->
+<!--        <put-attribute name="body" value="/WEB-INF/bodyfragments/tin_tuc.jsp"/>-->
+<!--    </definition>-->
+
+    <!--Gio Hang-->
+    <definition name="gio-hang" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/gio_hang.jsp"/>
+
+    </definition>
+
+    <!--Thanh Toan-->
+    <definition name="thanh-toan" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/thanh_toan.jsp"/>
+    </definition>
+
+ 
+    <!--Tin tuc-->
+    <definition name="tin-tuc-rightSide" extends="base-layout">
+        <put-attribute name="title" value="Tin tức"/>
+        <put-attribute name="body" value="/WEB-INF/layouts/tin_tuc_rightSide.jsp" />
+    </definition>
+
+    <definition name="tin-tuc" extends="tin-tuc-rightSide">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/tin_tuc.jsp" cascade="true"/>
+    </definition>
+
+    <!--san pham-->
+    <definition name="san-pham" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>
+    </definition>
+
+    <!--chi tiet tin tuc-->
+    <definition name="chi-tiet-tin-tuc" extends="tin-tuc-rightSide">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_tin_tuc.jsp" cascade="true"/>
+    </definition>
+
+    <!--Cong Trinh-->
+
+    <definition name="cong-trinh-rightSide" extends="base-layout">
+        <put-attribute name="title" value="Công trình"/>
+        <put-attribute name="body" value="/WEB-INF/layouts/cong_trinh_rightSide.jsp" />
+    </definition>
+
+    <definition name="cong-trinh" extends="cong-trinh-rightSide">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/cong_trinh.jsp" cascade="true"/>
+    </definition>
+
+    <!--chi tiet cong trinh-->
+    <definition name="chi-tiet-cong-trinh" extends="cong-trinh-rightSide">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_cong_trinh.jsp" cascade="true"/>
+    </definition>
+
+    <!--danh-muc-->
+    <definition name="danh-muc" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/danh_muc.jsp"/>
+    </definition>
+
+</tiles-definitions>
