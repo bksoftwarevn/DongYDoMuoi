@@ -1,7 +1,7 @@
 var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
-const COMPANY_ID = 2 ;
+const COMPANY_ID = 3 ;
 const TIN_TUC_TYPE = 1;
 const CONG_TRINH_TYPE = 2;
 const GIOI_THIEU_TYPE = 3;

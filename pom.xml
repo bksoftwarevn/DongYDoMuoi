@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bksoftwarevn.thietbidien</groupId>
-    <artifactId>avhh</artifactId>
+    <artifactId>dongydomuoi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>thiet-bi-dien</name>
+    <name>dong-y-do-muoi</name>
     <description>Project for Spring Boot</description>
 
     <properties>

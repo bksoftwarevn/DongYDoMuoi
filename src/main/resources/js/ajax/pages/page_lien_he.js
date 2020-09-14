@@ -4,9 +4,9 @@ let textEmail;
 
 $(function () {
     hiddenNavHero();
-    textName = $("#name");
-    textPhoneNumber = $("#phone-number");
-    textEmail = $("#email");
+    textName = $("#input-name");
+    textPhoneNumber = $("#input-phone");
+    textEmail = $("#input-email");
 
     InfoAdmin.fillInfo();
     InfoCustomer.init();
@@ -84,49 +84,20 @@ let InfoCustomer = {
                 let {check: cTen, val: vTen} = checkThongTinTen();
                 let {check: cSDT, val: vSDT} = checkThongTinSDT();
                 let {check: cEmail, val: vEmail} = checkThongTinEmail();
+                let customerInfo = InfoCustomer.getInfo();
                 if (cTen && cSDT && cEmail) {
-                    let formData = new FormData();
-                    let customerInfo = InfoCustomer.getInfo();
-
-                    if ($('#input-file-customer').get(0).files.length !== 0) {
-                        formData.append("files", $('#input-file-customer').get(0).files[0]);
-                        $("#btn-sendInfo").text('Đang xử lý tập tin...');
-                        uploadFiles(formData, COMPANY_ID).then(fileRes => {
-                            //đẩy thông tin người dùng lên
-                            customerInfo.attachment = fileRes.data[0].uri;
-
-                            InfoSystemAPI.postInfo(customerInfo)
-                                .then(rs1 => {
-                                    alertSuccess('Gửi thông tin liên hệ thành công');
-                                        $("#btn-sendInfo").text('Gửi đi');
-                                        setTimeout(function () {
-                                            InfoCustomer.resetInput()
-                                        }, 2000);
-                                    }
-                                )
-                                .catch(() => {
-                                    alertWarning('Gửi thông tin thất bại');
-                                    $("#btn-sendInfo").text('Gửi đi');
-                                });
+                    $("#btn-sendInfo").text('Đang xử lý...').prop('disabled', true);
+                    InfoSystemAPI.postInfo(customerInfo)
+                        .then(rs1 => {
+                            alertSuccess('Gửi thông tin liên hệ thành công');
+                            $("#btn-sendInfo").text('Gửi đi').prop('disabled', false);
+                            setTimeout(function () {
+                                InfoCustomer.resetInput()
+                            }, 2000);
                         }).catch(() => {
-                            $("#btn-sendInfo").text('Gửi đi');
-                            alertWarning('Tải tập tin thất bại');
-                        });
-                    } else {
-                        $("#btn-sendInfo").text('Đang xử lý...');
-                        InfoSystemAPI.postInfo(customerInfo)
-                            .then(rs1 => {
-                                alertSuccess('Gửi thông tin liên hệ thành công');
-                                $("#btn-sendInfo").text('Gửi đi');
-                                setTimeout(function () {
-                                    InfoCustomer.resetInput()
-                                }, 2000);
-                            }).catch(() => {
-                            $("#btn-sendInfo").text('Gửi đi');
-                            alertWarning('Gửi thông tin thất bại');
-                        });
-
-                    }
+                        $("#btn-sendInfo").text('Gửi đi').prop('disabled', false);
+                        alertWarning('Gửi thông tin thất bại');
+                    });
                 }
             });
     },

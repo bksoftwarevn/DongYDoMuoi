@@ -1,15 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<section id="sectionMap">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <iframe id="map__iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14901.625010498467!2d105.84077260000001!3d20.9763463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1599472014536!5m2!1sen!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
-        </div>
-    </div>
-</section>
-
 <link rel="stylesheet" href="css/common_category.css">
 
 <link rel="stylesheet" href="css/lien_he.css">
@@ -20,106 +10,107 @@
 <section id="sectionLienHe" class="lienHe">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 lienHe__contact">
-                <div class="lienHe__contact--box pl-3 pr-3 pl-md-0 pr-md-0">
-                    <h3 class="lienHe__contact--title text-uppercase" id="name-company">
-                        Công ty Thiết bị điện Hà Nội
-                    </h3>
-                    <ul class="lienHe__contact--listDetails">
-                        <li id='address-company'><strong>Địa chỉ</strong>: Nguyễn Phong Sắc, Quận Cầu Giấy, Hà Nội</li>
-                        <li id="phonenumber-company"><strong>Số điện thoại:</strong>
-                            <a href="" class="link-phone-comany text-phone-company"></a> -
-                            <a href="" class="link-phone-comany2 text-phone-company2"></a>
-                        </li>
-                        <li id='email-company'><strong>Email:</strong> Panasonicvietnam.com@gmail.com</li>
-                        <li id='website-company'><strong>Website:</strong> https://thietbidienpanasonic.com</li>
-                    </ul>
-                </div>
-<%--                <div style="width: 100%; " class="wrap-hr text-center">--%>
-<%--                    <hr>--%>
-<%--                </div>--%>
-
-
-                <div class="lienHe__contact--listZalo" id="list-zalo">
-                    <h3 class="lienHe__contact--title text-uppercase" id="">
-                        Liên hệ trực tiếp với
-                    </h3>
-                    <ul class="">
-                        <li class="d-flex">
-                            <span>
-                                <img src="icon/zalo.png" alt="" >
-                            </span>
-                            <span>
-                                <h4>Nhân viên kinh doanh 01</h4>
-                                <p><a href="tel: 0978960013">0978960013</a></p>
-                            </span>
-                        </li>
-                        <li class="d-flex">
-                            <span>
-                                <img src="icon/zalo.png" alt="" >
-                            </span>
-                            <span>
-                                <h4>Nhân viên kinh doanh 2</h4>
-                                <p><a href="tel: 0978960013">0978960013</a></p>
-                            </span>
-                        </li>
-                        <li class="d-flex">
-                            <span>
-                                <img src="icon/zalo.png" alt="" >
-                            </span>
-                            <span>
-                                <h4>Nhân viên kinh doanh 3</h4>
-                                <p><a href="tel: 0978960013">0978960013</a></p>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 lienHe__userInfo mt-3 mt-md-0">
-                <div class="lienHe__userInfo--box pl-3 pr-3 pl-md-0 pr-md-0">
-                    <h3 class="lienHe__userInfo--title text-uppercase">
+            <div class="col-12 col-md-7 lienHe__userInfo mt-3 mt-md-0">
+                <div class="lienHe__userInfo--box row pl-3 pr-3 pl-md-0 pr-md-0">
+                    <!-- <h3 class="col-12 lienHe__userInfo--title text-uppercase">
                         Liên hệ để có báo giá tốt nhất
-                    </h3>
-                    <div class="lienHe__userInfo--name mt-3" >
-                        <label><strong>Họ tên<span style="color: red;">(*)</span></strong></label>
-                        <input type="text" class="form-control" id="name">
+                    </h3> -->
+                    <div class="col-6 lienHe__userInfo--name mt-3" >
+                        <label for="input-name"><strong>Họ tên<span style="color: red;">(*)</span></strong></label>
+                        <input type="text" id="input-name" class="form-control">
                         <div class="invalid-feedback">
                             Looks good!
                         </div>
                     </div>
 
-                    <div class="lienHe__userInfo--email  mt-3" >
-                        <label><strong>Email<span style="color: red;">(*)</span></strong></label>
-                        <input type="text" class="form-control" id="email">
+                    <div class="col-6 lienHe__userInfo--email  mt-3" >
+                        <label for="input-email"><strong>Email<span style="color: red;">(*)</span></strong></label>
+                        <input type="text" id="input-email" class="form-control">
                         <div class="invalid-feedback">
                             Looks good!
                         </div>
                     </div>
 
-                    <div class="lienHe__userInfo--phone  mt-3" >
-                        <label ><strong>Số điện thoại<span style="color: red;">(*)</span></strong></label>
-                        <input type="text" class="form-control" id="phone-number">
+                    <div class="col-6 lienHe__userInfo--phone  mt-3" >
+                        <label for="input-phone"><strong><strong>Số điện thoại<span style="color: red;">(*)</span></strong></strong></label>
+                        <input type="text" id="input-phone" class="form-control">
                         <div class="invalid-feedback">
                             Looks good!
                         </div>
                     </div>
 
-                    <div class="lienHe__userInfo--content mt-3" >
-                        <label for="input-content-customer"><strong>Nội dung liên hệ</strong></label>
-                        <textarea name="" id="input-content-customer" cols="20" rows="12" class="form-control" ></textarea>
+                    <div class="col-6 lienHe__userInfo--phone  mt-3" >
+                        <label for="input-phone"><strong>Địa chỉ</strong></label>
+                        <input type="text" id="input-address" class="form-control">
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
                     </div>
 
-                    <div class="lienHe__userInfo--file mt-3" >
-                        <span><button class="lienHe__userInfo--downloadFile btn btn-primary btn-sm" id="btn-downloadFile">Tải file mẫu</button></span>
-                        <span><input type="file" id="input-file-customer"></span>
+                    <div class="col-12 lienHe__userInfo--content mt-3" >
+                        <label for="input-content"><strong>Nội dung liên hệ</strong></label>
+                        <textarea name="" id="input-content" cols="30" rows="5" class="form-control" ></textarea>
                     </div>
 
-                    <div class="lienHe__userInfo--sentBtn mt-3 d-flex justify-content-center">
-                        <span><button class="btn btn-primary btn-sm" id="btn-sendInfo">Gửi đi</button></span>
+                    <div class="col-12 lienHe__userInfo--sentBtn mt-3">
+                        <button class="btn btn-primary" id="btn-sendInfo">Gửi liên hệ</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-5 lienHe__contact mt-5">
+                <div class="lienHe__contact--wrapper">
+                    <div class="lienHe__contact--box pl-3 pr-3 pl-md-0 pr-md-0">
+                        <h3 class="lienHe__contact--title">
+                            TRUNG TÂM NGHIÊN CỨU VÀ ỨNG DỤNG THUỐC DÂN TỘC
+                        </h3>
+                        <ul class="lienHe__contact--listDetails">
+                            <li><i style="margin-right: 10px;" class="fas fa-globe-americas"></i><a href="https://www.thuocdantoc.org">www.thuocdantoc.org</a></li>
+                            <li><i style="margin-right: 10px;" class="fas fa-envelope"></i><a href="mailto:info@thuocdantoc.org">info@thuocdantoc.org</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="lienHe__workSchedule--box pl-3 pr-3 pl-md-0 pr-md-0">
+                        <h3 class="lienHe__workSchedule--title">
+                            Lịch làm việc
+                        </h3>
+                        <div class="lienHe__workSchedule--detail">
+                            <p>Tất cả các ngày trong tuần</p>
+                            <ul>
+                                <li>Sáng: 9h-10h</li>
+                                <li>Chiều: 13h-14h</li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
+
+
         </div>
+    </div>
+
+</section>
+
+<section id="sectionBranches" class="branches">
+    <div class="container branches__list">
+        <!--=== hidden branch element=== -->
+        <div class="row branches__element mt-5" id="hiddenBranchElement">
+            <div class="col-12 col-md-7 d-flex justify-content-start">
+                        <span class="branches__element--name text-uppercase">
+                            Quảng Bình
+                        </span>
+                <span class="branches__element--detail">
+                            <h4 class="font-weight-bold">Biệt thự B31 ngõ 70 Nguyễn Thị Định,Thanh Xuân - Hà Nội</h4>
+                            <p><span>Điện thoại: </span><a href="tel:(024)7109 6699">(024)7109 6699</a></p>
+                        </span>
+            </div>
+            <div class="col-12 col-md-5 branches__element--map mt-5 mt-md-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29803.124231097172!2d105.84077260000001!3d20.976977050000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1600053976474!5m2!1sen!2s" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div><!-- end div branch element-->
+        <!--=== end hidden branch element=== -->
     </div>
 </section>

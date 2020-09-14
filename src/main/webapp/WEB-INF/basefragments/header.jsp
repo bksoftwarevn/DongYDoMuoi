@@ -58,8 +58,11 @@
                         </li>
                         <li data-active="trang-chu"><a href="trang-chu">Trang chủ</a></li>
                         <li data-active="gioi-thieu"><a href="gioi-thieu">Giới thiệu</a></li>
-                        <li data-active="cong-trinh"><a href="cong-trinh">Công trình</a></li>
-                        <li data-active="tin-tuc"><a href="tin-tuc">Tin tức</a></li>
+                        <li data-active="bai-thuoc"><a href="bai-thuoc">Bài thuốc</a></li>
+                        <li data-active="san-pham"><a href="san-pham">Sản phẩm</a></li>
+                        <li data-active="nghien-cuu"><a href="nghien-cuu">Nghiên cứu</a></li>
+                        <li data-active="tai-lieu-y-khoa"><a href="tai-lieu-y-khoa">Tài liệu Y Khoa</a></li>
+                        <li data-active="tuyen-dung"><a href="tuyen-dung">Tuyển dụng</a></li>
                         <li data-active="lien-he"><a href="lien-he">Liên hệ</a></li>
                     </ul>
                     <div class="search-icon" title="Tìm kiếm">

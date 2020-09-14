@@ -1,16 +1,78 @@
+:root {
+  --font-size: 10px;
+  --font-family: "Roboto", sans-serif;
+  --bg-black: #000;
+  --bg-yellow1: #fbbc03;
+  --bg-yellow2: #fbbc03;
+  --bg-white: #fff;
+  --bg-gray: #e4e4e4;
+  --bg-gray2: #fafafa;
+  --bg-brown: #7d4d2f;
+  --bg-green: #046738;
+  --border-brown: #7d4d2f;
+  --border-yellow: #fbbc03;
+  --text-black1: #000;
+  --text-black2: #1b1b1b;
+  --text-yellow: #fbbc03;
+  --text-yellow2: #fbbc03;
+  --text-brown: #7d4d2f;
+  --text-gray1: #868686;
+  --text-gray2: #666;
+  --text-gray3: rgb(94, 94, 94);
+  --text-yellow3: fbbc03;
+  --text-blue: #0056a8;
+  --text-blue2: #007bff;
+  --text-white: #fff;
+  --font-size: 10px;
+  --font-h1-size-mobile: 26px;
+  --font-h2-size-mobile: 20px;
+  --font-h3-size-mobile: 18px;
+  --font-h4-size-mobile: 16px;
+  --font-h1-size-tablet: 28px;
+  --font-h2-size-tablet: 22px;
+  --font-h3-size-tablet: 20px;
+  --font-h4-size-tablet: 18px;
+  --font-h1-size-desktop: 32px;
+  --font-h2-size-desktop: 26px;
+  --font-h3-size-desktop: 22px;
+  --font-h4-size-desktop: 20px;
+  --font-size-table-title-mb: 20px;
+  --font-size-table-row-mb: 15px;
+  --font-size-table-title-tl: 22px;
+  --font-size-table-row-tl: 17px;
+  --font-size-table-title-de: 22px;
+  --font-size-table-row-de: 17px;
+
+  --main-color: #00676b;
+  --main-color-2: #00878b;
+  --color-m-hover:#08ccd3;
+  --text-white: #f1f1f1;
+  --text-black-1: #555555;
+  --text-black-2: #333333;
+  --text-black-3: #111111;
+  --hover-text-color: #ffeba4;
+  --button-bg: #ffff00;
+  --red: #e80910;
+  --red-color: #e80910;
+  --yellow-color: #fc963a;
+}
 /* ==============lien he========== */
 .sectionLienHe .row {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 .lienHe {
-  padding-top: 0;
+  /* border-top: 1px solid  #c9c9c9; */
+}
+.lienHe__contact--wrapper{
+  padding: 15px 20px;
+  background-color: var(--bg-gray);
 }
 .lienHe__contact--title,
-.lienHe__userInfo--title {
+.lienHe__userInfo--title,
+.lienHe__workSchedule--title {
   font-size: var(--font-h3-size-mobile);
   font-weight: bold;
-  margin-bottom: 15px;
 }
 
 .lienHe__contact--listDetails {
@@ -18,58 +80,26 @@
 }
 .lienHe__contact--listDetails li {
   font-size: var(--font-h4-size-mobile);
-  margin-bottom: 15px;
-  padding-right: 5px;
+  padding-bottom: 1px;
 }
 
 .lienHe__userInfo--sentBtn button {
-  font-size: 14px;
-}
+  font-size: var(--font-h3-size-mobile);
+  padding: 5px 30px;
+  background: #f39c1bc2;
 
-/* Danh sach zalo */
-.wrap-hr{
-  margin-top: 30px;
-
+  font-weight: 700;
+  text-transform: uppercase;
+  border-color: #ff9800;
+  min-width: 200px;
 }
-.lienHe__contact hr{
-  width: 40%;
-  align-self: center;
-  margin: auto;
-  border-top: 1px dashed var(--text-gray1);
-  background-color: transparent
+.lienHe__userInfo--sentBtn button:hover,
+.lienHe__userInfo--sentBtn button:focus{
+  outline: none;
+  background: #ff9800;
+  border-color: #ff9800 !important;
 }
-
-
-.lienHe__contact--listZalo{
-  margin-top: 20px;
-}
-.lienHe__contact--listZalo ul{
-  /*   border-top: 1px dashed var(--text-gray1);
-   */
-  /* padding-top: 10px */
-}
-.lienHe__contact--listZalo ul li:not(:first-child){
-  margin-top: 10px;
-
-}
-.lienHe__contact--listZalo ul li span:first-child{
-  margin-right: 10px;
-}
-.lienHe__contact--listZalo ul li span:first-child img{
-  width: 60px;
-
-}
-.lienHe__contact--listZalo ul li span:last-child{
-  align-self: center;
-
-}
-.lienHe__contact--listZalo ul li span:last-child h4{
-
-}
-.lienHe__contact--listZalo ul li span:last-child p{
-
-}
-/* end danh sach zalo */
+/* ==============end lien he========== */
 
 
 
@@ -77,6 +107,45 @@
 
 
 /* ==============end lien he========== */
+/* ======branches========= */
+
+
+.branches{}
+.branches__list{}
+.branches__element:not(:first-child){
+  padding-top: 20px;
+  border-top: 1px dashed var(--bg-gray);
+}
+.branches__element--name{
+  width: 50%;
+  max-width: 150px;
+  max-height: 50px;
+  background-color: var(--bg-green);
+  border-left: 5px solid var(--bg-yellow1);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px 10px;
+  margin-right: 10px;
+  line-height: 50px;
+
+  font-size: 14px;
+  color: var(--text-white);
+}
+.branches__element--detail{
+
+}
+.branches__element--detail h4{
+  margin-bottom: 10px;
+
+}
+.branches__element--map iframe{
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+}
+
+
+/* ======end branches========= */
 /* ===========more-info========== */
 .moreInfo {
   background-color: var(--bg-gray2);

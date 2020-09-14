@@ -30,13 +30,15 @@ public class MainController {
     public String page404() {return "404";}
 
     @GetMapping(value = {"/", "/trang-chu"})
-    public String trangChu() {return "trang-chu";}
+    public String trangChu() {
+        return "trang-chu";
+    }
 
-    @GetMapping(value = {"/tin-tuc"})
-    public String tinTuc() {return "tin-tuc";}
-
-    @GetMapping(value = {"/chi-tiet-tin-tuc"})
-    public String chiTietTinTuc() {return "chi-tiet-tin-tuc";}
+//    @GetMapping(value = {"/tuyen-dung"})
+//    public String tuyenDung() {return "tuyen-dung";}
+//
+//    @GetMapping(value = {"/chi-tiet-tuyen-dung"})
+//    public String chiTietTuyenDung() {return "chi-tiet-tuyen-dung";}
 
     @GetMapping(value = {"/cong-trinh"})
     public String congTrinh() {return "cong-trinh";}
@@ -65,54 +67,54 @@ public class MainController {
     @GetMapping(value = {"/danh-muc"})
     public String danhMuc() {return "danh-muc";}
 
-    @GetMapping(value = {"/robots.txt"})
-    private void robot(HttpServletResponse response) throws IOException {
-        try {
-            response.getWriter().println("# we use BKSoftwarevn as our ecommerce platform");
-            response.getWriter().println();
-            response.getWriter().println(restService.callGetFile("robot.txt"));
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            response.sendRedirect("404");
-        }
-    }
-
-    @GetMapping(value = {"/sitemap*.xml"})
-    private void sitemap(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        try {
-            String fileName = request.getServletPath();
-            if(fileName.indexOf("sitemap_page.xml") > -1) {
-                response.sendRedirect("trang-chu");
-            } else {
-                response.setContentType("application/xml");
-                response.getWriter().println(restService.callGetFile(fileName));
-            }
-        } catch (Exception ex) {
-            response.sendRedirect("404");
-        }
-    }
-
-    @GetMapping(value = {"/*"})
-    public void aliasPage(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String servletPath = request.getServletPath();
-        servletPath = servletPath.substring(1);
-        String uriAlias = "404";
-        ModelMapper modelMapper = new ModelMapper();
-        try {
-            Object o =  restService.callGet(RestBuilder.build()
-                    .service("infor-system-service")
-                    .uri("api/v1/public/url-alias/alias/"+servletPath+"/company-id/2"));
-            if(o != null) {
-                List<UrlAlias> urlAliasList = Arrays.asList(modelMapper.map(o, UrlAlias[].class));
-                if(urlAliasList != null && urlAliasList.size() > 0) {
-                    UrlAlias urlAlias = urlAliasList.get(0);
-                    uriAlias = urlAlias.getUrl();
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher(uriAlias);
-        requestDispatcher.forward(request, response);
-    }
+//    @GetMapping(value = {"/robots.txt"})
+//    private void robot(HttpServletResponse response) throws IOException {
+//        try {
+//            response.getWriter().println("# we use BKSoftwarevn as our ecommerce platform");
+//            response.getWriter().println();
+//            response.getWriter().println(restService.callGetFile("robot.txt"));
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//            response.sendRedirect("404");
+//        }
+//    }
+//
+//    @GetMapping(value = {"/sitemap*.xml"})
+//    private void sitemap(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        try {
+//            String fileName = request.getServletPath();
+//            if(fileName.indexOf("sitemap_page.xml") > -1) {
+//                response.sendRedirect("trang-chu");
+//            } else {
+//                response.setContentType("application/xml");
+//                response.getWriter().println(restService.callGetFile(fileName));
+//            }
+//        } catch (Exception ex) {
+//            response.sendRedirect("404");
+//        }
+//    }
+//
+//    @GetMapping(value = {"/*"})
+//    public void aliasPage(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//        String servletPath = request.getServletPath();
+//        servletPath = servletPath.substring(1);
+//        String uriAlias = "404";
+//        ModelMapper modelMapper = new ModelMapper();
+//        try {
+//            Object o =  restService.callGet(RestBuilder.build()
+//                    .service("infor-system-service")
+//                    .uri("api/v1/public/url-alias/alias/"+servletPath+"/company-id/2"));
+//            if(o != null) {
+//                List<UrlAlias> urlAliasList = Arrays.asList(modelMapper.map(o, UrlAlias[].class));
+//                if(urlAliasList != null && urlAliasList.size() > 0) {
+//                    UrlAlias urlAlias = urlAliasList.get(0);
+//                    uriAlias = urlAlias.getUrl();
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher(uriAlias);
+//        requestDispatcher.forward(request, response);
+//    }
 }
