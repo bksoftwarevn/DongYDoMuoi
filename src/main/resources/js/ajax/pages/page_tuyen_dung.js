@@ -45,19 +45,10 @@ let News = {
         tinTucElement.find('.tinTuc__element--month').text(TimeUtils.formatTime(object.creatTime).m);
         return tinTucElement;
     },
-    clickMoreDetails: function () {
-        $(".btn-showMore")
-            .off("click")
-            .click(function () {
-                let url = $(this).parents("a.tinTuc__element").attr("href");
-                location.href = url;
-            });
-    },
     mappingElement: function (listData) {
         listData.forEach((element) => {
             let templateTinTucElement = News.generateTinTucElement(element);
             $("#list-tin-tuc").append(templateTinTucElement);
-            clickMoreDetails();
         });
     },
     initElement: function (page, size) {

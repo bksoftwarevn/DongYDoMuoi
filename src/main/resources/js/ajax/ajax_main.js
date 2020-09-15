@@ -1,4 +1,4 @@
-var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/';
+var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dongydomuoi/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
 const COMPANY_ID = 3 ;
@@ -324,7 +324,7 @@ function viewAliasConstruction(alias, id) {
 }
 
 function viewAliasNews(alias, id){
-    return viewAlias(alias, `chi-tiet-tin-tuc?id=${id}`);
+    return viewAlias(alias, `chi-tiet-tuyen-dung?id=${id}`);
 }
 
 function viewAliasInfo(alias, id) {

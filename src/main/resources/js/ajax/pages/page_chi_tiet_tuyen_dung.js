@@ -8,6 +8,7 @@ $(function () {
 });
 
 let News = {
+
     getNewsData: async function (idNews = 116) {
         let newsData;
         newsData = await Promise.resolve(newsFindById(idNews))
@@ -15,6 +16,7 @@ let News = {
             .catch(err => console.log(err));
         return newsData;
     },
+
     generateNew: function (object) {
         $('.tinTuc__title--tagsTinTuc').html(this.handleTag(object.tag));
         $(".tinTuc__title h2").text(object.name);
@@ -24,19 +26,19 @@ let News = {
                 vào <a style="color: blue; cursor: default;" href="">${TimeUtils.formatTime(object.creatTime).d} tháng ${TimeUtils.formatTime(object.creatTime).mInNumber}</a> bởi ${object.author}`);
         templateNews.find('.tinTuc__contentTinTuc').html(object.content);
         templateNews.find('.tinTuc__previewTinTuc').text(object.preview);
-
     },
+
     handleTag: function (data) {
         if (!(data === '' || data === null)) {
             let listTags = data.split("|");
             let templateTags = listTags.map(data => {
-
-                return `<a href="tin-tuc?tag=${data}" class="text-uppercase" style="color: #007bff; font-size: 1.4rem;">${data}</a>`
+                return `<a href="tuyen-dung?tag=${data}" class="text-uppercase" style="color: #007bff; font-size: 1.4rem;">${data}</a>`
             }).join(', ');
             return templateTags;
         }
         return '';
     },
+
     mappingNews: function (idTinTuc) {
         this.getNewsData(idTinTuc).then(rs => this.generateNew(rs)).catch(er => console.log(er));
     },
