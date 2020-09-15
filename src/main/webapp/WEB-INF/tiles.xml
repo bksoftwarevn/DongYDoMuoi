@@ -38,20 +38,11 @@
         <put-attribute name="body" value="/WEB-INF/bodyfragments/trang_chu.jsp"/>
     </definition>
 
-<!--    Gioi Thieu-->
-    <definition name="gioi-thieu" extends="base-layout">
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/gioi_thieu.jsp"/>
-    </definition>
-
-    <definition name="chi-tiet-gioi-thieu" extends="base-layout">
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/chi_tiet_gioi_thieu.jsp"/>
-    </definition>
-
     <!--Lien He-->
     <definition name="lien-he" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/lien_he.jsp"/>
     </definition>
-
+<!--    ===Article===-->
     <!--Tuyen dung-->
     <definition name="dang-ky-tu-van" extends="base-layout">
         <put-attribute name="title" value="Tin tức"/>
@@ -66,6 +57,15 @@
         <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_tuyen_dung.jsp" cascade="true"/>
     </definition>
 
+    <!--    Gioi Thieu-->
+    <definition name="gioi-thieu" extends="dang-ky-tu-van">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/gioi_thieu.jsp" cascade="true"/>
+    </definition>
+
+    <definition name="chi-tiet-gioi-thieu" extends="dang-ky-tu-van">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_gioi_thieu.jsp" cascade="true"/>
+    </definition>
+    <!--    ===end Article===-->
     <!--san pham-->
     <definition name="san-pham" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>

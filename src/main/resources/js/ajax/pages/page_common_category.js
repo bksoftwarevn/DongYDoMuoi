@@ -1,211 +1,108 @@
+let textName;
+let textPhoneNumber;
+let textEmail;
+
 $(function () {
-    let url = new URL(location.href);
-
-    // let idCongTrinh = url.searchParams.get(id);
-
-
-    function detectTinTuc() {
-        return url.pathname.includes('tin-tuc') || localStorage.getItem('isTinTuc') === 'true';
-    }
-
-    setTimeout(function () {
-        if (detectTinTuc()) {
-            let isChiTiet = localStorage.getItem('isChiTiet') === 'true';
-            $('.tinTuc__danhMuc').addClass('d-none');
-            $('.tinTuc__spnb').removeClass('mt-5');
-            if (isChiTiet) {
-                $('.tinTuc__btnShowMoreNews').hide();
-            }
-            $('.tinTuc__bvgd--title h3').text('Được xem nhiều');
-
-            NewestArticle.mappingNewestArticle(true);
-        } else {
-            let isChiTiet = localStorage.getItem('isChiTiet') === 'true';
-            if (isChiTiet) {
-                $('.tinTuc__danhMuc').removeClass('d-none');
-                $('.tinTuc__spnb').addClass('mt-5');
-                $('.tinTuc__btnShowMoreNews').hide();
-                DuToan.mappingDuToan(idCongTrinh);
-            } else {
-                $('.tinTuc__danhMuc').addClass('d-none');
-                $('.tinTuc__spnb').removeClass('mt-5');
-
-                // DanhMuc.generateListDanhMucAndMapping();
-            }
-            $('.tinTuc__bvgd--title h3').text('công trình mới nhất');
-            NewestArticle.mappingNewestArticle(false);
-        }
-        OutStandingProduct.generateListOutstandingProductAndMapping();
-
-    }, 10);
-
-
+    hiddenNavHero();
+    textName = $("#input-name");
+    textPhoneNumber = $("#input-phone");
+    textEmail = $("#input-email");
+    InfoCustomer.init();
 });
-// ===Danh muc===
-let DuToan = {
 
-    generateListDuToan: function (object) {
-        let templateDanhMuc = $("#hiddenElementDm").clone();
-        templateDanhMuc.removeAttr("id").removeClass("d-none");
-        templateDanhMuc.find('.tinTuc__danhMuc--firstLevelLi div').prepend(textToIconFile(FileUtil.getFileName(object.url)));
-        templateDanhMuc.find("a.tinTuc__danhMuc--link")
-            .text(FileUtil.getFileNameWithoutExtension(object.url).nameFile)
-            .attr('href', FileUtil.getLinkFile(object.url));
-        return templateDanhMuc;
+let InfoCustomer = {
+    init: function () {
+        this.resetInput();
+        this.clickBtnSendInfo();
     },
-    mappingDuToan: function (id) {
-        FetchingNewsData.getListFile(id).then((listData) => {
-                if (listData.length > 0) {
-                    listData.forEach((el) => $("#listDm").append(this.generateListDuToan(el)));
-                } else {
-                    $("#listDm").html(`<li class="tinTuc__danhMuc--firstLevelLi text-uppercase"><span style="font-size: 14px; color: var(--text-black-1);">không có Dữ liệu</span></li>`);
-                };
-            }
-        );
-    }
-};
-// ===end Danh muc===
 
-//===Outstanding product===
-let OutStandingProduct = {
-    getListOutstandingProduct: async function () {
-        let listProduct;
-        listProduct = await Promise.resolve(
-            productFilter(COMPANY_ID, 0, null, 0, "", 0, "sold", false, 1, 6)
-        ).then((rs) => rs.content);
-        return listProduct;
+    resetInput: function () {
+        $('#input-name').val('');
+        $('#input-email').val('');
+        $('#input-phone').val('');
+        $('#input-content').val('');
     },
-    generateOutstandingProduct: function (object) {
-        let promotions = object.promotions;
-        let templateProduct = $("#hidden-product").clone().removeClass("d-none").removeAttr("id");
-        templateProduct.find("div.tinTuc__spnb--productName").text(object.name);
-        templateProduct.find("span.tinTuc__spnb--imgProduct img").attr({
-            src: viewSrcFile(object.image),
-        });
-        if (object.cost !== 0) {
-            templateProduct.find('.tinTuc__spnb--link').attr('href', viewAliasProduct(object.alias, object.id));
-            //handlePrice
-            if (promotions.length === 0) {
-                templateProduct
-                    .find("span.tinTuc__spnb--oldPrice").addClass('d-none');
 
-                templateProduct
-                    .find("span.tinTuc__spnb--newPrice")
-                    .html(`${MoneyUtils.viewPriceVND(object.cost)}`);
+    getInfo: function () {
+        let customerInfo = {};
+        customerInfo.name = $("#input-name").val();
+        customerInfo.email = $("#input-email").val();
+        customerInfo.phone = $("#input-phone").val();
+        customerInfo.content = $("#input-content").val();
+        customerInfo.companyId = COMPANY_ID;
+        return customerInfo;
+    },
 
-            } else {
-                let handledPromotion = viewPromotionCostProduct(promotions, object.cost);
-                if (handledPromotion.minusPrice === 0) {
-                    templateProduct
-                        .find("span.tinTuc__spnb--oldPrice").addClass('d-none');
-                } else {
-                    templateProduct
-                        .find("span.tinTuc__spnb--oldPrice").removeClass('d-none')
-                        .html(`<del>${MoneyUtils.viewPriceVND(object.cost)}</del>`);
+    clickBtnSendInfo: function () {
+        $("#btn-sendInfo")
+            .off("click")
+            .click(function () {
+                let {check: cTen, val: vTen} = checkThongTinTen();
+                let {check: cSDT, val: vSDT} = checkThongTinSDT();
+                let {check: cEmail, val: vEmail} = checkThongTinEmail();
+                let customerInfo = InfoCustomer.getInfo();
+                if (cTen && cSDT && cEmail) {
+                    $("#btn-sendInfo").text('Đang xử lý...').prop('disabled', true);
+                    InfoSystemAPI.postInfo(customerInfo)
+                        .then(rs1 => {
+                            alertSuccess('Gửi thông tin liên hệ thành công');
+                            $("#btn-sendInfo").text('Gửi đi').prop('disabled', false);
+                            setTimeout(function () {
+                                InfoCustomer.resetInput()
+                            }, 2000);
+                        }).catch(() => {
+                        $("#btn-sendInfo").text('Gửi đi').prop('disabled', false);
+                        alertWarning('Gửi thông tin thất bại');
+                    });
                 }
-                templateProduct
-                    .find("span.tinTuc__spnb--newPrice")
-                    .html(`${MoneyUtils.viewPriceVND(object.cost - handledPromotion.minusPrice)}`);
-            }
-        }else{
-            templateProduct.find('.tinTuc__spnb--link').attr('href', 'lien-he');
-            templateProduct
-                .find("span.tinTuc__spnb--oldPrice").addClass('d-none');
-            templateProduct
-                .find("span.tinTuc__spnb--newPrice")
-                .html(`Liên hệ trực tiếp`);
-        }
-
-
-
-        //end handle price
-        return templateProduct;
+            });
     },
-    generateListOutstandingProductAndMapping: function () {
-        this.getListOutstandingProduct().then((listData) => {
-            listData.forEach((el) =>
-                $("#list-product").append(this.generateOutstandingProduct(el))
-            )
-        });
+};
+
+let InfoSystemAPI = {
+    prefix: `infor-system-service/api/`,
+    postInfo: function (data) {
+        let uri = `${this.prefix}v1/public/contact`;
+        return ajaxPost(uri, data);
     }
 };
 
 
-//===end Outstanding product===
+function checkThongTinTen() {
+    let rs = false;
+    let size = 50;
+    let val = textName.val();
+    if (regexTen(val) && checkSize(size, val)) {
+        rs = true;
+        hiddenError(textName);
+    } else ViewInfo.viewError(textName, INVALID_NAME);
+    return {check: rs, val: val};
+}
 
-// ===bai viet gan day===
-let NewestArticle = {
-    getListNewestArticle: async function (type, category) {
-        let listNewestArticle;
-        listNewestArticle = await Promise.resolve(
-            newsFilter(category, COMPANY_ID, type, "", "", 1, 6)
-        )
-            .then((rs) => rs.content)
-            .catch((err) => console.log(err));
-        return listNewestArticle;
-    },
-    generateNewestArticle: function (object, isTinTuc) {
-        let templateNewestArticle = $("#hidden-bvgd")
-            .clone()
-            .removeClass("d-none")
-            .removeAttr("id");
-        templateNewestArticle.find('.tinTuc__bvgd--link').attr('href', `chi-tiet-${isTinTuc ? 'tin-tuc?id=' + object.id : 'cong-trinh?id=' + object.id}`);
-        templateNewestArticle
-            .find("span.tinTuc__bvgd--imgProduct img")
-            .attr("src", viewSrcFile(object.image));
-        templateNewestArticle
-            .find("div.tinTuc__bvgd--date")
-            .text(TimeUtils.formatTime(object.creatTime).d);
-        templateNewestArticle
-            .find("div.tinTuc__bvgd--month")
-            .text(TimeUtils.formatTime(object.creatTime).m);
-        templateNewestArticle
-            .find("div.tinTuc__bvgd--productName")
-            .text(object.name);
-        templateNewestArticle
-            .find("div.tinTuc__bvgd--commentCount")
-            .text(`${NumberUtils.formatLargeNumber(object.view)} lượt xem`);
-        return templateNewestArticle;
-    },
+function checkThongTinSDT() {
+    let rs = false;
+    let val = textPhoneNumber.val();
+    if (regexDienThoai(val)) {
+        rs = true;
+        hiddenError(textPhoneNumber);
+    } else ViewInfo.viewError(textPhoneNumber, INVALID_PHONE_NUMBER);
+    return {check: rs, val: val};
+}
 
-    mappingNewestArticle: function (isTinTuc = true) {
-        function mapping(typeArticle, category) {
-            NewestArticle.getListNewestArticle(typeArticle, category)
-                .then((rs) => {
-                    rs.forEach((data) =>
-                        $("#list-bvgd").append(NewestArticle.generateNewestArticle(data, isTinTuc))
-                    );
-                })
-                .catch((err) => console.log(err));
-        }
-
-        if (isTinTuc) {
-            mapping(TUYEN_DUNG_TYPE, 11);
-        } else {
-            mapping(NGHIEN_CUU_TYPE, 10);
-        }
-
-    },
-};
-// ===bai viet gan day===
-
-
-let FetchingNewsData = {
-    newsFrefix: 'news-service/api/',
-    getListFile: async function (id) {
-        let listFileName;
-        let url = `${this.newsFrefix}v1/public/attachments/news/${id}`;
-        await Promise.resolve(ajaxGet(url))
-            .then(rs => {
-                listFileName = rs.map(rs1 => {
-                    return {
-                        id: rs1.id,
-                        url: rs1.url,
-                        name: rs1.name
-                    }
-                });
-            });
-        return listFileName;
-
+function checkThongTinEmail() {
+    let rs = false;
+    let val = textEmail.val();
+    if (regexEmail(val)) {
+        rs = true;
+        hiddenError(textEmail);
+    } else ViewInfo.viewError(textEmail, INVALID_EMAIL);
+    return {check: rs, val: val};
+}
+let ViewInfo = {
+    viewError: function(selector, message){
+        $(selector).addClass("is-invalid");
+        $(selector).siblings(".invalid-feedback").text(`${message}`);
     }
 }
+
+
