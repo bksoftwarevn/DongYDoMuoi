@@ -1,13 +1,13 @@
 $(document).ready(function () {
-    // $('.banner').slick({
-    //     dots: true,
-    //     infinite: true,
-    // });
-    $(".bars-open").click(function () { 
+    $('.banner').slick({
+        dots: true,
+        infinite: true,
+    });
+    $(".bars-open").click(function () {
         $("nav .nav").addClass("open");
         $("nav .shadow").addClass("open");
     });
-    $(".fa-times").click(function () { 
+    $(".fa-times").click(function () {
         $("nav .nav").removeClass("open");
         $("nav .shadow").removeClass("open");
     });
@@ -19,6 +19,7 @@ $(document).ready(function () {
         if (!container.is(e.target) && container.has(e.target).length === 0)
         {
             if($(".search-icon").hasClass("show")){
+                console.log("has");
                 $(".search-icon").removeClass("show")
             };
         }

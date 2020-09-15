@@ -1,5 +1,6 @@
 package com.bksoftwarevn.dongydomuoi;
 
+import com.bksoftwarevn.dongydomuoi.filter.TransactionFilterAll;
 import com.bksoftwarevn.dongydomuoi.service_impl.RestService;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustStrategy;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
@@ -68,5 +70,13 @@ public class DongYDoMuoi implements CommandLineRunner {
 //        };
 //        Timer timer = new Timer();
 //        timer.schedule(timerTask, 0,24*60*60*1000);
+    }
+
+    @Bean
+    public FilterRegistrationBean<TransactionFilterAll> loggingFilter(){
+        FilterRegistrationBean<TransactionFilterAll> registrationBean = new FilterRegistrationBean<>();
+        registrationBean.setFilter(new TransactionFilterAll());
+        registrationBean.addUrlPatterns("/*");
+        return registrationBean;
     }
 }

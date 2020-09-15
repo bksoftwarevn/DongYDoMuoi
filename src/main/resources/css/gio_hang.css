@@ -40,12 +40,10 @@ table  thead tr th{
     width: 66px !important;
     height: 66px;
 }
-.cart-subtotal, .cart-price{
-    text-align: right;
-}
+
 .cart-name  a,.cart-price span,.cart-subtotal span{
     color: var(--main-color);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
@@ -68,17 +66,14 @@ table  thead tr th{
 }
 .cart-psubtotal td {
     color: var(--main-color);
-    text-align: right;
 }
 .order-total td {
     color: var(--red-color);
-    text-align: right;
 }
 .pay-page{
     padding: 10px 0;
 }
-.pay-page button{
-    width: 100%;
+.pay-page a{
     display: block;
     text-transform: uppercase;
 }
