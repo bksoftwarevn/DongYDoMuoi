@@ -1,7 +1,7 @@
-var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/';
+var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dongydomuoi/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
-const COMPANY_ID = 3;
+const COMPANY_ID = 3 ;
 const NGHIEN_CUU_TYPE = 1;
 const TUYEN_DUNG_TYPE = 2;
 const GIOI_THIEU_TYPE = 3;
@@ -323,8 +323,8 @@ function viewAliasConstruction(alias, id) {
     return viewAlias(alias, `chi-tiet-cong-trinh?id=${id}`);
 }
 
-function viewAliasNews(alias, id){
-    return viewAlias(alias, `chi-tiet-tin-tuc?id=${id}`);
+function viewAliasRecruitment(alias, id){
+    return viewAlias(alias, `chi-tiet-tuyen-dung?id=${id}`);
 }
 
 function viewAliasInfo(alias, id) {
