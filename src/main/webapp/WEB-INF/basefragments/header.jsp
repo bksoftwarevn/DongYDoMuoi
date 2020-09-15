@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8">
-                <a href="" class="logo-area">
+                <a href="trang-chu" class="logo-area">
                     <div class="logo-a__img">
                         <img src="https://img.icons8.com/ios-filled/50/00676b/leaf.png" alt="Thiết bị điện AVHH">
                     </div>
