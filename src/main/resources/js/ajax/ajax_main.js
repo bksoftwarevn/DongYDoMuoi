@@ -1,4 +1,4 @@
-var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/đong-y/';
+var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
 const COMPANY_ID = 3 ;
