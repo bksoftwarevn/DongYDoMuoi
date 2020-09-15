@@ -67,7 +67,7 @@ function viewListProductProductType() {
 }
 
 function viewConstructionCarousel() {
-    newsFilter(0, COMPANY_ID, CONG_TRINH_TYPE, name= "", tag = "", page = 1, size = 8).then(rs => {
+    newsFilter(0, COMPANY_ID, NGHIEN_CUU_TYPE, name= "", tag = "", page = 1, size = 8).then(rs => {
         if(rs) {
             rs = rs.content;
             let listContruction = rs.map(data => {

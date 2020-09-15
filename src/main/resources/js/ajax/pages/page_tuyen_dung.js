@@ -13,83 +13,83 @@ $(function () {
     } else {
         tag = '';
     }
-    initElement(currentPage, sizePage);
-    clickShowMoreNews();
+    News.initElement(currentPage, sizePage);
+    News.clickShowMoreNews();
+    News.getListTinTuc(1, 6).then(rs=>console.log(rs));
 });
 
-async function getListTinTuc(page, size) {
-    let rs;
-    rs = await Promise.resolve(newsFilter(0, COMPANY_ID, TIN_TUC_TYPE, "", tag, page, size))
-        .then((rs1) => rs1)
-        .catch((err) => console.log(err));
-    return rs;
-}
-
-function generateTinTucElement(object) {
-    console.log(object);
-    let tinTucElement = $("#tinTuc__element").clone();
-    tinTucElement.removeClass("d-none").removeAttr("id");
-    // tinTucElement.attr('href', `chi-tiet-tin-tuc?id=${object.id}`);
-    tinTucElement.attr('href', viewAliasNews(object.alias, object.id));
-    tinTucElement
-        .find("div.tinTuc__element--img img")
-        .attr("src", viewSrcFile(object.image));
-    tinTucElement
-        .find("h4.tinTuc__element--name")
-        .text(object.name ? object.name : "");
-    tinTucElement
-        .find("p.tinTuc__element--description")
-        .text(object.preview ? object.preview : "");
-    tinTucElement.find("p.tinTuc__element--commentCount").text("4 comments");
-    tinTucElement.find('.tinTuc__element--date').text(TimeUtils.formatTime(object.creatTime).d);
-    tinTucElement.find('.tinTuc__element--month').text(TimeUtils.formatTime(object.creatTime).m);
-    return tinTucElement;
-}
-
-function clickMoreDetails() {
-    $(".btn-showMore")
-        .off("click")
-        .click(function () {
-            let url = $(this).parents("a.tinTuc__element").attr("href");
-            location.href = url;
+let News = {
+    getListTinTuc: async function (page, size) {
+        let rs;
+        rs = await Promise.resolve(newsFilter(0, COMPANY_ID, TUYEN_DUNG_TYPE, "", tag, page, size))
+            .then((rs1) => rs1)
+            .catch((err) => console.log(err));
+        return rs;
+    },
+    generateTinTucElement: function (object) {
+        let tinTucElement = $("#tinTuc__element").clone();
+        tinTucElement.removeClass("d-none").removeAttr("id");
+        // tinTucElement.attr('href', `chi-tiet-tin-tuc?id=${object.id}`);
+        tinTucElement.attr('href', viewAliasNews(object.alias, object.id));
+        tinTucElement
+            .find("div.tinTuc__element--img img")
+            .attr("src", viewSrcFile(object.image));
+        tinTucElement
+            .find("h4.tinTuc__element--name")
+            .text(object.name ? object.name : "");
+        tinTucElement
+            .find("p.tinTuc__element--description")
+            .text(object.preview ? object.preview : "");
+        tinTucElement.find("p.tinTuc__element--commentCount").text("4 comments");
+        tinTucElement.find('.tinTuc__element--date').text(TimeUtils.formatTime(object.creatTime).d);
+        tinTucElement.find('.tinTuc__element--month').text(TimeUtils.formatTime(object.creatTime).m);
+        return tinTucElement;
+    },
+    clickMoreDetails: function () {
+        $(".btn-showMore")
+            .off("click")
+            .click(function () {
+                let url = $(this).parents("a.tinTuc__element").attr("href");
+                location.href = url;
+            });
+    },
+    mappingElement: function (listData) {
+        listData.forEach((element) => {
+            let templateTinTucElement = News.generateTinTucElement(element);
+            $("#list-tin-tuc").append(templateTinTucElement);
+            clickMoreDetails();
         });
-}
-
-function initElement(page, size) {
-    getListTinTuc(page, size).then(rs => {
-        if (rs.totalPages < 2) {
-            $("#btn-showMoreNews").hide();
-        } else {
-            $("#btn-showMoreNews").show();
-        }
-        rs = rs.content;
-        mappingElement(rs);
-    });
-}
-
-function mappingElement(listData) {
-    listData.forEach((element) => {
-        let templateTinTucElement = generateTinTucElement(element);
-        $("#list-tin-tuc").append(templateTinTucElement);
-        clickMoreDetails();
-    });
-}
-
-function clickShowMoreNews() {
-    $("#btn-showMoreNews").click(function () {
-        currentPage++;
-
-        getListTinTuc(currentPage, sizePage).then(rs => {
-            if (currentPage < rs.totalPage) {
-                $("#btn-showMoreNews").show();
-            } else {
+    },
+    initElement: function (page, size) {
+        this.getListTinTuc(page, size).then(rs => {
+            if (rs.totalPages < 2) {
                 $("#btn-showMoreNews").hide();
+            } else {
+                $("#btn-showMoreNews").show();
             }
             rs = rs.content;
-            mappingElement(rs);
-        })
-    });
+            News.mappingElement(rs);
+        });
+    },
+     clickShowMoreNews: function() {
+         $("#btn-showMoreNews").click(function () {
+             currentPage++;
+             News.getListTinTuc(currentPage, sizePage).then(rs => {
+                 if (currentPage < rs.totalPage) {
+                     $("#btn-showMoreNews").show();
+                 } else {
+                     $("#btn-showMoreNews").hide();
+                 }
+                 rs = rs.content;
+                 News.mappingElement(rs);
+             })
+         });
 
 }
+
+}
+
+
+
 
 

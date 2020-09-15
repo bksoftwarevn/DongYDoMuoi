@@ -34,38 +34,38 @@ public class MainController {
         return "trang-chu";
     }
 
-//    @GetMapping(value = {"/tuyen-dung"})
-//    public String tuyenDung() {return "tuyen-dung";}
+    @GetMapping(value = {"/tuyen-dung"})
+    public String tuyenDung() {return "tuyen-dung";}
+
+    @GetMapping(value = {"/chi-tiet-tuyen-dung"})
+    public String chiTietTuyenDung() {return "chi-tiet-tuyen-dung";}
+
+//    @GetMapping(value = {"/cong-trinh"})
+//    public String congTrinh() {return "cong-trinh";}
 //
-//    @GetMapping(value = {"/chi-tiet-tuyen-dung"})
-//    public String chiTietTuyenDung() {return "chi-tiet-tuyen-dung";}
-
-    @GetMapping(value = {"/cong-trinh"})
-    public String congTrinh() {return "cong-trinh";}
-
-    @GetMapping(value = {"/chi-tiet-cong-trinh"})
-    public String chiTietCongTrinh() {return "chi-tiet-cong-trinh";}
-
+//    @GetMapping(value = {"/chi-tiet-cong-trinh"})
+//    public String chiTietCongTrinh() {return "chi-tiet-cong-trinh";}
+//
     @GetMapping(value = {"/gioi-thieu"})
     public String gioiThieu() {return "gioi-thieu";}
 
     @GetMapping(value = {"/chi-tiet-gioi-thieu"})
     public String chiTietGioiThieu() {return "chi-tiet-gioi-thieu";}
-
+//
     @GetMapping(value = {"/lien-he"})
     public String lienHe() {return "lien-he";}
-
-    @GetMapping(value = {"/gio-hang"})
-    public String gioHang() {return "gio-hang";}
-
-    @GetMapping(value = {"/thanh-toan"})
-    public String thanhToan() {return "thanh-toan";}
-
-    @GetMapping(value = {"/san-pham"})
-    public String sanPham() {return "san-pham";}
-
-    @GetMapping(value = {"/danh-muc"})
-    public String danhMuc() {return "danh-muc";}
+//
+//    @GetMapping(value = {"/gio-hang"})
+//    public String gioHang() {return "gio-hang";}
+//
+//    @GetMapping(value = {"/thanh-toan"})
+//    public String thanhToan() {return "thanh-toan";}
+//
+//    @GetMapping(value = {"/san-pham"})
+//    public String sanPham() {return "san-pham";}
+//
+//    @GetMapping(value = {"/danh-muc"})
+//    public String danhMuc() {return "danh-muc";}
 
 //    @GetMapping(value = {"/robots.txt"})
 //    private void robot(HttpServletResponse response) throws IOException {
