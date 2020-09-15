@@ -1,5 +1,27 @@
+/* name of detail of article */
 .tinTuc__title{
   font-size: var(--font-h3-size-mobile);
   padding-top: 30px;
+}
+/* end name of detail of article */
+
+/* tong dai tu van */
+.tinTuc__tdtv{
+  font-size: 2rem;
 
 }
+.tinTuc__tdtv--nameContact{
+  font-size: 1.4rem;
+
+}
+.tinTuc__tdtv--details{
+  font-size: 1.4rem;
+}
+.tinTuc__tdtv--details i{
+  margin-right: 10px;
+}
+.tinTuc__tdtv--details a{
+  
+}
+
+/* end tong dai tu van */
