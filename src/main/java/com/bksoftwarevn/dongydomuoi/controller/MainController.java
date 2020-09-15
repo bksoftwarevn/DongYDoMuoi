@@ -3,6 +3,7 @@ package com.bksoftwarevn.dongydomuoi.controller;
 import com.bksoftwarevn.dongydomuoi.json.RestBuilder;
 import com.bksoftwarevn.dongydomuoi.json.UrlAlias;
 import com.bksoftwarevn.dongydomuoi.service_impl.RestService;
+import org.json.simple.JSONObject;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,8 +21,23 @@ import java.util.List;
 @Controller
 public class MainController {
 
+    @Value("${urlCDNConfig}")
+    private String urlCDNConfig;
+
     @Value("${urlCDN}")
     private String urlCDN;
+
+    @Value("${inforSystemService}")
+    private String inforSystemService;
+
+    @Value("${newsService}")
+    private String newsService;
+
+    @Value("${productService}")
+    private String productService;
+
+    @Value("${companyId}")
+    private String companyId;
 
     @Autowired
     private RestService restService;
@@ -30,42 +46,100 @@ public class MainController {
     public String page404() {return "404";}
 
     @GetMapping(value = {"/", "/trang-chu"})
-    public String trangChu() {
+    public String trangChu(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(inforSystemService)
+                    .uri("api/v1/public/companies/" + companyId));
+            String valImage = jsonObject.get("logo").toString();
+            String valTitle = jsonObject.get("nameCompany").toString();
+            String valDescription = jsonObject.get("description").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "trang-chu";
     }
 
     @GetMapping(value = {"/tuyen-dung"})
-    public String tuyenDung() {return "tuyen-dung";}
+    public String tuyenDung(HttpServletRequest request) {
+        request.setAttribute("title", "Tuyển dụng");
+        return "tuyen-dung";
+    }
 
     @GetMapping(value = {"/chi-tiet-tuyen-dung"})
-    public String chiTietTuyenDung() {return "chi-tiet-tuyen-dung";}
+    public String chiTietTuyenDung(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(newsService)
+                    .uri("api/v1/public/newses/" + request.getParameter("id")));
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-tuyen-dung";
+    }
 
-//    @GetMapping(value = {"/cong-trinh"})
-//    public String congTrinh() {return "cong-trinh";}
-//
-//    @GetMapping(value = {"/chi-tiet-cong-trinh"})
-//    public String chiTietCongTrinh() {return "chi-tiet-cong-trinh";}
-//
     @GetMapping(value = {"/gioi-thieu"})
-    public String gioiThieu() {return "gioi-thieu";}
+    public String gioiThieu(HttpServletRequest request) {
+        request.setAttribute("title", "Giới thiệu");
+        return "gioi-thieu";
+    }
 
     @GetMapping(value = {"/chi-tiet-gioi-thieu"})
-    public String chiTietGioiThieu() {return "chi-tiet-gioi-thieu";}
+    public String chiTietGioiThieu(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(newsService)
+                    .uri("api/v1/public/newses/" + request.getParameter("id")));
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-gioi-thieu";
+    }
 
     @GetMapping(value = {"/lien-he"})
-    public String lienHe() {return "lien-he";}
+    public String lienHe(HttpServletRequest request) {
+        request.setAttribute("title", "Liên hệ");
+        return "lien-he";
+    }
 
-    @GetMapping(value = {"/gio-hang"})
-    public String gioHang() {return "gio-hang";}
+    @GetMapping(value= {"/bai-thuoc"})
+    public String baiThuoc(HttpServletRequest request) {
+        request.setAttribute("title", "Bài thuốc");
+        return "bai-thuoc";
+    }
 
-    @GetMapping(value = {"/thanh-toan"})
-    public String thanhToan() {return "thanh-toan";}
+    @GetMapping(value= {"/san-pham"})
+    public String sanPham(HttpServletRequest request) {
+        request.setAttribute("title", "Sản phẩm");
+        return "san-pham";
+    }
 
-    @GetMapping(value = {"/san-pham"})
-    public String sanPham() {return "san-pham";}
+    @GetMapping(value= {"/nghien-cuu"})
+    public String nghienCuu(HttpServletRequest request) {
+        request.setAttribute("title", "Nghiên cứu");
+        return "nghien-cuu";
+    }
 
-    @GetMapping(value = {"/danh-muc"})
-    public String danhMuc() {return "danh-muc";}
+    @GetMapping(value= {"/tai-lieu-y-khoa"})
+    public String taiLieuYKhoa(HttpServletRequest request) {
+        request.setAttribute("title", "Tài liệu y khoa");
+        return "tai-lieu-y-khoa";
+    }
 
     @GetMapping(value = {"/robots.txt"})
     private void robot(HttpServletResponse response) throws IOException {
@@ -103,7 +177,7 @@ public class MainController {
         try {
             Object o =  restService.callGet(RestBuilder.build()
                     .service("infor-system-service")
-                    .uri("api/v1/public/url-alias/alias/"+servletPath+"/company-id/2"));
+                    .uri("api/v1/public/url-alias/alias/"+servletPath+"/company-id/3"));
             if(o != null) {
                 List<UrlAlias> urlAliasList = Arrays.asList(modelMapper.map(o, UrlAlias[].class));
                 if(urlAliasList != null && urlAliasList.size() > 0) {
@@ -116,6 +190,10 @@ public class MainController {
         }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(uriAlias);
         requestDispatcher.forward(request, response);
+    }
+
+    public String viewSrcFile(String url) {
+        return url.indexOf("http") == 0 ? url : urlCDN + url;
     }
 
 }

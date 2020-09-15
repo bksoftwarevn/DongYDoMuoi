@@ -57,6 +57,7 @@
         <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_tuyen_dung.jsp" cascade="true"/>
     </definition>
 
+
     <!--    Gioi Thieu-->
     <definition name="gioi-thieu" extends="dang-ky-tu-van">
         <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/gioi_thieu.jsp" cascade="true"/>
@@ -66,13 +67,25 @@
         <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_gioi_thieu.jsp" cascade="true"/>
     </definition>
     <!--    ===end Article===-->
+
+    <!--bai thuoc-->
+    <definition name="bai-thuoc" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/bai_thuoc.jsp"/>
+    </definition>
+
     <!--san pham-->
     <definition name="san-pham" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>
     </definition>
 
+    <!--nghien cuu-->
+    <definition name="nghien-cuu" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/nghien_cuu.jsp"/>
+    </definition>
 
-
-
+    <!--tai lieu y khoa-->
+    <definition name="tai-lieu-y-khoa" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/tai_lieu_y_khoa.jsp"/>
+    </definition>
 
 </tiles-definitions>
