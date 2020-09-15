@@ -5,7 +5,7 @@
 }
 .catalog a {
   display: block;
-  border: 3px solid #cecece;
+  border: 3px solid var(--main-color);
 }
 /* construction */
 .h-construction{
@@ -48,11 +48,6 @@
 .partner-carousel{
   margin-top: 30px;
 }
-.partner-carousel .slick-slide img{
-  width: 160px;
-  height: 90px;
-  object-fit: cover;
-}
 .partner-item:hover,.partner-item:focus {
   outline: none !important;
   border: none !important;
@@ -74,7 +69,7 @@
 .quote-bg{
   width: 100%;
   height: 100%;
-  /*background-image: url(../file/dynamic/home/quote.png);*/
+  background-image: url(../file/dynamic/home/quote.png);
   background-size: cover!important;
   background-repeat: no-repeat!important;
   background-position: 50% 50%;
