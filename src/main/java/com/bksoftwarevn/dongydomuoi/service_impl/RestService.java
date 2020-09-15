@@ -3,6 +3,8 @@ package com.bksoftwarevn.dongydomuoi.service_impl;
 import com.bksoftwarevn.dongydomuoi.json.JsonResult;
 import com.bksoftwarevn.dongydomuoi.json.RestBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,8 @@ public class RestService {
 
     @Autowired
     private RestTemplate template;
+
+    JSONParser parser = new JSONParser();
 
     private static final String SERVER_URL = "https://dev.bksoftwarevn.com/";
 
@@ -39,6 +43,19 @@ public class RestService {
             JsonResult data = template.getForObject(url.toString(), JsonResult.class);
             if (data.getData() == null) return null;
             return data.getData();
+        } catch (Exception ex) {
+            log.error("rest call " + url + " err {0}", ex);
+            throw ex;
+        }
+    }
+
+    public JSONObject callGetJson(RestBuilder rest) throws Exception {
+        StringBuilder url = new StringBuilder(SERVER_URL + rest.getService() + "/" + rest.getUri() + "?");
+        rest.getParams().forEach((key, value) -> url.append(key).append("=").append(value).append("&"));
+        try {
+            String rs = template.getForObject(url.toString(), String.class);
+            JSONObject jsonObject = (JSONObject) parser.parse(rs);
+            return (JSONObject) jsonObject.get("data");
         } catch (Exception ex) {
             log.error("rest call " + url + " err {0}", ex);
             throw ex;

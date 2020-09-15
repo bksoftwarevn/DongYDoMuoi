@@ -52,10 +52,10 @@
                         </li>
                         <li class="active"><a href="trang-chu">Trang chủ</a></li>
                         <li><a href="gioi-thieu">Giới thiệu</a></li>
-                        <li><a href="cong-trinh">Bài thuốc</a></li>
-                        <li><a href="tin-tuc">Sản phẩm</a></li>
-                        <li><a href="lien-he">Nghiên cứu</a></li>
-                        <li><a href="lien-he">Tài liệu y khoa</a></li>
+                        <li><a href="bai-thuoc">Bài thuốc</a></li>
+                        <li><a href="san-pham">Sản phẩm</a></li>
+                        <li><a href="nghien-cuu">Nghiên cứu</a></li>
+                        <li><a href="tai-lieu-y-khoa">Tài liệu y khoa</a></li>
                         <li><a href="tuyen-dung">Tuyển dụng</a></li>
                         <li><a href="lien-he">Liên hệ</a></li>
                     </ul>
