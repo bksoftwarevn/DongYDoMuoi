@@ -64,31 +64,82 @@ public class MainController {
     }
 
     @GetMapping(value = {"/tuyen-dung"})
-    public String tuyenDung(HttpServletRequest request) {return "tuyen-dung";}
+    public String tuyenDung(HttpServletRequest request) {
+        request.setAttribute("title", "Tuyển dụng");
+        return "tuyen-dung";
+    }
 
     @GetMapping(value = {"/chi-tiet-tuyen-dung"})
-    public String chiTietTuyenDung(HttpServletRequest request) {return "chi-tiet-tuyen-dung";}
+    public String chiTietTuyenDung(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(newsService)
+                    .uri("api/v1/public/newses/" + request.getParameter("id")));
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-tuyen-dung";
+    }
 
     @GetMapping(value = {"/gioi-thieu"})
-    public String gioiThieu(HttpServletRequest request) {return "gioi-thieu";}
+    public String gioiThieu(HttpServletRequest request) {
+        request.setAttribute("title", "Giới thiệu");
+        return "gioi-thieu";
+    }
 
     @GetMapping(value = {"/chi-tiet-gioi-thieu"})
-    public String chiTietGioiThieu(HttpServletRequest request) {return "chi-tiet-gioi-thieu";}
+    public String chiTietGioiThieu(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(newsService)
+                    .uri("api/v1/public/newses/" + request.getParameter("id")));
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-gioi-thieu";
+    }
 
     @GetMapping(value = {"/lien-he"})
-    public String lienHe(HttpServletRequest request) {return "lien-he";}
+    public String lienHe(HttpServletRequest request) {
+        request.setAttribute("title", "Liên hệ");
+        return "lien-he";
+    }
 
     @GetMapping(value= {"/bai-thuoc"})
-    public String baiThuoc(HttpServletRequest request) {return "bai-thuoc";}
+    public String baiThuoc(HttpServletRequest request) {
+        request.setAttribute("title", "Bài thuốc");
+        return "bai-thuoc";
+    }
 
     @GetMapping(value= {"/san-pham"})
-    public String sanPham(HttpServletRequest request) {return "san-pham";}
+    public String sanPham(HttpServletRequest request) {
+        request.setAttribute("title", "Sản phẩm");
+        return "san-pham";
+    }
 
     @GetMapping(value= {"/nghien-cuu"})
-    public String nghienCuu(HttpServletRequest request) {return "nghien-cuu";}
+    public String nghienCuu(HttpServletRequest request) {
+        request.setAttribute("title", "Nghiên cứu");
+        return "nghien-cuu";
+    }
 
     @GetMapping(value= {"/tai-lieu-y-khoa"})
-    public String taiLieuYKhoa(HttpServletRequest request) {return "tai-lieu-y-khoa";}
+    public String taiLieuYKhoa(HttpServletRequest request) {
+        request.setAttribute("title", "Tài liệu y khoa");
+        return "tai-lieu-y-khoa";
+    }
 
     @GetMapping(value = {"/robots.txt"})
     private void robot(HttpServletResponse response) throws IOException {
