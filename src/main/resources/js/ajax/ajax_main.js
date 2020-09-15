@@ -323,7 +323,7 @@ function viewAliasConstruction(alias, id) {
     return viewAlias(alias, `chi-tiet-cong-trinh?id=${id}`);
 }
 
-function viewAliasNews(alias, id){
+function viewAliasRecruitment(alias, id){
     return viewAlias(alias, `chi-tiet-tuyen-dung?id=${id}`);
 }
 

@@ -26,11 +26,12 @@ let News = {
             .catch((err) => console.log(err));
         return rs;
     },
+
     generateTinTucElement: function (object) {
         let tinTucElement = $("#tinTuc__element").clone();
         tinTucElement.removeClass("d-none").removeAttr("id");
         // tinTucElement.attr('href', `chi-tiet-tin-tuc?id=${object.id}`);
-        tinTucElement.attr('href', viewAliasNews(object.alias, object.id));
+        tinTucElement.attr('href', `chi-tiet-tuyen-dung?id=${object.id}`);
         tinTucElement
             .find("div.tinTuc__element--img img")
             .attr("src", viewSrcFile(object.image));
