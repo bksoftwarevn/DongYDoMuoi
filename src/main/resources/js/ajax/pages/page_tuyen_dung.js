@@ -4,7 +4,6 @@ let sizePage = 6;
 let tag;
 $(function () {
     hiddenNavHero();
-
     let url = new URL(location.href);
     tag = url.searchParams.get('tag');
     if (tag !== null) {
@@ -12,9 +11,10 @@ $(function () {
     } else {
         tag = '';
     }
-    News.initElement(currentPage, sizePage);
-    News.clickShowMoreNews();
-    News.getListTinTuc(1, 6).then(rs=>console.log(rs));
+
+
+    // News.initElement(currentPage, sizePage);
+    // News.clickShowMoreNews();
 });
 
 let News = {

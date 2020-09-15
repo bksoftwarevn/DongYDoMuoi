@@ -8,6 +8,7 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="css/common_category.css">
+
 <script src="js/utils.js"></script>
 <script src="ajax/pages/page_common_category.js"></script>
 
