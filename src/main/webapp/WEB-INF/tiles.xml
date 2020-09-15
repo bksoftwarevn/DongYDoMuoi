@@ -62,6 +62,10 @@
         <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/tuyen_dung.jsp" cascade="true"/>
     </definition>
 
+    <definition name="chi-tiet-tuyen-dung" extends="dang-ky-tu-van">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_tuyen_dung.jsp" cascade="true"/>
+    </definition>
+
     <!--san pham-->
     <definition name="san-pham" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>

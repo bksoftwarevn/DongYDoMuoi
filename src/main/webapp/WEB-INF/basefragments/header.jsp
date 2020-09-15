@@ -56,7 +56,7 @@
                         <li><a href="tin-tuc">Sản phẩm</a></li>
                         <li><a href="lien-he">Nghiên cứu</a></li>
                         <li><a href="lien-he">Tài liệu y khoa</a></li>
-                        <li><a href="lien-he">Tuyển dụng</a></li>
+                        <li><a href="tuyen-dung">Tuyển dụng</a></li>
                         <li><a href="lien-he">Liên hệ</a></li>
                     </ul>
                     <div class="search-icon" title="Tìm kiếm">

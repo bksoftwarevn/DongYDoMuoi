@@ -26,11 +26,12 @@ let News = {
             .catch((err) => console.log(err));
         return rs;
     },
+
     generateTinTucElement: function (object) {
         let tinTucElement = $("#tinTuc__element").clone();
         tinTucElement.removeClass("d-none").removeAttr("id");
         // tinTucElement.attr('href', `chi-tiet-tin-tuc?id=${object.id}`);
-        tinTucElement.attr('href', viewAliasNews(object.alias, object.id));
+        tinTucElement.attr('href', `chi-tiet-tuyen-dung?id=${object.id}`);
         tinTucElement
             .find("div.tinTuc__element--img img")
             .attr("src", viewSrcFile(object.image));
@@ -45,19 +46,10 @@ let News = {
         tinTucElement.find('.tinTuc__element--month').text(TimeUtils.formatTime(object.creatTime).m);
         return tinTucElement;
     },
-    clickMoreDetails: function () {
-        $(".btn-showMore")
-            .off("click")
-            .click(function () {
-                let url = $(this).parents("a.tinTuc__element").attr("href");
-                location.href = url;
-            });
-    },
     mappingElement: function (listData) {
         listData.forEach((element) => {
             let templateTinTucElement = News.generateTinTucElement(element);
             $("#list-tin-tuc").append(templateTinTucElement);
-            clickMoreDetails();
         });
     },
     initElement: function (page, size) {
@@ -71,21 +63,21 @@ let News = {
             News.mappingElement(rs);
         });
     },
-     clickShowMoreNews: function() {
-         $("#btn-showMoreNews").click(function () {
-             currentPage++;
-             News.getListTinTuc(currentPage, sizePage).then(rs => {
-                 if (currentPage < rs.totalPage) {
-                     $("#btn-showMoreNews").show();
-                 } else {
-                     $("#btn-showMoreNews").hide();
-                 }
-                 rs = rs.content;
-                 News.mappingElement(rs);
-             })
-         });
+    clickShowMoreNews: function() {
+        $("#btn-showMoreNews").click(function () {
+            currentPage++;
+            News.getListTinTuc(currentPage, sizePage).then(rs => {
+                if (currentPage < rs.totalPage) {
+                    $("#btn-showMoreNews").show();
+                } else {
+                    $("#btn-showMoreNews").hide();
+                }
+                rs = rs.content;
+                News.mappingElement(rs);
+            })
+        });
 
-}
+    }
 
 }
 
