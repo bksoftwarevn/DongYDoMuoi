@@ -1,16 +1,12 @@
 $(function () {
     hiddenNavHero();
-    localStorage.setItem('isTinTuc', 'true');
-    localStorage.setItem('isChiTiet', 'true');
     let idRecruitment = getPageId();
     Recruitment.mappingRecruitment(idRecruitment);
-
     Recruitment.increaseView(idRecruitment).then();
 });
 
 let Recruitment = {
-
-    getRecruitmentData: async function (idNews = 116) {
+    getRecruitmentData: async function (idNews ) {
         let newsData;
         newsData = await Promise.resolve(newsFindById(idNews))
             .then(rs => rs)

@@ -36,46 +36,27 @@ let InfoAdmin = {
 };
 let InfoCustomer = {
     init: function () {
-        this.clickDownloadSample();
         this.clickBtnSendInfo();
     },
 
     resetInput: function () {
-        $('#name').val('');
-        $('#email').val('');
-        $('#phone-number').val('');
-        $('#input-content-customer').val('');
-        let f = document.getElementById('input-content-customer');
-        if (f.value) {
-            try {
-                f.value = ''; //for IE11, latest Chrome/Firefox/Opera...
-            } catch (err) {
-            }
-            if (f.value) { //for IE5 ~ IE10
-                var form = document.createElement('form'),
-                    parentNode = f.parentNode, ref = f.nextSibling;
-                form.appendChild(f);
-                form.reset();
-                parentNode.insertBefore(f, ref);
-            }
-        }
+        $('#input-name').val('');
+        $('#input-email').val('');
+        $('#input-phone').val('');
+        $('#input-content').val('');
     },
 
     getInfo: function () {
         let customerInfo = {};
-        customerInfo.name = $("#name").val();
-        customerInfo.email = $("#email").val();
-        customerInfo.phone = $("#phone-number").val();
-        customerInfo.content = $("#input-content-customer").val();
+        customerInfo.name = $("#input-name").val();
+        customerInfo.email = $("#input-email").val();
+        customerInfo.phone = $("#input-phone").val();
+        customerInfo.content = $("#input-content").val();
         customerInfo.companyId = COMPANY_ID;
         return customerInfo;
     },
 
-    clickDownloadSample: function () {
-        $("#btn-downloadFile").click(function () {
-            window.open('https://docs.spring.io/spring/docs/2.5.x/spring-reference.pdf');
-        });
-    },
+
 
     clickBtnSendInfo: function () {
         $("#btn-sendInfo")

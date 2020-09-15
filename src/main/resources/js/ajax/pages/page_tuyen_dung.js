@@ -4,8 +4,7 @@ let sizePage = 6;
 let tag;
 $(function () {
     hiddenNavHero();
-    localStorage.setItem('isTinTuc', 'true');
-    localStorage.setItem('isChiTiet', 'false');
+
     let url = new URL(location.href);
     tag = url.searchParams.get('tag');
     if (tag !== null) {
