@@ -19,7 +19,7 @@ $(function () {
 
 async function getListTinTuc(page, size) {
     let rs;
-    rs = await Promise.resolve(newsFilter(0, COMPANY_ID, CONG_TRINH_TYPE, "", tag, page, size))
+    rs = await Promise.resolve(newsFilter(0, COMPANY_ID, NGHIEN_CUU_TYPE, "", tag, page, size))
         .then((rs1) => rs1)
         .catch((err) => console.log(err));
     return rs;

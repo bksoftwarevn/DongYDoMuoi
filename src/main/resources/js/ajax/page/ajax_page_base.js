@@ -173,7 +173,7 @@ function activeMenuMain() {
 }
 
 function viewListNewsFooter() {
-    newsFilter(0, COMPANY_ID, TIN_TUC_TYPE, "", "", 1, 5).then(rs => {
+    newsFilter(0, COMPANY_ID, TUYEN_DUNG_TYPE, "", "", 1, 5).then(rs => {
         if(rs) {
             rs = rs.content;
             let liTemp = listNewFooter.find(".d-none").removeClass("d-none");

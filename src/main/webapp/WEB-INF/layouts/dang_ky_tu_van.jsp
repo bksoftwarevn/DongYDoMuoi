@@ -18,7 +18,7 @@
 <%--                <h3 class="text-center tinTuc__title--tagsTinTuc" style="font-size: 12px; color: #007bff;"></h3>--%>
 <%--            </div>--%>
             <div class="col-12">
-                <h2 class="text-uppercase text-center ">Chuyên mục: Tin tức</h2>
+                <h2 class="text-uppercase text-center ">Tuyển dụng</h2>
             </div>
         </div>
         <div class="row">

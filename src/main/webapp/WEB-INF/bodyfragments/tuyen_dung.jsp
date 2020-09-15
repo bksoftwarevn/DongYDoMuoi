@@ -4,12 +4,12 @@
 
 <!-- ============= Custom Css ============= -->
 
-<link rel="stylesheet" href="css/tin_tuc.css">
+<link rel="stylesheet" href="css/tuyen_dung.css">
 
 
 <%--phan chung cho danh muc--%>
 
-<script src="ajax/pages/page_tin_tuc.js"></script>
+<script src="ajax/pages/page_tuyen_dung.js"></script>
 <script src="js/lienhe.js"></script>
 
 <div class="col-12 col-md-8 col-lg-9 " >

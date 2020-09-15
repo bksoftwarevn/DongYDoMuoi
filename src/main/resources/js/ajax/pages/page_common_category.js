@@ -180,9 +180,9 @@ let NewestArticle = {
         }
 
         if (isTinTuc) {
-            mapping(TIN_TUC_TYPE, 11);
+            mapping(TUYEN_DUNG_TYPE, 11);
         } else {
-            mapping(CONG_TRINH_TYPE, 10);
+            mapping(NGHIEN_CUU_TYPE, 10);
         }
 
     },

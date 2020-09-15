@@ -1,5 +1,4 @@
 :root {
-  --font-size: 10px;
   --font-family: "Roboto", sans-serif;
   --bg-black: #000;
   --bg-yellow1: #fbbc03;
@@ -19,10 +18,13 @@
   --text-gray1: #868686;
   --text-gray2: #666;
   --text-gray3: rgb(94, 94, 94);
-  --text-yellow3: fbbc03;
+  --text-green: #046738;
+  --text-yellow3: #fbbc03;
   --text-blue: #0056a8;
   --text-blue2: #007bff;
   --text-white: #fff;
+
+  /*font-size*/
   --font-size: 10px;
   --font-h1-size-mobile: 26px;
   --font-h2-size-mobile: 20px;
@@ -42,6 +44,8 @@
   --font-size-table-row-tl: 17px;
   --font-size-table-title-de: 22px;
   --font-size-table-row-de: 17px;
+  /*font-size*/
+
 
   --main-color: #00676b;
   --main-color-2: #00878b;
