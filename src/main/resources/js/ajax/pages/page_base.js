@@ -24,6 +24,7 @@ $(function () {
     textSearch = $("#text-search");
 
     viewSocialCompany();
+    viewBackGroundHeader();
     activeMenuMain();
     viewNumberCart();
     keypressEnterInputSearchProduct();
@@ -31,6 +32,29 @@ $(function () {
 })
 
 //HEADER
+function viewBackGroundHeader() {
+    contentFindByCompany(COMPANY_ID, "background-header").then(rs => {
+        if(rs[0] && rs[0].partDetails) {
+            rs = rs[0].partDetails;
+            rs.map(data => {
+                let bannerItemClone = bannerItemTemp.clone();
+                bannerItemClone.attr("href", viewField(data.link));
+                let imgItemClone = bannerItemClone.find("img");
+                imgItemClone.attr("src", viewSrcFile(data.url));
+                imgItemClone.attr("alt", viewField(data.text));
+                bannerItemTemp.before(bannerItemClone);
+            })
+            bannerItemTemp.remove();
+            slideBanner.slick({
+                dots: true,
+                infinite: true,
+            });
+        }
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
 function viewSocialCompany() {
     companyFindById(COMPANY_ID).then(rs => {
         if(rs) {
@@ -137,8 +161,6 @@ function viewNav1(id) {
         let liNav1 = ulNav1.find(" > li");
         if(rs && rs.length > 0) {
             ulNav1.removeClass("d-none");
-            //view arrow icon
-            $(`.nav-href[data-id=${id}]`).append(`<i class="fas fa-angle-double-right"></i>`);
             rs.map(data => {
                 let liNav1Clone = liNav1.clone();
                 let nav1Href = liNav1Clone.find(".nav1-href");
