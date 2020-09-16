@@ -122,7 +122,7 @@ header {
   top: 0;
   left: 0;
   z-index: 101;
-  /* background-image: url(../public/dynamic/home/bg-header.jpg); */
+  background-image: url(../file/dynamic/home/bg-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1205,10 +1205,11 @@ span.product-name {
   background-color: var(--bg-gray2);
 }
 
-.lopHoc-text i {
-  font-size: 5rem;
-  color: var(--main-color);
-  padding-bottom: 10px;
+.lopHoc-text img {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 .lopHoc-text h3 {
   color: var(--main-color);
