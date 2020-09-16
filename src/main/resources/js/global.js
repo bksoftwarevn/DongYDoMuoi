@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    $('.banner').slick({
-        dots: true,
-        infinite: true,
-    });
+    // $('.banner').slick({
+    //     dots: true,
+    //     infinite: true,
+    // });
     $(".bars-open").click(function () {
         $("nav .nav").addClass("open");
         $("nav .shadow").addClass("open");
