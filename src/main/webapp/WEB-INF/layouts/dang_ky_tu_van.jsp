@@ -8,6 +8,7 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="css/common_category.css">
+
 <script src="js/utils.js"></script>
 <script src="ajax/pages/page_common_category.js"></script>
 
@@ -30,21 +31,71 @@
 
                 <div class="row">
                     <%--===tong dai tu van===--%>
-                    <div class="tinTuc__tdtv">
-                        <h3 class="text-uppercase"><i class="fas fa-comment-medical"></i>Tổng đài tư vấn</h3>
-                        <ul>
-<%--                            hidden contact--%>
-                            <li>
-                                <span class="tinTuc__tdtv--nameContact"></span>
-                                <span class="tinTuc__tdtv--details">
-                                    <i class="fas fa-phone-volume"></i>
-                                    <a href="tel:(024)7109 6699">(024)7109 6699</a>
-                                </span>
-                            </li>
-    <%--                           end hidden contact--%>
-                        </ul>
+                    <div class="tinTuc__tdtv col-12 col-sm-5 col-md-12">
+                        <div class="tinTuc__tdtv--wrap">
+                            <h3 class="text-uppercase"><i class="fas fa-comment-medical"></i>Tổng đài tư vấn</h3>
+                            <ul class="text-center text-sm-left">
+                                <%--===hidden contact===--%>
+                                <li class="">
+                                    <div class="tinTuc__tdtv--nameContact">Chi Nhánh Quảng Ninh</div>
+                                    <div class="tinTuc__tdtv--details ">
+                                        <a href="tel:(024)7109 6699">SĐT: (024)7109 6699</a>
+                                    </div>
+                                </li>
+                                <%--===end hidden contact===--%>
+
+                                    <li class="">
+                                        <div class="tinTuc__tdtv--nameContact">Chi Nhánh Quảng Ninh</div>
+                                        <div class="tinTuc__tdtv--details ">
+                                            <a href="tel:(024)7109 6699">SĐT: (024)7109 6699</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="">
+                                        <div class="tinTuc__tdtv--nameContact">Chi Nhánh Quảng Ninh</div>
+                                        <div class="tinTuc__tdtv--details">
+                                            <a href="tel:(024)7109 6699">SĐT: (024)7109 6699</a>
+                                        </div>
+                                    </li>
+
+                            </ul>
+                        </div>
+
                     </div>
                     <%--=== end tong dai tu van===--%>
+
+                    <%-- === gui cau hoi tu van ===--%>
+                        <div class="tinTuc__sendQuestion col-12 col-sm-7 col-md-12">
+                            <div class="tinTuc__sendQuestion--wrap">
+                                <h3 class="text-center">Gửi câu hỏi tư vấn</h3>
+                                <div class="tinTuc__sendQuestion--input">
+                                    <input id="input-name" class="form-control" type="text" placeholder="Họ tên">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="tinTuc__sendQuestion--input">
+                                    <input id="input-phone" class="form-control" type="text" placeholder="Số điện thoại">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="tinTuc__sendQuestion--input">
+                                    <input id="input-email" class="form-control" type="text" placeholder="email">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="tinTuc__sendQuestion--input form-group">
+                                    <textarea id="input-content" row="5" class="form-control" placeholder="Nội dung">
+                                    </textarea>
+                                </div>
+                                <div class="text-center tinTuc__sendQuestion--button">
+                                    <button id="btn-sendInfo" class="btn btn-success">GỬI CÂU HỎI</button>
+                                </div>
+                            </div>
+                        </div>
+                    <%--=== end gui cau hoi tu van ===--%>
                 </div>
 
             </div>

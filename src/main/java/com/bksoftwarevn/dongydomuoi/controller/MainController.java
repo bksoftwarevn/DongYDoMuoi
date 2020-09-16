@@ -117,6 +117,12 @@ public class MainController {
         return "lien-he";
     }
 
+    @GetMapping(value = {"/dat-lich-kham"})
+    public String datLichKham(HttpServletRequest request) {
+        request.setAttribute("title", "Đặt lịch khám");
+        return "dat-lich-kham";
+    }
+
     @GetMapping(value= {"/bai-thuoc"})
     public String baiThuoc(HttpServletRequest request) {
         request.setAttribute("title", "Bài thuốc");

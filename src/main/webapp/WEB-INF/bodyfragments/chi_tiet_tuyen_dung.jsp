@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="css/chi_tiet_tuyen_dung.css">
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=305080727577465&autoLogAppEvents=1" nonce="AI6nZZbG"></script>
 <div class="d-none" id="page-id" data-page-id="<%=request.getParameter("id")%>"></div>
+<script src="ajax/object/article.js"></script>
 <script src="ajax/pages/page_chi_tiet_tuyen_dung.js"></script>
 <script src="js/lienhe.js"></script>
-<div class="col-12 col-md-8 col-lg-9 tinTuc__element mt-5 mt-md-5">
+<div class="col-12 col-md-8 col-lg-9 tinTuc__element mt-5 mt-md-5" id="article-box">
     <!-- hidden element -->
     <div class="row d-none" id="hidden-chiTietTinTuc">
         <div class="col-12">
