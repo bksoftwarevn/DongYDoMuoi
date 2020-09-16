@@ -177,11 +177,7 @@ public class MainController {
         return "dat-lich-kham";
     }
 
-    @GetMapping(value= {"/bai-thuoc"})
-    public String baiThuoc(HttpServletRequest request) {
-        request.setAttribute("title", "Bài thuốc");
-        return "bai-thuoc";
-    }
+
 
 
     @GetMapping(value = {"/san-pham"})
