@@ -7,7 +7,6 @@ $(function () {
     textName = $("#input-name");
     textPhoneNumber = $("#input-phone");
     textEmail = $("#input-email");
-
     InfoAdmin.fillInfo();
     InfoCustomer.init();
 });
@@ -38,14 +37,12 @@ let InfoCustomer = {
     init: function () {
         this.clickBtnSendInfo();
     },
-
     resetInput: function () {
         $('#input-name').val('');
         $('#input-email').val('');
         $('#input-phone').val('');
         $('#input-content').val('');
     },
-
     getInfo: function () {
         let customerInfo = {};
         customerInfo.name = $("#input-name").val();
@@ -55,9 +52,6 @@ let InfoCustomer = {
         customerInfo.companyId = COMPANY_ID;
         return customerInfo;
     },
-
-
-
     clickBtnSendInfo: function () {
         $("#btn-sendInfo")
             .off("click")
@@ -83,7 +77,6 @@ let InfoCustomer = {
             });
     },
 };
-
 let InfoSystemAPI = {
     prefix: `infor-system-service/api/`,
     postInfo: function (data) {
@@ -91,8 +84,6 @@ let InfoSystemAPI = {
         return ajaxPost(uri, data);
     }
 };
-
-
 function checkThongTinTen() {
     let rs = false;
     let size = 50;

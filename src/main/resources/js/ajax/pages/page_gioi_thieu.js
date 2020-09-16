@@ -32,19 +32,16 @@ function generateTinTucElement(object) {
     tinTucElement.find('.tinTuc__element--month').text(TimeUtils.formatTime(object.creatTime).m);
     return tinTucElement;
 }
-
 function initElement(page, size) {
     getListTinTuc(page, size).then(rs => {
         rs=rs.content;
         mappingElement(rs);
     });
 }
-
 function mappingElement(listData){
     listData.forEach((element) => {
         let templateTinTucElement = generateTinTucElement(element);
         $("#list-tin-tuc").append(templateTinTucElement);
-
     });
 }
 
