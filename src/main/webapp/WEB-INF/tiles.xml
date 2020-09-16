@@ -107,4 +107,8 @@
         <put-attribute name="body" value="/WEB-INF/bodyfragments/tai_lieu_y_khoa.jsp"/>
     </definition>
 
+    <!--dat lich kham-->
+    <definition name="dat-lich-kham" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/dat_lich_kham.jsp"/>
+    </definition>
 </tiles-definitions>
