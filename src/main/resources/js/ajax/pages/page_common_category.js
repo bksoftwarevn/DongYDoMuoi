@@ -4,11 +4,48 @@ let textEmail;
 
 $(function () {
     hiddenNavHero();
+    let parentSelector = $('#branch-info-box');
+    let childSelector = $('#hidden-branchInfo');
     textName = $("#input-name");
     textPhoneNumber = $("#input-phone");
     textEmail = $("#input-email");
     InfoCustomer.init();
+    InfoCompany.mappingTemplate(parentSelector, childSelector);
+
 });
+
+
+let InfoCompany = {
+    getListInfoBranch: async function(){
+        return brachFindByCompany(COMPANY_ID);
+    },
+    generateTemplateInfo: function(data, templateSelector, callback){
+        let template = '';
+        if(callback){
+            template = callback(data, templateSelector);
+        }
+        return template;
+    },
+    mappingTemplate: function(parentSelector, childSelector){
+        this.getListInfoBranch().then(rs=>{
+            rs.forEach(rs1=>{
+                let templateEl = InfoCompany.generateTemplateInfo(rs1, childSelector, function(rs1, childSelector){
+                        return TemplateInfo.generateInfoBranchTemplate(rs1, childSelector)
+                    }
+                );
+                $(parentSelector).append(templateEl);
+            });
+        })
+    }
+}
+let TemplateInfo = {
+    generateInfoBranchTemplate: function(data, selector){
+        let template = $(selector).clone().removeAttr('id').removeClass('d-none');
+        template.find('.branch-name').text(data.name);
+        template.find('branch-phone').html(`<a href="tel:${data.phone}">SĐT: ${data.phone}</a>`);
+        return template;
+    }
+}
 
 let InfoCustomer = {
     init: function () {
