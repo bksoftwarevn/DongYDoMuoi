@@ -1,6 +1,5 @@
 var textNameCompany, textSlogan, linkEmailCompany, textEmailCompany, linkFacebookCompany, linkYoutubeCompany, linkZaloCompany, descriptionCompnay, iframeAddressCompany,
-    textAddressCompany, linkPhoneCompany, linkPhoneCompany2, textPhoneCompany, textPhoneCompany2, selectCategorySearch, textSearch, textWorkingTime;
-
+    textAddressCompany, linkPhoneCompany, linkPhoneCompany2, textPhoneCompany, textPhoneCompany2, selectCategorySearch, textSearch, textWorkingTime, navCategory, liNavTemp, navNTemp;
 $(function () {
     textNameCompany = $(".text-name-company");
     textSlogan = $(".text-solgan");
@@ -17,6 +16,9 @@ $(function () {
     textPhoneCompany = $(".text-phone-company");
     textPhoneCompany2 = $(".text-phone-company2");
     textWorkingTime = $(".text-working-time");
+    navCategory = $("#nav-category");
+    liNavTemp = $("#li-nav-temp");
+    navNTemp = liNavTemp.find(".class-n");
 
     selectCategorySearch = $("#cars");
     textSearch = $("#text-search");
@@ -25,6 +27,7 @@ $(function () {
     activeMenuMain();
     viewNumberCart();
     keypressEnterInputSearchProduct();
+    viewNavAndSelectCategorySearch();
 })
 
 //HEADER
@@ -93,4 +96,82 @@ function activeMenuMain() {
     if(pathname == "/") pathname = "/trang-chu";
     $("#nav-main li").removeClass("active");
     $(`#nav-main li[data-active='${pathname.slice(1)}']`).addClass("active");
+}
+
+async function viewNavAndSelectCategorySearch() {
+    await productTypeFindByCompany(COMPANY_ID).then(rs => {
+        if(rs) {
+            let optionTemp = selectCategorySearch.find("option");
+            rs.map(data => {
+                let liNavTempClone = liNavTemp.clone();
+                liNavTempClone.removeClass("d-none");
+                liNavTempClone.find(".nav-href").attr("href", viewAliasProductType(data.alias, data.id));
+                let imgLiNav = liNavTempClone.find("img");
+                imgLiNav.attr("src", viewSrcFile(data.icon));
+                imgLiNav.attr("alt", viewField(data.name));
+                liNavTempClone.find(".nav-href").attr("data-id", data.id);
+                liNavTempClone.find(".nav-text").html(viewField(data.name));
+                liNavTempClone.find(".nav1").attr("data-id", data.id);
+                liNavTempClone.removeAttr("id");
+                //add html
+                liNavTemp.before(liNavTempClone);
+                //add Nav1
+                viewNav1(data.id);
+                //viewSelectProductTypeSearch
+                let optionClone = optionTemp.clone();
+                optionClone.removeAttr("selected");
+                optionClone.attr("value", viewAliasProductType(data.alias, data.id));
+                optionClone.html(viewField(data.name));
+                selectCategorySearch.append(optionClone);
+            })
+        }
+    }).catch(err => {
+        console.log(err);
+        alertDanger(DANGER_PRODUCT_TYPE);
+    })
+}
+
+function viewNav1(id) {
+    categoryProductFindByProductType(id).then(rs => {
+        let ulNav1 = $(`.nav1[data-id=${id}]`);
+        let liNav1 = ulNav1.find(" > li");
+        if(rs && rs.length > 0) {
+            ulNav1.removeClass("d-none");
+            //view arrow icon
+            $(`.nav-href[data-id=${id}]`).append(`<i class="fas fa-angle-double-right"></i>`);
+            rs.map(data => {
+                let liNav1Clone = liNav1.clone();
+                let nav1Href = liNav1Clone.find(".nav1-href");
+                nav1Href.attr("href", viewAliasCategory(data.alias, data.id));
+                nav1Href.html(viewField(data.name));
+                liNav1Clone.attr("data-id", data.id);
+                liNav1Clone.find(".class-n").remove();
+                liNav1.before(liNav1Clone);
+                viewChildsCategory(data.childs, data.id);
+            })
+        } else {
+            ulNav1.remove();
+        }
+        liNav1.remove();
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+function viewChildsCategory(listChild, idCategory) {
+    if(listChild && listChild.length > 0) {
+        let navNClone = navNTemp.clone();
+        let liNTemp = navNTemp.find("li");
+        let listLi = listChild.map(data => {
+            let liClone = liNTemp.clone();
+            liClone.attr("data-id", data.id);
+            liClone.find("a").attr("href", viewAliasCategory(data.alias, data.id));
+            liClone.find("a").html(viewField(data.name));
+            return liClone;
+        })
+        navCategory.find(`li[data-id='${idCategory}']`).append(navNClone.html(listLi));
+        listChild.map(data => {
+            viewChildsCategory(data.childs, data.id);
+        })
+    }
 }

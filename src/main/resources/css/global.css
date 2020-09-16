@@ -1382,7 +1382,23 @@ span.product-name {
 .cart-bor {
   border-right: 1px solid #dee2e6;
 }
+/*tai lieu y khoa*/
+.tlyk-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tlyk-item .tlyk__img{
 
+}
+.tlyk-item .tlyk__text{
+
+}
+.tlyk-item .tlyk__dlbt{
+
+}
+
+/*tai lieu y khoa*/
 @media screen and (max-width: 471px) {
   .product-price {
     height: 48px;
