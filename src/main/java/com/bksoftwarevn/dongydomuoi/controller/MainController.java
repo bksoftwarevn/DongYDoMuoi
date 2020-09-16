@@ -42,8 +42,10 @@ public class MainController {
     @Autowired
     private RestService restService;
 
-    @GetMapping(value= {"/404"})
-    public String page404() {return "404";}
+    @GetMapping(value = {"/404"})
+    public String page404() {
+        return "404";
+    }
 
     @GetMapping(value = {"/", "/trang-chu"})
     public String trangChu(HttpServletRequest request) {
@@ -86,9 +88,10 @@ public class MainController {
         }
         return "chi-tiet-tuyen-dung";
     }
-
+// gioi thieu
     @GetMapping(value = {"/gioi-thieu"})
     public String gioiThieu(HttpServletRequest request) {
+
         request.setAttribute("title", "Giới thiệu");
         return "gioi-thieu";
     }
@@ -110,12 +113,63 @@ public class MainController {
         }
         return "chi-tiet-gioi-thieu";
     }
+    //end gioi thieu
+//bai thuoc
+    @GetMapping(value = {"/bai-thuoc"})
+    public String baiThuoc(HttpServletRequest request) {
+        request.setAttribute("title", "Bài Thuốc");
+        return "bai-thuoc";
+    }
 
+    @GetMapping(value = {"/chi-tiet-bai-thuoc"})
+    public String chiTietBaiThuoc(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(newsService)
+                    .uri("api/v1/public/newses/" + request.getParameter("id")));
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-bai-thuoc";
+    }
+    //end bai thuoc
+    //    nghien cuu
+    @GetMapping(value = {"/nghien-cuu"})
+    public String nghienCuu(HttpServletRequest request) {
+        request.setAttribute("title", "Nghiên cứu");
+        return "nghien-cuu";
+    }
+
+    @GetMapping(value = {"/chi-tiet-nghien-cuu"})
+    public String chiTietNghienCuu(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(newsService)
+                    .uri("api/v1/public/newses/" + request.getParameter("id")));
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-nghien-cuu";
+    }
+    //end nghien cuu
     @GetMapping(value = {"/lien-he"})
     public String lienHe(HttpServletRequest request) {
         request.setAttribute("title", "Liên hệ");
         return "lien-he";
     }
+
 
     @GetMapping(value = {"/dat-lich-kham"})
     public String datLichKham(HttpServletRequest request) {
@@ -129,19 +183,15 @@ public class MainController {
         return "bai-thuoc";
     }
 
-    @GetMapping(value= {"/san-pham"})
+
+    @GetMapping(value = {"/san-pham"})
     public String sanPham(HttpServletRequest request) {
         request.setAttribute("title", "Sản phẩm");
         return "san-pham";
     }
 
-    @GetMapping(value= {"/nghien-cuu"})
-    public String nghienCuu(HttpServletRequest request) {
-        request.setAttribute("title", "Nghiên cứu");
-        return "nghien-cuu";
-    }
 
-    @GetMapping(value= {"/tai-lieu-y-khoa"})
+    @GetMapping(value = {"/tai-lieu-y-khoa"})
     public String taiLieuYKhoa(HttpServletRequest request) {
         request.setAttribute("title", "Tài liệu y khoa");
         return "tai-lieu-y-khoa";
@@ -163,7 +213,7 @@ public class MainController {
     private void sitemap(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             String fileName = request.getServletPath();
-            if(fileName.indexOf("sitemap_page.xml") > -1) {
+            if (fileName.indexOf("sitemap_page.xml") > -1) {
                 response.sendRedirect("trang-chu");
             } else {
                 response.setContentType("application/xml");
@@ -181,12 +231,12 @@ public class MainController {
         String uriAlias = "404";
         ModelMapper modelMapper = new ModelMapper();
         try {
-            Object o =  restService.callGet(RestBuilder.build()
+            Object o = restService.callGet(RestBuilder.build()
                     .service("infor-system-service")
-                    .uri("api/v1/public/url-alias/alias/"+servletPath+"/company-id/3"));
-            if(o != null) {
+                    .uri("api/v1/public/url-alias/alias/" + servletPath + "/company-id/3"));
+            if (o != null) {
                 List<UrlAlias> urlAliasList = Arrays.asList(modelMapper.map(o, UrlAlias[].class));
-                if(urlAliasList != null && urlAliasList.size() > 0) {
+                if (urlAliasList != null && urlAliasList.size() > 0) {
                     UrlAlias urlAlias = urlAliasList.get(0);
                     uriAlias = urlAlias.getUrl();
                 }

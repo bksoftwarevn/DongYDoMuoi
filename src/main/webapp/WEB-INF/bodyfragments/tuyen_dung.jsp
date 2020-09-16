@@ -8,9 +8,11 @@
 
 
 <%--phan chung cho danh muc--%>
-<script src=""></script>
+<script src="ajax/object/article.js"></script>
+<script src="ajax/pages/page_article.js"></script>
+<script src="ajax/pages/page_article_details.js"></script>
 <script src="ajax/pages/page_tuyen_dung.js"></script>
-<script src="js/lienhe.js"></script>
+<%--<script src="js/lienhe.js"></script>--%>
 
 <div class="col-12 col-md-8 col-lg-9 " >
 

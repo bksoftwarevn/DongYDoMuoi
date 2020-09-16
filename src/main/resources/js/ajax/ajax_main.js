@@ -5,7 +5,7 @@ const COMPANY_ID = 3 ;
 const NGHIEN_CUU_TYPE = 1;
 const TUYEN_DUNG_TYPE = 2;
 const GIOI_THIEU_TYPE = 3;
-
+const BAI_THUOC_TYPE = 4;
 function requireJs(listUrl) {
     if(listUrl && listUrl.length > 0) {
         let scriptNone = $("#script-none");
