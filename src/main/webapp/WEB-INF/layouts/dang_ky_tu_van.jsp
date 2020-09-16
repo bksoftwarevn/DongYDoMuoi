@@ -8,18 +8,14 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="css/common_category.css">
-
 <script src="js/utils.js"></script>
 <script src="ajax/pages/page_common_category.js"></script>
 
 <section id="tinTuc">
     <div class="container">
         <div class="tinTuc__title row">
-            <%--            <div class="col-12 text-center">--%>
-            <%--                <h3 class="text-center tinTuc__title--tagsTinTuc" style="font-size: 12px; color: #007bff;"></h3>--%>
-            <%--            </div>--%>
             <div class="col-12">
-                <h2 class="text-uppercase text-center ">Tuyển dụng</h2>
+                <h2 class="text-uppercase text-center "></h2>
             </div>
         </div>
         <div class="row">
@@ -34,29 +30,17 @@
                     <div class="tinTuc__tdtv col-12 col-sm-5 col-md-12">
                         <div class="tinTuc__tdtv--wrap">
                             <h3 class="text-uppercase"><i class="fas fa-comment-medical"></i>Tổng đài tư vấn</h3>
-                            <ul class="text-center text-sm-left">
+                            <ul class="text-center text-sm-left" id="branch-info-box">
                                 <%--===hidden contact===--%>
-                                <li class="">
-                                    <div class="tinTuc__tdtv--nameContact">Chi Nhánh Quảng Ninh</div>
-                                    <div class="tinTuc__tdtv--details ">
+                                <li class="d-none" id="hidden-branchInfo">
+                                    <div class="tinTuc__tdtv--nameContact branch-name">Chi Nhánh Quảng Ninh</div>
+                                    <div class="tinTuc__tdtv--details branch-phone">
                                         <a href="tel:(024)7109 6699">SĐT: (024)7109 6699</a>
                                     </div>
                                 </li>
                                 <%--===end hidden contact===--%>
 
-                                    <li class="">
-                                        <div class="tinTuc__tdtv--nameContact">Chi Nhánh Quảng Ninh</div>
-                                        <div class="tinTuc__tdtv--details ">
-                                            <a href="tel:(024)7109 6699">SĐT: (024)7109 6699</a>
-                                        </div>
-                                    </li>
 
-                                    <li class="">
-                                        <div class="tinTuc__tdtv--nameContact">Chi Nhánh Quảng Ninh</div>
-                                        <div class="tinTuc__tdtv--details">
-                                            <a href="tel:(024)7109 6699">SĐT: (024)7109 6699</a>
-                                        </div>
-                                    </li>
 
                             </ul>
                         </div>
