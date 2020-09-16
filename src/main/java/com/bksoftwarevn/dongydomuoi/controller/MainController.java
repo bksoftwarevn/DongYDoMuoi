@@ -91,7 +91,6 @@ public class MainController {
 // gioi thieu
     @GetMapping(value = {"/gioi-thieu"})
     public String gioiThieu(HttpServletRequest request) {
-
         request.setAttribute("title", "Giới thiệu");
         return "gioi-thieu";
     }
@@ -114,6 +113,12 @@ public class MainController {
         return "chi-tiet-gioi-thieu";
     }
     //end gioi thieu
+    //bai thuoc
+    @GetMapping(value = {"/bai-thuoc"})
+    public String baiThuoc(HttpServletRequest request) {
+        request.setAttribute("title", "Bài thuốc");
+        return "bai-thuoc";
+    }
 
     @GetMapping(value = {"/chi-tiet-bai-thuoc"})
     public String chiTietBaiThuoc(HttpServletRequest request) {
