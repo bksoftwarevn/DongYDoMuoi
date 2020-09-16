@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="js/home.js"></script>
+<script src="ajax/pages/page_trang_chu.js"></script>
 <!-- ============= Custom Css ============= -->
 <link rel="stylesheet" href="css/trang_chu.css">
 <section class="hero d-none d-md-block">
@@ -8,84 +9,33 @@
             <div class="col-12">
                 <div class="hero-wrapper row">
                     <div class="hero__category col-md-4 col-lg-3" id="hero__category">
-                        <ul class="hero__category-list">
+                        <ul class="hero__category-list" id="nav-category">
                             <div class="nav-category">
                                 <i class="fas fa-bars"></i>
                                 <span>Danh mục sản phẩm</span>
                             </div>
-                            <li class="li-1">
-                                <a href=""><img src="file/icon/icon-1.png" alt=""><span>Dược liệu
-                                                quý</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="">Công tắc ổ cắm</a>
+                            <li class="li-1 d-none" id="li-nav-temp">
+                                <a href="" class="nav-href" data-id="">
+                                    <img src="" alt="" class="nav-img">
+                                    <span class="nav-text"></span>
+                                </a>
+                                <ul class="d-none nav1" data-id="">
+                                    <li data-id="">
+                                        <a href="" class="nav1-href"></a>
                                         <ul class="class-n">
-                                            <li><a href="">Đèn led </a>
-                                                <ul class="class-n">
-                                                    <li><a href="">Máng Đèn Tán Quang Và Tán Xạ LED Thanh </a>
-                                                        <ul class="class-n">
-                                                            <li><a href="">Máng Đèn Tán Quang Và Tán Xạ LED
-                                                                Thanh </a></li>
-                                                            <li><a href="">Đèn led </a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="">Đèn led </a></li>
-                                                </ul>
+                                            <li data-id="">
+                                                <a href=""></a>
                                             </li>
-                                            <li><a href="">Máng Đèn Tán Quang Và Tán Xạ LED Thanh </a></li>
-                                            <li><a href="">Đèn led </a></li>
-                                            <li><a href="">Máng Đèn Tán Quang Và Tán Xạ LED Thanh </a></li>
-
                                         </ul>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li class="li-1">
-                                <a href=""><img src="file/icon/icon-1.png" alt=""><span>Dược liệu
-                                                quý</span></a>
-                                <ul>
-                                    <li><a href=""><i class="fas fa-angle-double-right"></i>Công tắc ổ cắm</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-1">
-                                <a href=""><img src="file/icon/icon-1.png" alt=""><span>Dược liệu
-                                                quý</span></a>
-
-                                <ul>
-                                    <li><a href=""><i class="fas fa-angle-double-right"></i>Công tắc ổ cắm</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-1">
-                                <a href=""><img src="file/icon/icon-1.png" alt=""><span>Dược liệu
-                                                quý</span></a>
-
-                                <ul>
-                                    <li><a href=""><i class="fas fa-angle-double-right"></i>Công tắc ổ cắm</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                     <div class="hero__banner col-md-8 col-lg-9 pl-0">
-                        <div class="banner">
-                            <a href="" class="slick-item">
-                                <img src="file/dynamic/home/trung-tam-duoc-lieu-vietfarm-slide1-825x350.jpg"
-                                     alt="">
-                            </a>
-                            <a href="" class="slick-item">
-                                <img src="file/dynamic/home/trung-tam-duoc-lieu-vietfarm-slide1-825x350.jpg"
-                                     alt="">
-                            </a>
-                            <a href="" class="slick-item">
-                                <img src="file/dynamic/home/trung-tam-duoc-lieu-vietfarm-slide1-825x350.jpg"
-                                     alt="">
-                            </a>
-                            <a href="" class="slick-item">
-                                <img src="file/dynamic/home/trung-tam-duoc-lieu-vietfarm-slide1-825x350.jpg"
-                                     alt="">
+                        <div class="banner" id="banner-main">
+                            <a href="" class="slick-item" id="banner-item-temp">
+                                <img src="" alt="">
                             </a>
                         </div>
                     </div>
