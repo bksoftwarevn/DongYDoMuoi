@@ -15,7 +15,6 @@
 <%--<script src="js/lienhe.js"></script>--%>
 
 <div class="col-12 col-md-8 col-lg-9 " >
-
     <div id="list-tin-tuc">
         <!-- ===hidden tintuc element=== -->
         <a href="#" class="tinTuc__element article__element row d-none  mt-3 mt-md-5" id="tinTuc__element">
