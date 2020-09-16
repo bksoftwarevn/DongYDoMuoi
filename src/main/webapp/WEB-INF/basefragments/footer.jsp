@@ -62,14 +62,18 @@
     </section>
 </footer>
 <div id="social-right-fixed" class="">
-    <a href="" class="facebook"><img src="file/icon/facebook-f.png"></a>
-    <a href="" class="youtube"><img src="file/icon/youtube-play.png"></a>
-    <a href="" class="email-r"><img src="file/icon/important-mail.png"></a>
-    <a href="" class="hot-line-r"><img src="file/icon/zalo.png"></a>
+    <a href="" class="facebook"><img src="/icon/facebook-f.png"></a>
+    <a href="" class="youtube"><img src="/icon/youtube-play.png"></a>
+    <a href="" class="email-r"><img src="/icon/message-squared.png"></a>
+    <a href="" class="hot-line-r"><img src="/icon/zalo.png"></a>
 </div>
 <a class="btn-call-now" href="tel:0334299199">
     <i class="fas fa-phone-volume"></i>
     <span style="margin-left: 5px; padding: 0 5px" class="d-none d-md-block">Hotline: 0334299199</span>
+</a>
+<a class="schedule" href="dat-lich-kham">
+    <i class="far fa-calendar-check"></i>
+    <span style="margin-left: 5px; padding: 0 5px" class="d-none d-md-block">Đặt lịch khám</span>
 </a>
 <div class="gioHang">
     <a href="" class="cart-icon" title="Giỏ hàng của bạn">

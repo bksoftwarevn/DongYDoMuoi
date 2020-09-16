@@ -16,16 +16,16 @@
             <div class="col-12 col-md-4 d-none d-md-block">
                 <div class="header-contact">
                     <a href="" class="email">
-                        <img src="https://img.icons8.com/ios-filled/100/00676b/important-mail.png" alt="Mail">
+                        <img src="/icon/message-squared.png" alt="Mail">
                     </a>
                     <a href="" class="facebook">
-                        <img src="https://img.icons8.com/ios-filled/100/00676b/facebook.png" alt="Facebook">
+                        <img src="/icon/facebook.png" alt="Facebook">
                     </a>
                     <a href="" class="youtube">
-                        <img src="https://img.icons8.com/ios-filled/100/00676b/youtube-squared.png" alt="Youtube">
+                        <img src="/icon/youtube-squared.png" alt="Youtube">
                     </a>
                     <a href="" class="zalo">
-                        <img src="https://img.icons8.com/ios-filled/100/00676b/zalo.png" alt="Zalo">
+                        <img src="/icon/zalo.png" alt="Zalo">
                     </a>
                 </div>
             </div>

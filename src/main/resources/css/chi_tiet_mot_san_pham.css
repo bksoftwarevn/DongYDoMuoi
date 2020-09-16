@@ -34,6 +34,10 @@
   position: relative;
   display: block;
 }
+.product-detail__img img{
+  max-width: 100%;
+  height: 545px;
+}
 .p-promo {
   position: absolute;
   top: 5px;
@@ -103,10 +107,26 @@
 }
 .pdc-inbut {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
   margin-top: 15px;
   margin-bottom: 10px;
+}
+.bt-gr{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.buynow{
+  width: 100%;
+}
+.bt-gr label{
+  width: 103px;
+  margin-right: 5px;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 .pdc-inbut button.buynow {
   border: none;
@@ -188,9 +208,13 @@
 }
 #gal1 img {
   border: 1px solid #fff;
+  width: 78px;
+  height: 78px;
 }
 #gal1 a {
   padding: 5px;
+  width: 83px;
+  height: 83px;
 }
 /*Change the colour*/
 #gallery_01 img {
@@ -208,4 +232,31 @@
   border: none;
   outline: none;
   box-shadow: none;
+}
+.zoomContainer{
+  width: 100% !important;
+}
+@media screen and (min-width: 576px) {
+  .product-detail__img {
+
+  }
+  .product-detail__img img{
+    height: 510px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .product-detail__img {
+
+  }
+  .product-detail__img img{
+    height: 330px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .product-detail__img {
+    height: 290px;
+  }
+  .product-detail__img img{
+    height: 290px;
+  }
 }
