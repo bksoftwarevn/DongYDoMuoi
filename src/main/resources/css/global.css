@@ -296,7 +296,7 @@ nav .nav.open {
   text-transform: capitalize !important;
 }
 nav .nav li img {
-  width: 35px;
+  width: 50px;
   height: 50px;
 }
 nav .nav li {
@@ -1039,7 +1039,11 @@ footer .logo-area {
 .col-inner .inner-item h3 a {
   text-transform: uppercase;
   color: #fff;
-  max-width: 203px;
+  max-width: 245px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .col-inner .inner-item h3 {
   margin: 0;
@@ -1169,7 +1173,7 @@ footer .logo-area {
   right: 10px;
   width: 35px;
   height: 35px;
-  background-image: url(../public/icon/gift.png);
+  background-image: url(../icon/gift.png);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -1408,6 +1412,9 @@ span.product-name {
     font-size: 2rem;
   }
   /* Product */
+  .col-inner .inner-item h3 a {
+    max-width: 100%;
+  }
   .product__img {
     min-width: 160px;
     max-width: 255px;
