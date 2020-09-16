@@ -34,21 +34,10 @@ $(function () {
 //HEADER
 function viewBackGroundHeader() {
     contentFindByCompany(COMPANY_ID, "background-header").then(rs => {
+        console.log(rs);
         if(rs[0] && rs[0].partDetails) {
-            rs = rs[0].partDetails;
-            rs.map(data => {
-                let bannerItemClone = bannerItemTemp.clone();
-                bannerItemClone.attr("href", viewField(data.link));
-                let imgItemClone = bannerItemClone.find("img");
-                imgItemClone.attr("src", viewSrcFile(data.url));
-                imgItemClone.attr("alt", viewField(data.text));
-                bannerItemTemp.before(bannerItemClone);
-            })
-            bannerItemTemp.remove();
-            slideBanner.slick({
-                dots: true,
-                infinite: true,
-            });
+            rs = rs[0].partDetails[0];
+            $("header").css("background-image", `url("${viewSrcFile(rs.url)}"`);
         }
     }).catch(err => {
         console.log(err);
