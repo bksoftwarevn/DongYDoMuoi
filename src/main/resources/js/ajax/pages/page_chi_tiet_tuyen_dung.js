@@ -8,16 +8,12 @@ $(function () {
             let Recruitment = {...Article};
             Recruitment.data = rs;
             Recruitment.endpoint = 'tuyen-dung';
-
             let RecruitmentDetailController = {...ArticleDetailController};
             RecruitmentDetailController.article = Recruitment;
             RecruitmentDetailController.mappingDetailArticle(Recruitment, articleBox);
             RecruitmentDetailController.increaseView(idRecruitment).then();
-
         })
         .catch(err=>console.log(err));
-
-
 });
 
 
