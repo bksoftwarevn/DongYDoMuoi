@@ -123,7 +123,7 @@ header {
   top: 0;
   left: 0;
   z-index: 101;
-  background-image: url(../file/dynamic/home/bg-header.jpg);
+  /*background-image: url(../file/dynamic/home/bg-header.jpg);*/
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -173,6 +173,7 @@ header {
   margin-left: 5px;
   border-radius: 5px;
   transition: all 0.4s;
+  background-color: var(--main-color);
 }
 .header-contact a:hover {
   transform: translateY(-4px);
@@ -1455,7 +1456,8 @@ span.product-name {
     width: 200%;
   }
   .hero__category-list li ul li {
-    min-width: 50%;
+    min-width: 49%;
+    max-width: 50%;
   }
 
   .wiget-title {
@@ -1547,7 +1549,8 @@ span.product-name {
     width: 300%;
   }
   .hero__category-list li ul li {
-    min-width: 33%;
+    min-width: 49%;
+    max-width: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
