@@ -16,7 +16,7 @@
             <div class="col-12 col-md-4 d-none d-md-block">
                 <div class="header-contact">
                     <a href="" class="email link-email-company" target="_blank">
-                        <img src="icon/message-squared.png" alt="Mail">
+                        <img src="icon/message-squared-w.png" alt="Mail">
                     </a>
                     <a href="" class="facebook link-facebook-company" target="_blank">
                         <img src="icon/facebook.png" alt="Facebook">
@@ -25,7 +25,7 @@
                         <img src="icon/youtube-squared.png" alt="Youtube">
                     </a>
                     <a href="" class="zalo link-zalo-company" target="_blank">
-                        <img src="icon/zalo.png" alt="Zalo">
+                        <img src="icon/zalo-w.png" alt="Zalo">
                     </a>
                 </div>
             </div>

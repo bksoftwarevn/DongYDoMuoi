@@ -361,8 +361,8 @@
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5  order-md-1">
                 <div class="lopHoc-text text-center">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Dạy căn bản, hiểu gốc rễ</h3>
+                    <img src="https://img.icons8.com/ios-filled/100/00676b/guarantee.png">
+                    <h3>Được Bộ Y Tế cấp phép hoạt động công khai</h3>
                     <p>Với mỗi một môn học, học viên của Natalie CLASS đều được dạy từ căn bản, đi từ gốc rễ,
                         giúp học viên
                         hiểu được nguyên lý</p>
@@ -392,8 +392,8 @@
             </div>
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center  mb-5  order-md-4">
                 <div class="lopHoc-text text-center">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Thực hành</h3>
+                    <img src="https://img.icons8.com/ios-filled/100/00676b/diamond-care-1.png">
+                    <h3>Mang lại những dịch vụ tốt nhất cho khách hàng</h3>
                     <p>Với mỗi một môn học, học viên của Natalie CLASS đều được dạy từ căn bản</p>
                 </div>
             </div>
@@ -404,8 +404,8 @@
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5  order-md-5">
                 <div class="lopHoc-text text-center">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Cung cấp chứng chỉ</h3>
+                    <img src="https://img.icons8.com/ios-filled/100/00676b/physics-book.png">
+                    <h3>Bài thuốc gia truyền</h3>
                     <p>Với mỗi một môn học, học viên của Natalie CLASS đều được dạy từ căn bản, đi từ gốc rễ,
                         giúp học viên
                         hiểu được nguyên lý</p>

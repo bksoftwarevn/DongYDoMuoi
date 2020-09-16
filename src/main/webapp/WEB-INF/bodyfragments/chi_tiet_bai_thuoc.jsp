@@ -11,7 +11,7 @@
 <div class="d-none" id="page-id" data-page-id="<%=request.getParameter("id")%>"></div>
 <script src="ajax/object/article.js"></script>
 <script src="ajax/pages/page_article_details.js"></script>
-<script src="ajax/pages/page_chi_tiet_gioi_thieu.js"></script>
+<script src="ajax/pages/page_chi_tiet_bai_thuoc.js"></script>
 
 <div class="col-12 col-md-8 col-lg-9 tinTuc__element mt-5 mt-md-5" id="article-box">
     <!-- hidden element -->

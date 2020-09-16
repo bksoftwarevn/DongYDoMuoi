@@ -1,7 +1,8 @@
-let Article =  {
+let Article = {
     data: {},
-    endpoint: 'string'
-}
+    endpoint: 'string',
+    endpointDetail: 'string'
+};
 
 // function Recruitment() {
 //     Article.call(this);
@@ -9,8 +10,11 @@ let Article =  {
 // }
 
 
-let ArticleController = {
+let ArticleController1 = {
     currentPage: 1,
+    size: 6,
+    tag: '',
+    type: 1,
 
     getListArticle: async function (page, size, type) {
         let rs;
@@ -20,46 +24,58 @@ let ArticleController = {
         return rs;
     },
     //callback trả về template tương ứng từng web
-    generateArticleElement: function (object, selector, callback) {
-        if(callback){
+    generateArticleElement: function (data = {...Article}, selector, callback) {
+        if (callback) {
             // data and parent of template
-            let template = callback(object, selector);
+            let template = callback(data, selector);
             return template;
         }
         return null;
     },
 
-    appendListElements: function (listData, callback) {
-        listData.forEach((element) => {
-            let templateTinTucElement = ArticleController.generateArticleElement(element);
-            $("#list-tin-tuc").append(templateTinTucElement);
-        });
+    appendListElements: function (data = {...Article}, parentHiddenElementSelector, hiddenElementSelector, callback) {
+            let templateTinTucElement = this.generateArticleElement(data, hiddenElementSelector, callback);
+            $(parentHiddenElementSelector).append(templateTinTucElement);
     },
 
-    initElement: function (page, size) {
-        this.getListTinTuc(page, size).then(rs => {
-            if (rs.totalPages < 2) {
-                $("#btn-showMoreNews").hide();
-            } else {
-                $("#btn-showMoreNews").show();
-            }
-            rs = rs.content;
-            News.appendListElements(rs);
-        });
-    },
+    // initElement: function (hiddenElementSelector, clickBtnSelector, page, size, callback) {
+    //         let data = callback(page, size);
+    //         if (data.totalPages < 2) {
+    //             $(clickBtnSelector).hide();
+    //         } else {
+    //             $(clickBtnSelector).show();
+    //         }
+    //         data = data.content;
+    //         ArticleController.appendListElements(rs, hiddenElementSelector, callback);
+    //
+    // },
 
-    clickShowMoreNews: function(data, selector) {
-        $(selector).click(function () {
-            this.currentPage++;
-            News.getListTinTuc(currentPage, sizePage).then(rs => {
-                if (currentPage < rs.totalPage) {
-                    $(selector).show();
-                } else {
-                    $(selector).hide();
-                }
-                rs = rs.content;
-                ArticleController.mappingElement(rs);
-            })
+    clickShowMoreNews: function (parentHiddenElementSelector,hiddenElementSelector, showMoreBtn, article = {...Article}, callback) {
+
+        $(showMoreBtn).click(function () {
+            ArticleController1.currentPage++;
+            newsFilter(0, COMPANY_ID, ArticleController1.type, "", '', ArticleController1.currentPage, ArticleController1.size)
+                .then(data=>{
+                    console.log(data);
+                    if (ArticleController1.currentPage < data.totalPages) {
+                        $(showMoreBtn).show();
+                    } else {
+                        $(showMoreBtn).hide();
+                    }
+
+                    let listData = data.content;
+                    if(listData.length !== 0){
+                        listData.forEach(el=>{
+                            article.data = el;
+                            console.log(article);
+                            ArticleController1.appendListElements(article, parentHiddenElementSelector, hiddenElementSelector, callback)
+                        })
+                    }
+                    // console.log(listData);
+                })
+                .catch(err=>console.log(err));
+
+
         });
 
     }
@@ -67,7 +83,7 @@ let ArticleController = {
 
 
 let ArticleDetailController = {
-    handleTag : function(data, endpoint) {
+    handleTag: function (data, endpoint) {
         if (!(data === '' || data === null)) {
             let listTags = data.split("|");
             let templateTags = listTags.map(data => {
@@ -78,14 +94,13 @@ let ArticleDetailController = {
         return '';
     },
     //data = article.data
-    mapTitleAndTag : function (article) {
-        console.log(article);
-        $('.tinTuc__title--tagsTinTuc').html(ArticleDetailController.handleTag(article.data.tag,article.endpoint));
+    mapTitleAndTag: function (article) {
+        $('.tinTuc__title--tagsTinTuc').html(ArticleDetailController.handleTag(article.data.tag, article.endpoint));
         $(".tinTuc__title h2").text(article.data.name);
     },
     //tham so data = Article
     generateArticle: function (article, callback) {
-        if(callback){
+        if (callback) {
             callback(article);
         }
 
@@ -102,17 +117,31 @@ let ArticleDetailController = {
         $(parentSelector).prepend(ArticleDetailController.generateArticle(article, ArticleDetailController.mapTitleAndTag(article)))
     },
 
-    increaseView : function (id) {
+    increaseView: function (id) {
         let uri = `news-service/api/v1/public/statistic/news/${id}/view`;
         return ajaxPut(uri);
     },
 };
 
 let TemplateArticle = {
-    generateTemplateArticle: function(article = {...Article}, selector){
+    //trong phan bai viet (load dsach bai viet)
+    generateTemplateArticle: function (article = {...Article}, selector) {
         let template = $(selector).clone().removeAttr('id').removeClass('d-none');
-        template.find('img').attr('src', viewAliasArticle(article.data.alias, article.endpoint, article.data.id));
-        template.find('')
+        template.removeClass("d-none").removeAttr("id");
+        // tinTucElement.attr('href', `chi-tiet-tin-tuc?id=${object.id}`);
+        template.attr('href', viewAliasArticle(article.data.alias, article.endpointDetail, article.data.id));
+        template
+            .find(".article__element--img img")
+            .attr("src", viewSrcFile(article.data.image));
+        template
+            .find(".article__element--name")
+            .text(article.data.name ? article.data.name : "");
+        template
+            .find(".article__element--description")
+            .text(article.data.preview ? article.data.preview : "");
+        template.find('.article__element--date').text(TimeUtils.formatTime(article.data.creatTime).d);
+        template.find('.article__element--month').text(TimeUtils.formatTime(article.data.creatTime).m);
+        return template;
     }
 }
 
