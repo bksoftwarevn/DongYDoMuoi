@@ -126,6 +126,7 @@ header {
   /*background-image: url(../file/dynamic/home/bg-header.jpg);*/
   background-repeat: no-repeat;
   background-size: cover;
+  height: 75px;
 }
 .logo-area {
   display: flex;
@@ -157,6 +158,7 @@ header {
   text-transform: uppercase;
   font-size: 2rem;
   display: block;
+  line-height: 1;
 }
 .logo-a__text p {
   font-weight: 600;
@@ -246,7 +248,7 @@ nav {
   background-color: var(--main-color);
   padding: 0;
   position: sticky;
-  top: 50px;
+  top: 75px;
   left: 0;
   z-index: 101;
   /* border-bottom: 2px solid rgba(221,184,104,1); */
@@ -1384,21 +1386,43 @@ span.product-name {
   border-right: 1px solid #dee2e6;
 }
 /*tai lieu y khoa*/
-.tlyk-item{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.tlyk-title{
+    text-transform: uppercase;
+    font-size: 2.4rem;
 }
-.tlyk-item .tlyk__img{
-
+.tb__color-main{
+    background-color: var(--main-color-2);
+    color: #fff;
 }
-.tlyk-item .tlyk__text{
-
+.tb__color-main tr th{
+    text-transform: uppercase;
+    font-size: 1.5rem;
 }
-.tlyk-item .tlyk__dlbt{
-
+.tlyk tbody {
+    font-size: 1.5rem;
 }
-
+.tlyk-name a{
+    display: flex;
+    align-items: flex-start;
+}
+.tlyk-name a img{
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+.tlyk-btdl a{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: underline;
+    color: var(--main-color);
+}
+.tlyk-btdl a img{
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+}
 /*tai lieu y khoa*/
 @media screen and (max-width: 471px) {
   .product-price {
