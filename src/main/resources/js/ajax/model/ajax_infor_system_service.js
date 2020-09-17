@@ -101,3 +101,9 @@ function urlAliasFilter(alias = "", url = "", companyId = 0, page = 1, size = 10
     return ajaxGet(`${URL_API_INFOR_SYSTEM_SERIVCE}v1/public/url-alias/filter?alias=${alias}&url=${url}&company-id=${companyId}&page=${page}&size=${size}`);
 }
 //END_URL_ALIAS_API
+
+//CUSTOMER_API
+function customerFindByCompany(companyId) {
+    return ajaxGet(`${URL_API_INFOR_SYSTEM_SERIVCE}v1/public/customers/company/${companyId}`);
+}
+//END_CUSTOMER_API

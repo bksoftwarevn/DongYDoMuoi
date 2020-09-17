@@ -1,5 +1,6 @@
 //COMPANY
 const DANGER_INFOR_COMPANY = "Lỗi tải thông tin công ty";
+const DANGER_INFOR_COMPANY_WHY_CHOOSE = "Lỗi tải thông tin vì sao chọn chúng tôi";
 //END COMPANY
 
 //PRODUCT_TYPE
@@ -13,6 +14,7 @@ const DANGER_CONTENT_COMPANY = "Lỗi tải tài nguyên trang";
 //PRODUCT
 const DANGER_PRODUCT_BY_PRODUCT_TYPE = "Lỗi tải sản phẩm theo danh mục ";
 const DANGER_LIST_PRODUCT = "Lỗi tải thông tin danh sách sản phẩm ";
+const DANGER_LIST_PRODUCT_SOLD = "Lỗi tải thông tin danh sách sản phẩm bán chạy";
 const DANGER_PRODUCT = "Lỗi tải thông tin sản phẩm ";
 const DANGER_PRODUCT_RELATED = "Lỗi tải sản phẩm liên quan";
 //END_PRODUCT
@@ -65,3 +67,11 @@ const DANGER_INFO_FOOTER= "Lỗi tải bài viết thông tin công ty";
 //FILE_CATEGORY
 const DANGER_FILE_CATEGORY_FOOTER = "Lỗi tải tài liệu báo giá";
 //END_FIEL_CATEGORY
+
+//LECTURER
+const DANGER_LECTURER = "Lỗi tải thông tin bác sĩ";
+//END_LECTURER
+
+//CUSTOMER
+const DANGER_FEED_BACK_CUSTOMER = "Lỗi tải nhận xét khác hàng";
+//END_CUSTOMER
