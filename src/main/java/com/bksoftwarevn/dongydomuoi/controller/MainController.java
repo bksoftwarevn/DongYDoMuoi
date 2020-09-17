@@ -175,27 +175,73 @@ public class MainController {
         return "lien-he";
     }
 
-
     @GetMapping(value = {"/dat-lich-kham"})
     public String datLichKham(HttpServletRequest request) {
         request.setAttribute("title", "Đặt lịch khám");
         return "dat-lich-kham";
     }
 
-
-
-
-    @GetMapping(value = {"/san-pham"})
-    public String sanPham(HttpServletRequest request) {
-        request.setAttribute("title", "Sản phẩm");
-        return "san-pham";
+    @GetMapping(value = {"/danh-muc"})
+    public String danhMuc(HttpServletRequest request) {
+        try {
+            int root = Integer.parseInt(request.getParameter("root"));
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(productService)
+                    .uri("api/v1/public/".concat(root == 1 ? "product-types/" : "categorys/")+ request.getParameter("id")));
+            if(jsonObject != null) {
+                String valImage = jsonObject.get("image").toString();
+                String valTitle = jsonObject.get("name").toString();
+                String valDescription = jsonObject.get("description").toString();
+                request.setAttribute("image", viewSrcFile(valImage));
+                request.setAttribute("title", valTitle);
+                request.setAttribute("description", valDescription);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "danh-muc";
     }
 
+    @GetMapping(value = {"/chi-tiet-san-pham"})
+    public String sanPham(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(productService)
+                    .uri("api/v1/public/products/" + request.getParameter("id"))
+                    .param("cost", "false")
+                    .param("property", "false")
+                    .param("file", "false")
+                    .param("category", "false")
+                    .param("promotion", "false")
+                    .param("statistic", "false"));
+            jsonObject = (JSONObject) jsonObject.get("product");
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-san-pham";
+    }
 
     @GetMapping(value = {"/tai-lieu-y-khoa"})
     public String taiLieuYKhoa(HttpServletRequest request) {
         request.setAttribute("title", "Tài liệu y khoa");
         return "tai-lieu-y-khoa";
+    }
+
+    @GetMapping(value = {"/gio-hang"})
+    public String gioHang(HttpServletRequest request) {
+        request.setAttribute("title", "Giỏ Hàng");
+        return "gio-hang";
+    }
+    @GetMapping(value = {"/thanh-toan"})
+    public String thanhToan(HttpServletRequest request) {
+        request.setAttribute("title", "Thanh Toán");
+        return "thanh-toan";
     }
 
     @GetMapping(value = {"/robots.txt"})

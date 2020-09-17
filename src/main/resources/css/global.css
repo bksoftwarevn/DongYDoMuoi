@@ -126,6 +126,7 @@ header {
   /*background-image: url(../file/dynamic/home/bg-header.jpg);*/
   background-repeat: no-repeat;
   background-size: cover;
+  height: 75px;
 }
 .logo-area {
   display: flex;
@@ -157,6 +158,7 @@ header {
   text-transform: uppercase;
   font-size: 2rem;
   display: block;
+  line-height: 1;
 }
 .logo-a__text p {
   font-weight: 600;
@@ -246,7 +248,7 @@ nav {
   background-color: var(--main-color);
   padding: 0;
   position: sticky;
-  top: 50px;
+  top: 75px;
   left: 0;
   z-index: 101;
   /* border-bottom: 2px solid rgba(221,184,104,1); */
@@ -724,14 +726,14 @@ main {
   background-color: var(--main-color-2);
 }
 .introduce .intro-item:nth-child(1) {
-  border-right: 1px dashed var(--yellow-color);
-  border-bottom: 1px dashed var(--yellow-color);
+  border-right: 1px dashed #fff;
+  border-bottom: 1px dashed #fff;
 }
 .introduce .intro-item:nth-child(2) {
-  border-bottom: 1px dashed var(--yellow-color);
+  border-bottom: 1px dashed #fff;
 }
 .introduce .intro-item:nth-child(3) {
-  border-right: 1px dashed var(--yellow-color);
+  border-right: 1px dashed #fff;
 }
 .intro-inner {
   padding: 15px;
@@ -761,7 +763,7 @@ main {
   font-weight: 700;
 }
 .intro-item h2 a{
-  color: var(--yellow-color);
+  color: #fff;
   text-transform: uppercase;
 }
 /* Introducue */
@@ -832,7 +834,7 @@ main {
 .customer-carousel .slick-dots {
   bottom: -10px !important;
 }
-.customer-carousel .slick-prev:before,.customer-carousel.slick-next:before {
+.customer-carousel .slick-prev:before,.customer-carousel .slick-next:before {
   color: var(--main-color) !important;
 }
 .customer-carousel .doctor-text p{
@@ -840,6 +842,19 @@ main {
   height: 72px;
 }
 /* Customer  */
+/*xem them*/
+.see-more-button img {
+  width: 57px;
+  height: 18px;
+  object-fit: cover;
+}
+.place-order button.btn-loading img {
+  width: 62px;
+  height: 18px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+/*xem them*/
 /* footer */
 footer {
 }
@@ -1111,20 +1126,20 @@ footer .logo-area {
   position: relative;
 }
 .product__img::before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: .4s all;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: .4s all;
 }
 .product__img:hover::before{
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 .product__img img {
   min-width: 143px;
@@ -1384,22 +1399,90 @@ span.product-name {
   border-right: 1px solid #dee2e6;
 }
 /*tai lieu y khoa*/
-.tlyk-item{
+.tlyk-title{
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+.tb__color-main{
+  background-color: var(--main-color-2);
+  color: #fff;
+}
+.tb__color-main tr th{
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.tlyk tbody {
+  font-size: 1.5rem;
+}
+.tlyk-name a{
+  display: flex;
+  align-items: flex-start;
+}
+.tlyk-name a img{
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+.tlyk-btdl a{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  white-space: nowrap;
+  text-decoration: underline;
+  color: var(--main-color);
 }
-.tlyk-item .tlyk__img{
-
+.tlyk-btdl a img{
+  width: 16px;
+  height: 16px;
+  margin-right: 3px;
 }
-.tlyk-item .tlyk__text{
-
-}
-.tlyk-item .tlyk__dlbt{
-
-}
-
 /*tai lieu y khoa*/
+/* ==========Popup css========== */
+.popup-ad {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2500;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.popup-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-wrapper a {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.popup-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.close-popup {
+  position: absolute;
+  color: red;
+  font-size: 2.6rem;
+  top: -20px;
+  right: -10px;
+  cursor: pointer;
+  z-index: 5000;
+}
+
+/* ==========Popup css========== */
 @media screen and (max-width: 471px) {
   .product-price {
     height: 48px;
@@ -1424,10 +1507,10 @@ span.product-name {
     height: 80px;
   }
   .logo-a__text span {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .logo-a__text p {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   /* Product */
   .col-inner .inner-item h3 a {

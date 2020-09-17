@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<header>
-    <div class="container">
+<header class="d-flex align-items-center">
+    <div class="container ">
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 d-flex align-items-center">
                 <a href="trang-chu" class="logo-area">
                     <div class="logo-a__img">
                         <img src="https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/logo/logo-dong-y.png" alt="Đông Y Đỗ Mười">
@@ -53,7 +53,7 @@
                         <li class="active" data-active="trang-chu"><a href="trang-chu">Trang chủ</a></li>
                         <li data-active="gioi-thieu"><a href="gioi-thieu">Giới thiệu</a></li>
                         <li data-active="bai-thuoc"><a href="bai-thuoc">Bài thuốc</a></li>
-                        <li data-active="san-pham"><a href="san-pham">Sản phẩm</a></li>
+                        <li data-active="danh-muc"><a href="danh-muc">Sản phẩm</a></li>
                         <li data-active="nghien-cuu"><a href="nghien-cuu">Nghiên cứu</a></li>
                         <li data-active="tai-lieu-y-khoa"><a href="tai-lieu-y-khoa">Tài liệu y khoa</a></li>
                         <li data-active="tuyen-dung"><a href="tuyen-dung">Tuyển dụng</a></li>

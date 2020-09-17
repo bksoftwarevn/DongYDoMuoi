@@ -13,7 +13,7 @@
         <div class="col-12">
             <div class="tinTuc__element--img">
                 <img class="img-fluid" src="https://thietbidienpanasonic.com/wp-content/uploads/2018/08/bep-dien-tu-panasonic-chat-luong-1024x555.jpg"
-                     alt="">
+                     >
             </div>
         </div>
         <div class="col-12 d-flex justify-content-between mt-3">

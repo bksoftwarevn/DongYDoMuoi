@@ -98,18 +98,29 @@
 
     <!--    =======================end Article=====================-->
 
+    <!--danh-muc-->
+    <definition name="danh-muc" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/danh_muc.jsp"/>
+    </definition>
 
+    <!--Gio hang-->
+    <definition name="gio-hang" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/gio_hang.jsp"/>
+    </definition>
 
-
-    <!--san pham-->
-    <definition name="san-pham" extends="base-layout">
+    <!--thanh toan-->
+    <definition name="thanh-toan" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/thanh_toan.jsp"/>
+    </definition>
+    <!--Chi tiet san pham-->
+    <definition name="chi-tiet-san-pham" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>
     </definition>
 
     <!--tai lieu y khoa-->
 
     <definition name="tai-lieu-y-khoa" extends="dang-ky-tu-van">
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/tai_lieu_y_khoa.jsp"/>
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/tai_lieu_y_khoa.jsp" cascade="true"/>
     </definition>
 
     <!--dat lich kham-->
