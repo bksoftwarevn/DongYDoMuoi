@@ -132,7 +132,7 @@ async function viewNavAndSelectCategorySearch() {
                 //viewSelectProductTypeSearch
                 let optionClone = optionTemp.clone();
                 optionClone.removeAttr("selected");
-                optionClone.attr("value", viewAliasProductType(data.alias, data.id));
+                optionClone.attr("value", viewAliasProductType(null, data.id));
                 optionClone.html(viewField(data.name));
                 selectCategorySearch.append(optionClone);
             })

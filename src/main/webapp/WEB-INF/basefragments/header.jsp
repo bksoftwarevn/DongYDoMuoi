@@ -53,7 +53,7 @@
                         <li class="active" data-active="trang-chu"><a href="trang-chu">Trang chủ</a></li>
                         <li data-active="gioi-thieu"><a href="gioi-thieu">Giới thiệu</a></li>
                         <li data-active="bai-thuoc"><a href="bai-thuoc">Bài thuốc</a></li>
-                        <li data-active="danh-muc"><a href="danh-muc?id=0">Sản phẩm</a></li>
+                        <li data-active="danh-muc"><a href="danh-muc">Sản phẩm</a></li>
                         <li data-active="nghien-cuu"><a href="nghien-cuu">Nghiên cứu</a></li>
                         <li data-active="tai-lieu-y-khoa"><a href="tai-lieu-y-khoa">Tài liệu y khoa</a></li>
                         <li data-active="tuyen-dung"><a href="tuyen-dung">Tuyển dụng</a></li>
