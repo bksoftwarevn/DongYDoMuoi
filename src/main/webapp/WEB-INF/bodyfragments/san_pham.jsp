@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-detail__img">
-                    <img src="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/hgQD0kFdLx/4919_0_ong_nhua_gan_xoan_hdpe_ospen.jpg" alt=""
+                    <img src="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/hgQD0kFdLx/4919_0_ong_nhua_gan_xoan_hdpe_ospen.jpg"
                          id="zoom_03"
                          data-zoom-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/hgQD0kFdLx/4919_0_ong_nhua_gan_xoan_hdpe_ospen.jpg">
                     <div class="p-promo">
@@ -153,7 +153,7 @@
                         <a href="" class="product">
                             <div class="product-inner">
                                 <div class="product__img">
-                                    <img src="./public/dynamic/home/product1.jpg" alt="">
+                                    <img src="./public/dynamic/home/product1.jpg" >
                                     <div class="product__promo">
                                         <div class="promo-sale">
                                             <span>-18%</span>
@@ -179,7 +179,7 @@
                         <a href="" class="product">
                             <div class="product-inner">
                                 <div class="product__img">
-                                    <img src="./public/dynamic/home/product1.jpg" alt="">
+                                    <img src="./public/dynamic/home/product1.jpg" >
                                     <div class="product__promo">
                                         <div class="promo-sale">
                                             <span>-18%</span>
@@ -205,7 +205,7 @@
                         <a href="" class="product">
                             <div class="product-inner">
                                 <div class="product__img">
-                                    <img src="./public/dynamic/home/product1.jpg" alt="">
+                                    <img src="./public/dynamic/home/product1.jpg" >
                                     <div class="product__promo">
                                         <div class="promo-sale">
                                             <span>-18%</span>
@@ -231,7 +231,7 @@
                         <a href="" class="product">
                             <div class="product-inner">
                                 <div class="product__img">
-                                    <img src="./public/dynamic/home/product1.jpg" alt="">
+                                    <img src="./public/dynamic/home/product1.jpg" >
                                     <div class="product__promo">
                                         <div class="promo-sale">
                                             <span>-18%</span>
@@ -257,7 +257,7 @@
                         <a href="" class="product">
                             <div class="product-inner">
                                 <div class="product__img">
-                                    <img src="./public/dynamic/home/product1.jpg" alt="">
+                                    <img src="./public/dynamic/home/product1.jpg" >
                                     <div class="product__promo">
                                         <div class="promo-sale">
                                             <span>-18%</span>

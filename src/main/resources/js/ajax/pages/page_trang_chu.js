@@ -11,6 +11,7 @@ $(function() {
     listProductTemp = $("#list-product-temp");
     productTemp = $("#product-temp")
 
+    viewPopup();
     viewSlideBanner();
     viewQuangCao();
     viewGioiThieu();
@@ -19,6 +20,27 @@ $(function() {
     viewViSaoChon();
     viewKhachHang();
 })
+
+function viewPopup() {
+    popupFindShowedCompany(COMPANY_ID).then(rs => {
+        if (rs) {
+            $("#set-popup").html(`<a href="${rs.link}" id="img-pop-up">
+                                    <img src="${viewSrcFile(rs.url)}" alt="${rs.name}">
+                                    <div class="close-popup">
+                                             [x]
+                                    </div>
+                                </a>
+                                `)
+            $(".popup-ad").removeClass("d-none");
+            $(".close-popup").click(function () {
+                $(".popup-ad").css("display", "none");
+                return false;
+            });
+        }
+    }).catch(err => {
+        console.log(err);
+    })
+}
 
 function viewSlideBanner() {
     contentFindByCompany(COMPANY_ID, "slide").then(rs => {
@@ -70,7 +92,7 @@ function viewGioiThieu() {
                 let elementGioiThieu = $(`#gioi-thieu-${i + 1}`);
                 elementGioiThieu.find(".text-gioi-thieu").html(viewField(data.text));
                 elementGioiThieu.find(".href-gioi-thieu").attr("href", data.link);
-                let imgElementGioiThieu = elementGioiThieu.find("img");
+                let imgElementGioiThieu = elementGioiThieu.find("img").removeClass("d-none");
                 imgElementGioiThieu.attr("src", viewSrcFile(data.url));
                 imgElementGioiThieu.attr("alt", viewField(data.text));
             }
@@ -200,7 +222,7 @@ function viewKhachHang() {
         if(rs) {
             let listCustomerItem = rs.map(data => {
                 let customerItemClone = customerItemTemp.clone().removeClass("d-none").removeAttr("id");
-                let imgCustomer = customerItemClone.find(".customer-item-img");
+                let imgCustomer = customerItemClone.find(".customer-item-img").removeClass("d-none");
                 imgCustomer.attr("src", viewSrcFile(data.image));
                 imgCustomer.attr("attr", viewField(data.name));
                 customerItemClone.find(".customer-item-name").html(viewField(data.name));

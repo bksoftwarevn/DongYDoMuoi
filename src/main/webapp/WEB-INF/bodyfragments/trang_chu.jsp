@@ -17,7 +17,7 @@
                             </div>
                             <li class="li-1 d-none" id="li-nav-temp">
                                 <a href="" class="nav-href" data-id="">
-                                    <img src="" alt="" class="nav-img">
+                                    <img src=""  class="nav-img">
                                     <span class="nav-text"></span>
                                 </a>
                                 <ul class="d-none nav1" data-id="">
@@ -36,7 +36,7 @@
                     <div class="hero__banner col-md-8 col-lg-9 pl-0">
                         <div class="banner" id="banner-main">
                             <a href="" class="slick-item" id="banner-item-temp">
-                                <img src="" alt="">
+                                <img src="" >
                             </a>
                         </div>
                     </div>
@@ -50,22 +50,22 @@
         <div class="row">
             <div class="col-12 col-md-3 mt-4">
                 <a href="" id="img-gioi-thieu-1">
-                    <img src="" alt="">
+                    <img src="" >
                 </a>
             </div>
             <div class="col-12 col-md-3 mt-4">
                 <a href="" id="img-gioi-thieu-2">
-                    <img src="" alt="">
+                    <img src="" >
                 </a>
             </div>
             <div class="col-12 col-md-3 mt-4">
                 <a href="" id="img-gioi-thieu-3">
-                    <img src="" alt="">
+                    <img src="" >
                 </a>
             </div>
             <div class="col-12 col-md-3 mt-4">
                 <a href="" id="img-gioi-thieu-4">
-                    <img src="" alt="">
+                    <img src="" >
                 </a>
             </div>
         </div>
@@ -87,7 +87,7 @@
                         <div class="intro-inner" id="gioi-thieu-4">
                             <div class="intro-icon text-center">
                                 <a href="" class="href-gioi-thieu">
-                                    <img src="" alt="" class="">
+                                    <img src=""  class="d-none">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
@@ -100,7 +100,7 @@
                         <div class="intro-inner" id="gioi-thieu-5">
                             <div class="intro-icon text-center">
                                 <a href="" class="href-gioi-thieu">
-                                    <img src="" alt="" class="">
+                                    <img src=""  class="d-none">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
@@ -113,7 +113,7 @@
                         <div class="intro-inner" id="gioi-thieu-6">
                             <div class="intro-icon text-center">
                                 <a href="" class="href-gioi-thieu">
-                                    <img src="" alt="" class="">
+                                    <img src=""  class="d-none">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
@@ -126,7 +126,7 @@
                         <div class="intro-inner" id="gioi-thieu-7">
                             <div class="intro-icon text-center">
                                 <a href="" class="href-gioi-thieu">
-                                    <img src="" alt="" class="">
+                                    <img src=""  class="d-none">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
@@ -151,7 +151,7 @@
                 <div class="doctors-carousel" id="doctors-carousel">
                     <div class="doctor-item d-none" id="doctor-item-temp">
                         <div class="doctor-img">
-                            <img src="" alt="" class="doctor-item-img">
+                            <img src=""  class="doctor-item-img">
                         </div>
                         <div class="doctor-text">
                             <h3 class="doctor-name text-center doctor-item-name"></h3>
@@ -179,7 +179,7 @@
                     <div class="inner-item">
                         <h3>
                             <a href="" class="lp-product-type-link">
-                                <img src="" alt="" class="lp-product-type-img">
+                                <img src=""  class="lp-product-type-img">
                                 <span class="lp-product-type-name"></span>
                             </a>
                         </h3>
@@ -193,7 +193,7 @@
                 <a href="" class="product product-link">
                     <div class="product-inner">
                         <div class="product__img">
-                            <img src="" alt="" class="product-img">
+                            <img src=""  class="product-img">
                             <div class="product__promo product-promo">
                                 <div class="promo-sale"></div>
                                 <div class="promo-gift" data-placement="bottom" data-toggle="tooltip"></div>
@@ -223,7 +223,7 @@
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5  order-md-1">
                 <div class="lopHoc-text text-center" id="vi-sao-1-1">
-                    <img src="" alt="">
+                    <img src="" >
                     <h3 class="text-vi-sao"></h3>
                     <p id="vi-sao-1-2"><span class="text-vi-sao"></span></p>
                 </div>
@@ -231,47 +231,47 @@
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center  mb-5 order-md-2">
                 <div class="lopHoc-img multi-img">
                     <div class="lh-img1" id="vi-sao-1-3">
-                        <img src="" alt="">
+                        <img src="" class="d-none">
                     </div>
                     <div class="lh-img2" id="vi-sao-1-4">
-                        <img src="" alt="">
+                        <img src="" class="d-none">
                     </div>
                     <div class="lh-img3" id="vi-sao-1-5">
-                        <img src="" alt="">
+                        <img src="" class="d-none">
                     </div>
                     <div class="lh-img4" id="vi-sao-1-6">
-                        <img src="" alt="">
+                        <img src="" class="d-none">
                     </div>
                     <div class="lh-img5" id="vi-sao-1-7">
-                        <img src="" alt="">
+                        <img src="" class="d-none">
                     </div>
                     <div class="lh-img6" id="vi-sao-1-8">
-                        <img src="" alt="">
+                        <img src="" class="d-none">
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center  mb-5  order-md-4">
                 <div class="lopHoc-text text-center" id="vi-sao-2-1">
-                    <img src="" alt="">
+                    <img src="" >
                     <h3 class="text-vi-sao"></h3>
                     <p id="vi-sao-2-2"><span class="text-vi-sao"></span></p>
                 </div>
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center  mb-5  order-md-3">
                 <div class="lopHoc-img" id="vi-sao-2-3">
-                    <img src="" alt="">
+                    <img src="" class="d-none">
                 </div>
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5  order-md-5">
                 <div class="lopHoc-text text-center" id="vi-sao-3-1">
-                    <img src="" alt="">
+                    <img src="" class="d-none">
                     <h3 class="text-vi-sao"></h3>
                     <p id="vi-sao-3-2"><span class="text-vi-sao"></span></p>
                 </div>
             </div>
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center mb-5  order-md-6">
                 <div class="lopHoc-img" id="vi-sao-3-3">
-                    <img src="" alt="">
+                    <img src="" class="d-none">
                 </div>
             </div>
         </div>
@@ -287,7 +287,7 @@
                 <div class="customer-carousel" id="customer-carousel">
                     <div class="doctor-item d-none" id="customer-item-temp">
                         <div class="doctor-img">
-                            <img src="" alt="" class="customer-item-img">
+                            <img src=""  class="customer-item-img">
                         </div>
                         <div class="doctor-text">
                             <h3 class="doctor-name text-center customer-item-name"></h3>
