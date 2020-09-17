@@ -834,7 +834,7 @@ main {
 .customer-carousel .slick-dots {
   bottom: -10px !important;
 }
-.customer-carousel .slick-prev:before,.customer-carousel.slick-next:before {
+.customer-carousel .slick-prev:before,.customer-carousel .slick-next:before {
   color: var(--main-color) !important;
 }
 .customer-carousel .doctor-text p{

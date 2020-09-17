@@ -4,6 +4,17 @@
 <script src="ajax/pages/page_trang_chu.js"></script>
 <!-- ============= Custom Css ============= -->
 <link rel="stylesheet" href="css/trang_chu.css">
+<!-- Quảng cáo -->
+<section class="popup-ad d-none">
+    <div class="popup-wrapper" id="set-popup">
+        <a href="trang-chu">
+            <img src="" alt="">
+            <div class="close-popup">
+                [x]
+            </div>
+        </a>
+    </div>
+</section>
 <section class="hero d-none d-md-block">
     <div class="container">
         <div class="row">
