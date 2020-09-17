@@ -34,7 +34,6 @@ $(function () {
 //HEADER
 function viewBackGroundHeader() {
     contentFindByCompany(COMPANY_ID, "background-header").then(rs => {
-        console.log(rs);
         if(rs[0] && rs[0].partDetails) {
             rs = rs[0].partDetails[0];
             $("header").css("background-image", `url("${viewSrcFile(rs.url)}"`);

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="js/home.js"></script>
+<script src="https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/ajax_edu_service.js"></script>
 <script src="ajax/pages/page_trang_chu.js"></script>
 <!-- ============= Custom Css ============= -->
 <link rel="stylesheet" href="css/trang_chu.css">
@@ -144,61 +145,18 @@
         <div class="row">
             <div class="col-12">
                 <h3 class="section-title text-center">Đội ngũ bác sĩ - Nơi tinh hoa hội tụ</h3>
-                <p class="doctors-decs text-center">
-                    Đội ngũ chuyên gia, bác sĩ của Trung tâm có trình độ chuyên môn cao, phục vụ khám chữa bệnh
-                    tận tình và luôn đề cao y đức của người thầy thuốc với bệnh nhân.
-                </p>
+                <p class="doctors-decs text-center" id="text-doi-ngu-bac-si-trang-chu"></p>
             </div>
             <div class="col-12">
-                <div class="doctors-carousel">
-                    <div class="doctor-item">
+                <div class="doctors-carousel" id="doctors-carousel">
+                    <div class="doctor-item d-none" id="doctor-item-temp">
                         <div class="doctor-img">
-                            <img src="file/dynamic/home/bac-si-tung-150x150.jpg" alt="">
+                            <img src="" alt="" class="doctor-item-img">
                         </div>
                         <div class="doctor-text">
-                            <h3 class="doctor-name text-center">Bùi thanh tùng</h3>
-                            <strong class="d-block text-center">Bác sĩ</strong>
-                            <p class="text-center">Từng là bác sĩ YHCT của BV quân y 121 Cần Thơ</p>
-                        </div>
-                    </div>
-                    <div class="doctor-item">
-                        <div class="doctor-img">
-                            <img src="file/dynamic/home/bac-si-tung-150x150.jpg" alt="">
-                        </div>
-                        <div class="doctor-text">
-                            <h3 class="doctor-name text-center">Bùi thanh tùng</h3>
-                            <strong class="d-block text-center">Bác sĩ</strong>
-                            <p class="text-center">Từng là bác sĩ YHCT của BV quân y 121 Cần Thơ</p>
-                        </div>
-                    </div>
-                    <div class="doctor-item">
-                        <div class="doctor-img">
-                            <img src="file/dynamic/home/bac-si-tung-150x150.jpg" alt="">
-                        </div>
-                        <div class="doctor-text">
-                            <h3 class="doctor-name text-center">Bùi thanh tùng</h3>
-                            <strong class="d-block text-center">Bác sĩ</strong>
-                            <p class="text-center">Từng là bác sĩ YHCT của BV quân y 121 Cần Thơ</p>
-                        </div>
-                    </div>
-                    <div class="doctor-item">
-                        <div class="doctor-img">
-                            <img src="file/dynamic/home/bac-si-tung-150x150.jpg" alt="">
-                        </div>
-                        <div class="doctor-text">
-                            <h3 class="doctor-name text-center">Bùi thanh tùng</h3>
-                            <strong class="d-block text-center">Bác sĩ</strong>
-                            <p class="text-center">Từng là bác sĩ YHCT của BV quân y 121 Cần Thơ</p>
-                        </div>
-                    </div>
-                    <div class="doctor-item">
-                        <div class="doctor-img">
-                            <img src="file/dynamic/home/bac-si-tung-150x150.jpg" alt="">
-                        </div>
-                        <div class="doctor-text">
-                            <h3 class="doctor-name text-center">Bùi thanh tùng</h3>
-                            <strong class="d-block text-center">Bác sĩ</strong>
-                            <p class="text-center">Từng là bác sĩ YHCT của BV quân y 121 Cần Thơ</p>
+                            <h3 class="doctor-name text-center doctor-item-name"></h3>
+                            <strong class="d-block text-center doctor-item-position"></strong>
+                            <p class="text-center doctor-item-des"></p>
                         </div>
                     </div>
                 </div>
@@ -214,130 +172,41 @@
             </div>
         </div>
     </div>
-    <div class="container product-wrapper">
-        <div class="row">
+    <div class="container product-wrapper d-none" id="list-product-temp" data-product-type="">
+        <div class="row" >
             <div class="col-12 mb-5">
                 <div class="col-inner">
                     <div class="inner-item">
-                        <h3><a href=""><img src="file/icon/icon-bai-thuoc.png" alt=""> <span>Sản phẩm bán
-                                            chạy</span></a></h3>
+                        <h3>
+                            <a href="" class="lp-product-type-link">
+                                <img src="" alt="" class="lp-product-type-img">
+                                <span class="lp-product-type-name"></span>
+                            </a>
+                        </h3>
                         <div class="see-more">
-                            <a href="">Xem thêm</a>
+                            <a href="" class="lp-product-type-link">Xem thêm</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-5">
-                <a href="" class="product">
+            <div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-5 product-temp d-none" id="product-temp">
+                <a href="" class="product product-link">
                     <div class="product-inner">
                         <div class="product__img">
-                            <img src="file/dynamic/home/product1.jpg" alt="">
-                            <div class="product__promo">
-                                <div class="promo-sale">
-                                    <span>-18%</span>
-                                </div>
-                                <div class="promo-gift">
-
-                                </div>
+                            <img src="" alt="" class="product-img">
+                            <div class="product__promo product-promo">
+                                <div class="promo-sale"></div>
+                                <div class="promo-gift" data-placement="bottom" data-toggle="tooltip"></div>
                             </div>
                         </div>
                         <div class="product__text">
-                                    <span class="d-block text-center product-name">
-                                        Quạt trần F-56MPG-GO F-56MPG-GO
-                                    </span>
+                            <span class="d-block text-center product-name"></span>
                             <div class="product-price text-center">
-                                <del>12.200.000 ₫</del>
-                                <span>12.000.000 ₫</span>
+                                <del></del>
+                                <span></span>
                             </div>
                             <div class="bt-add-cart text-center">
-                                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-5">
-                <a href="" class="product">
-                    <div class="product-inner">
-                        <div class="product__img">
-                            <img src="file/dynamic/home/product1.jpg" alt="">
-                            <div class="product__promo">
-                                <div class="promo-sale">
-                                    <span>-18%</span>
-                                </div>
-                                <div class="promo-gift">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product__text">
-                                    <span class="d-block text-center product-name">
-                                        Quạt trần F-56MPG-GO
-                                    </span>
-                            <div class="product-price text-center">
-                                <del>2.200.000 ₫</del>
-                                <span>2.000.000 ₫</span>
-                            </div>
-                            <div class="bt-add-cart text-center">
-                                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-5">
-                <a href="" class="product">
-                    <div class="product-inner">
-                        <div class="product__img">
-                            <img src="file/dynamic/home/product1.jpg" alt="">
-                            <div class="product__promo">
-                                <div class="promo-sale">
-                                    <span>-18%</span>
-                                </div>
-                                <div class="promo-gift">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product__text">
-                                    <span class="d-block text-center product-name">
-                                        Quạt trần F-56MPG-GO F-56MPG-GO
-                                    </span>
-                            <div class="product-price text-center">
-                                <del>2.200.000 ₫</del>
-                                <span>2.000.000 ₫</span>
-                            </div>
-                            <div class="bt-add-cart text-center">
-                                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-5">
-                <a href="" class="product">
-                    <div class="product-inner">
-                        <div class="product__img">
-                            <img src="file/dynamic/home/product1.jpg" alt="">
-                            <div class="product__promo">
-                                <div class="promo-sale">
-                                    <span>-18%</span>
-                                </div>
-                                <div class="promo-gift">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product__text">
-                                    <span class="d-block text-center product-name">
-                                        Quạt trần F-56MPG-GO
-                                    </span>
-                            <div class="product-price text-center">
-                                <del>2.200.000 ₫</del>
-                                <span>2.000.000 ₫</span>
-                            </div>
-                            <div class="bt-add-cart text-center">
-                                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
+                                <button type="button" class="btn btn-primary btn-add-cart">Thêm vào giỏ</button>
                             </div>
                         </div>
                     </div>
@@ -350,63 +219,59 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="section-title text-center">Tại sao nên chọn sản phẩm của chúng tôi</h3>
+                <h3 class="section-title text-center">Vì sao nên chọn sản phẩm của chúng tôi</h3>
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5  order-md-1">
-                <div class="lopHoc-text text-center">
-                    <img src="https://img.icons8.com/ios-filled/100/00676b/guarantee.png">
-                    <h3>Được Bộ Y Tế cấp phép hoạt động công khai</h3>
-                    <p>Với mỗi một môn học, học viên của Natalie CLASS đều được dạy từ căn bản, đi từ gốc rễ,
-                        giúp học viên
-                        hiểu được nguyên lý</p>
+                <div class="lopHoc-text text-center" id="vi-sao-1-1">
+                    <img src="" alt="">
+                    <h3 class="text-vi-sao"></h3>
+                    <p id="vi-sao-1-2"><span class="text-vi-sao"></span></p>
                 </div>
             </div>
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center  mb-5 order-md-2">
                 <div class="lopHoc-img multi-img">
-                    <div class="lh-img1">
-                        <img src="file/img/lha1.jpg" alt="">
+                    <div class="lh-img1" id="vi-sao-1-3">
+                        <img src="" alt="">
                     </div>
-                    <div class="lh-img2">
-                        <img src="file/img/lha2.jpg" alt="">
+                    <div class="lh-img2" id="vi-sao-1-4">
+                        <img src="" alt="">
                     </div>
-                    <div class="lh-img3">
-                        <img src="file/img/quynhNga.jpg" alt="">
+                    <div class="lh-img3" id="vi-sao-1-5">
+                        <img src="" alt="">
                     </div>
-                    <div class="lh-img4">
-                        <img src="file/img/lha5.jpg" alt="">
+                    <div class="lh-img4" id="vi-sao-1-6">
+                        <img src="" alt="">
                     </div>
-                    <div class="lh-img5">
-                        <img src="file/img/TNDV2.jpg" alt="">
+                    <div class="lh-img5" id="vi-sao-1-7">
+                        <img src="" alt="">
                     </div>
-                    <div class="lh-img6">
-                        <img src="file/img/hDT1.png" alt="">
+                    <div class="lh-img6" id="vi-sao-1-8">
+                        <img src="" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center  mb-5  order-md-4">
-                <div class="lopHoc-text text-center">
-                    <img src="https://img.icons8.com/ios-filled/100/00676b/diamond-care-1.png">
-                    <h3>Mang lại những dịch vụ tốt nhất cho khách hàng</h3>
-                    <p>Với mỗi một môn học, học viên của Natalie CLASS đều được dạy từ căn bản</p>
+                <div class="lopHoc-text text-center" id="vi-sao-2-1">
+                    <img src="" alt="">
+                    <h3 class="text-vi-sao"></h3>
+                    <p id="vi-sao-2-2"><span class="text-vi-sao"></span></p>
                 </div>
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center  mb-5  order-md-3">
-                <div class="lopHoc-img">
-                    <img src="file/img/lopHoc.jpg" alt="">
+                <div class="lopHoc-img" id="vi-sao-2-3">
+                    <img src="" alt="">
                 </div>
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5  order-md-5">
-                <div class="lopHoc-text text-center">
-                    <img src="https://img.icons8.com/ios-filled/100/00676b/physics-book.png">
-                    <h3>Bài thuốc gia truyền</h3>
-                    <p>Với mỗi một môn học, học viên của Natalie CLASS đều được dạy từ căn bản, đi từ gốc rễ,
-                        giúp học viên
-                        hiểu được nguyên lý</p>
+                <div class="lopHoc-text text-center" id="vi-sao-3-1">
+                    <img src="" alt="">
+                    <h3 class="text-vi-sao"></h3>
+                    <p id="vi-sao-3-2"><span class="text-vi-sao"></span></p>
                 </div>
             </div>
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center mb-5  order-md-6">
-                <div class="lopHoc-img">
-                    <img src="file/img/TNDV2.jpg" alt="">
+                <div class="lopHoc-img" id="vi-sao-3-3">
+                    <img src="" alt="">
                 </div>
             </div>
         </div>
@@ -419,19 +284,17 @@
                 <h3 class="section-title text-center">Khách hàng của chúng tôi</h3>
             </div>
             <div class="col-12">
-                <div class="customer-carousel">
-                    <div class="doctor-item">
+                <div class="customer-carousel" id="customer-carousel">
+                    <div class="doctor-item d-none" id="customer-item-temp">
                         <div class="doctor-img">
-                            <img src="file/dynamic/home/bac-si-tung-150x150.jpg" alt="">
+                            <img src="" alt="" class="customer-item-img">
                         </div>
                         <div class="doctor-text">
-                            <h3 class="doctor-name text-center">Bùi thanh tùng</h3>
-                            <p class="text-center">Từng là bác sĩ YHCT của BV quân y 121 Cần Thơ <br>
-                                Từng là bác sĩ YHCT của BV quân y 121 Cần Thơ <br>
-
-                            </p>
+                            <h3 class="doctor-name text-center customer-item-name"></h3>
+                            <p class="text-center customer-item-des"></p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
