@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<header>
-    <div class="container">
+<header class="d-flex align-items-center">
+    <div class="container ">
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 d-flex align-items-center">
                 <a href="trang-chu" class="logo-area">
                     <div class="logo-a__img">
                         <img src="https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/logo/logo-dong-y.png" alt="Đông Y Đỗ Mười">

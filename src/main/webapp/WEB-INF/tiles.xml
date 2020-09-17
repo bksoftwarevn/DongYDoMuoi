@@ -105,7 +105,7 @@
     <!--tai lieu y khoa-->
 
     <definition name="tai-lieu-y-khoa" extends="dang-ky-tu-van">
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/tai_lieu_y_khoa.jsp"/>
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/tai_lieu_y_khoa.jsp" cascade="true"/>
     </definition>
 
     <!--dat lich kham-->
