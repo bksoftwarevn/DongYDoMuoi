@@ -86,8 +86,12 @@
         <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/bai_thuoc.jsp" cascade="true"/>
     </definition>
 
+    <definition name="bai-thuoc-danh-muc" extends="dang-ky-tu-van">
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/bai_thuoc_danh_muc.jsp" cascade="true"/>
+    </definition>
+
     <definition name="chi-tiet-bai-thuoc" extends="dang-ky-tu-van">
-        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_bai-thuoc.jsp" cascade="true"/>
+        <put-attribute name="view-tt" value="/WEB-INF/bodyfragments/chi_tiet_bai_thuoc.jsp" cascade="true"/>
     </definition>
     <!--end bai thuoc-->
 

@@ -24,7 +24,6 @@
 
             <!-- right side -->
             <div class="col-12 col-md-4 col-lg-3 mt-5 mt-md-5">
-
                 <div class="row">
                     <%--===tong dai tu van===--%>
                     <div class="tinTuc__tdtv col-12 col-sm-5 col-md-12">
