@@ -9,12 +9,9 @@
         <div class="row">
             <div class="col-12">
                 <nav aria-label="breadcrumb ">
-                    <ol
-                            class="breadcrumb d-flex justify-content-center justify-content-md-start align-items-center">
-                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                        <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Category</li>
+                    <ol class="breadcrumb d-flex justify-content-center justify-content-md-start align-items-center">
+                        <li class="breadcrumb-item"><a href="trang-chu">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><span>Sản phẩm</span></li>
                     </ol>
                 </nav>
             </div>
@@ -119,8 +116,7 @@
                     <h3 class="pd-cs-title text-left">Chính sách của trung tâm</h3>
                     <ul>
                         <li> Cam kết hàng chính hãng</li>
-                        <li> Lời hứa thương hiệu <a href="#">(Xem thêm)</a></li>
-                        <li> Đổi trả hàng trong 15 ngày <a href="#">(Xem thêm)</a></li>
+                        <li> Đổi trả hàng trong 15 ngày</li>
                         <li> Giao hàng toàn quốc, nhận hàng trả tiền</li>
                         <li> Dược sĩ giỏi tư vấn trực tiếp</li>
                     </ul>
