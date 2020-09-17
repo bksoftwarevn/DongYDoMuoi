@@ -98,8 +98,8 @@
 
 
     <!--san pham-->
-    <definition name="san-pham" extends="base-layout">
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>
+    <definition name="danh-muc" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/danh_muc.jsp"/>
     </definition>
 
     <!--tai lieu y khoa-->
