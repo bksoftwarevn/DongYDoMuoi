@@ -169,22 +169,32 @@ public class MainController {
         return "lien-he";
     }
 
-
     @GetMapping(value = {"/dat-lich-kham"})
     public String datLichKham(HttpServletRequest request) {
         request.setAttribute("title", "Đặt lịch khám");
         return "dat-lich-kham";
     }
 
-
-
-
-    @GetMapping(value = {"/san-pham"})
-    public String sanPham(HttpServletRequest request) {
-        request.setAttribute("title", "Sản phẩm");
-        return "san-pham";
+    @GetMapping(value = {"/danh-muc"})
+    public String danhMuc(HttpServletRequest request) {
+        try {
+            int root = Integer.parseInt(request.getParameter("root"));
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(productService)
+                    .uri("api/v1/public/".concat(root == 1 ? "product-types/" : "categorys/")+ request.getParameter("id")));
+            if(jsonObject != null) {
+                String valImage = jsonObject.get("image").toString();
+                String valTitle = jsonObject.get("name").toString();
+                String valDescription = jsonObject.get("description").toString();
+                request.setAttribute("image", viewSrcFile(valImage));
+                request.setAttribute("title", valTitle);
+                request.setAttribute("description", valDescription);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "danh-muc";
     }
-
 
     @GetMapping(value = {"/tai-lieu-y-khoa"})
     public String taiLieuYKhoa(HttpServletRequest request) {
