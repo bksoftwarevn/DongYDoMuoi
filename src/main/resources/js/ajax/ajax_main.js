@@ -316,7 +316,7 @@ function viewAliasCategory(alias, id) {
 }
 
 function viewAliasProduct(alias, id) {
-    return viewAlias(alias, `san-pham?id=${id}`);
+    return viewAlias(alias, `chi-tiet-san-pham?id=${id}`);
 }
 
 function viewAliasConstruction(alias, id) {

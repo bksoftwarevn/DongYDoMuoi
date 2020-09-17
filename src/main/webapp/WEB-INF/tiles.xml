@@ -97,9 +97,14 @@
 
 
 
-    <!--san pham-->
+    <!--danh-muc-->
     <definition name="danh-muc" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/danh_muc.jsp"/>
+    </definition>
+
+    <!--san pham-->
+    <definition name="chi-tiet-san-pham" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>
     </definition>
 
     <!--tai lieu y khoa-->

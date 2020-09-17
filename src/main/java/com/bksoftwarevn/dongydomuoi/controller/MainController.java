@@ -196,6 +196,31 @@ public class MainController {
         return "danh-muc";
     }
 
+    @GetMapping(value = {"/chi-tiet-san-pham"})
+    public String sanPham(HttpServletRequest request) {
+        try {
+            JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
+                    .service(productService)
+                    .uri("api/v1/public/products/" + request.getParameter("id"))
+                    .param("cost", "false")
+                    .param("property", "false")
+                    .param("file", "false")
+                    .param("category", "false")
+                    .param("promotion", "false")
+                    .param("statistic", "false"));
+            jsonObject = (JSONObject) jsonObject.get("product");
+            String valImage = jsonObject.get("image").toString();
+            String valTitle = jsonObject.get("name").toString();
+            String valDescription = jsonObject.get("preview").toString();
+            request.setAttribute("image", viewSrcFile(valImage));
+            request.setAttribute("title", valTitle);
+            request.setAttribute("description", valDescription);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "chi-tiet-san-pham";
+    }
+
     @GetMapping(value = {"/tai-lieu-y-khoa"})
     public String taiLieuYKhoa(HttpServletRequest request) {
         request.setAttribute("title", "Tài liệu y khoa");
