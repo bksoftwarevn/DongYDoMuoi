@@ -842,6 +842,19 @@ main {
   height: 72px;
 }
 /* Customer  */
+/*xem them*/
+.see-more-button img {
+  width: 57px;
+  height: 18px;
+  object-fit: cover;
+}
+.place-order button.btn-loading img {
+  width: 62px;
+  height: 18px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+/*xem them*/
 /* footer */
 footer {
 }

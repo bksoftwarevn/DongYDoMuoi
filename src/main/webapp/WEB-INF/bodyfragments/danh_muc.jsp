@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="css/product.css">
 <script src="ajax/pages/page_danh_muc.js"></script>
 <div class="d-none" id="page-id" data-page-id="<%=request.getParameter("id")%>"></div>
 <div class="d-none" id="root-category" data-root-category="<%=request.getParameter("root")%>"></div>
