@@ -6,6 +6,14 @@
 .catalog a {
   display: block;
   border: 3px solid var(--main-color);
+  min-height: 85px;
+  max-height: 86px;
+}
+.catalog a img{
+  min-height: 79px;
+  max-height: 80px;
+  object-fit: cover;
+  border: 2px solid #fff;
 }
 /* construction */
 .h-construction{
