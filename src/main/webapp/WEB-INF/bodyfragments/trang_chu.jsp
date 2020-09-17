@@ -48,23 +48,23 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3 mt-4">
-                <a href="">
-                    <img src="file/dynamic/home/catalog1.jpg" alt="">
+                <a href="" id="img-gioi-thieu-1">
+                    <img src="" alt="">
                 </a>
             </div>
             <div class="col-12 col-md-3 mt-4">
-                <a href="">
-                    <img src="file/dynamic/home/catalog2.jpg" alt="">
+                <a href="" id="img-gioi-thieu-2">
+                    <img src="" alt="">
                 </a>
             </div>
             <div class="col-12 col-md-3 mt-4">
-                <a href="">
-                    <img src="file/dynamic/home/catalog3.jpg" alt="">
+                <a href="" id="img-gioi-thieu-3">
+                    <img src="" alt="">
                 </a>
             </div>
             <div class="col-12 col-md-3 mt-4">
-                <a href="">
-                    <img src="file/dynamic/home/catalog3.jpg" alt="">
+                <a href="" id="img-gioi-thieu-4">
+                    <img src="" alt="">
                 </a>
             </div>
         </div>
@@ -74,69 +74,62 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8">
-                <h3 class="text-center text-md-left">Giới thiệu thuốc ĐỖ MƯỜI</h3>
-                <p class="intro-slogan text-center text-md-left">Nâng tầm giá trị dân tộc</p>
-                <p class="intro-content text-justify text-md-left">Trải qua nhiều năm xây dựng và trưởng thành,
-                    vượt qua bao khó khăn với nhiều thăng trầm, Trung tâm Nghiên cứu & Ứng dụng Thuốc dân tộc đã
-                    không ngừng lớn mạnh vươn lên khẳng định mình trở thành địa chỉ tin cậy và uy tín hàng đầu
-                    trong công tác nghiên cứu – khám chữa bệnh – chăm sóc sức khỏe cho cộng đồng.</p>
-                <p class="intro-bt text-center text-md-left mb-5"><a href="" class="btn btn-main-co btn-lg">Tìm
+                <h3 class="text-center text-md-left" id="gioi-thieu-1"><span class="text-gioi-thieu"></span></h3>
+                <p class="intro-slogan text-center text-md-left" id="gioi-thieu-2"><span class="text-gioi-thieu"></span></p>
+                <p class="intro-content text-justify text-md-left" id="gioi-thieu-3"><span class="text-gioi-thieu"></span></p>
+                <p class="intro-bt text-center text-md-left mb-5"><a href="gioi-thieu" class="btn btn-main-co btn-lg">Tìm
                     hiểu thêm</a></p>
             </div>
             <div class="col-12 col-lg-4">
                 <div class="row mr-0 ml-0">
                     <div class="col-6 intro-item">
-                        <div class="intro-inner">
+                        <div class="intro-inner" id="gioi-thieu-4">
                             <div class="intro-icon text-center">
-                                <a href="">
-                                    <img src="file/icon/icon-nghien-cuu (1).png" alt="">
+                                <a href="" class="href-gioi-thieu">
+                                    <img src="" alt="" class="">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
-                                <a href="">
-                                    Công trình <br> Nghiên cứu
+                                <a href="" class="href-gioi-thieu text-gioi-thieu">
                                 </a>
                             </h2>
                         </div>
                     </div>
                     <div class="col-6 intro-item">
-                        <div class="intro-inner">
+                        <div class="intro-inner" id="gioi-thieu-5">
                             <div class="intro-icon text-center">
-                                <a href="">
-                                    <img src="file/icon/icon-kham-chua-benh.png" alt="">
+                                <a href="" class="href-gioi-thieu">
+                                    <img src="" alt="" class="">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
-                                <a href="">
-                                    Khám <br> Chữa bệnh
+                                <a href="" class="href-gioi-thieu text-gioi-thieu">
                                 </a>
                             </h2>
                         </div>
                     </div>
                     <div class="col-6 intro-item">
-                        <div class="intro-inner">
+                        <div class="intro-inner" id="gioi-thieu-6">
                             <div class="intro-icon text-center">
-                                <a href="">
-                                    <img src="file/icon/icon-bai-thuoc.png" alt="">
+                                <a href="" class="href-gioi-thieu">
+                                    <img src="" alt="" class="">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
-                                <a href="">
-                                    Bài thuốc<br> hay
+                                <a href="" class="href-gioi-thieu text-gioi-thieu">
                                 </a>
                             </h2>
                         </div>
                     </div>
                     <div class="col-6 intro-item">
-                        <div class="intro-inner">
+                        <div class="intro-inner" id="gioi-thieu-7">
                             <div class="intro-icon text-center">
-                                <a href="">
-                                    <img src="file/icon/icon-vat-ly-tri-lieu.png" alt="">
+                                <a href="" class="href-gioi-thieu">
+                                    <img src="" alt="" class="">
                                 </a>
                             </div>
                             <h2 class="intro-heading text-center">
-                                <a href="">
-                                    Vật lí <br> Trị liệu
+                                <a href="" class="href-gioi-thieu text-gioi-thieu">
                                 </a>
                             </h2>
                         </div>
