@@ -32,7 +32,7 @@
             <div class="col-12">
                 <div class="clearfix">
                     <img src="" alt="" id="img-catalog">
-                    <h1 id="name-catalog">Công tắc ổ cắm</h1>
+                    <h1 id="name-catalog"></h1>
                     <div class="term-description">
                         <div id="des-catalog"></div>
                         </p>

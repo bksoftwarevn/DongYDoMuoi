@@ -52,6 +52,7 @@ function viewInforCategoryPage(img, name, desc) {
     let imgCatalog = $("#img-catalog");
     imgCatalog.attr("src", viewSrcFile(img));
     imgCatalog.attr("alt", viewField(name));
+    $("#name-catalog").html(viewField(name));
     $("#des-catalog").html(desc);
 }
 
