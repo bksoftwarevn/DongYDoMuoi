@@ -204,7 +204,7 @@ function viewViSaoChon() {
                     data.map((data1, index1) => {
                         let elementViSao = $(`#vi-sao-${index + 1}-${index1 + 1}`);
                         elementViSao.find(".text-vi-sao").html(viewField(data1.text));
-                        let imgElement = elementViSao.find("img");
+                        let imgElement = elementViSao.find("img").removeClass("d-none");
                         imgElement.attr("src", viewSrcFile(data1.url));
                         imgElement.attr("alt", viewField(data1.text));
                     })

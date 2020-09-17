@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="js/home.js"></script>
 <script src="https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/ajax_edu_service.js"></script>
+<script src="https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/ajax_marketing_service.js"></script>
 <script src="ajax/pages/page_trang_chu.js"></script>
 <!-- ============= Custom Css ============= -->
 <link rel="stylesheet" href="css/trang_chu.css">
