@@ -94,12 +94,19 @@
 
     <!--    =======================end Article=====================-->
 
-
-
-
     <!--san pham-->
     <definition name="danh-muc" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/danh_muc.jsp"/>
+    </definition>
+
+    <!--Gio hang-->
+    <definition name="gio-hang" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/gio_hang.jsp"/>
+    </definition>
+
+    <!--thanh toan-->
+    <definition name="thanh-toan" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/thanh_toan.jsp"/>
     </definition>
 
     <!--tai lieu y khoa-->

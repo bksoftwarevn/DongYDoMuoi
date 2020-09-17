@@ -202,6 +202,17 @@ public class MainController {
         return "tai-lieu-y-khoa";
     }
 
+    @GetMapping(value = {"/gio-hang"})
+    public String gioHang(HttpServletRequest request) {
+        request.setAttribute("title", "Giỏ Hàng");
+        return "gio-hang";
+    }
+    @GetMapping(value = {"/thanh-toan"})
+    public String thanhToan(HttpServletRequest request) {
+        request.setAttribute("title", "Thanh Toán");
+        return "thanh-toan";
+    }
+
     @GetMapping(value = {"/robots.txt"})
     private void robot(HttpServletResponse response) throws IOException {
         try {
