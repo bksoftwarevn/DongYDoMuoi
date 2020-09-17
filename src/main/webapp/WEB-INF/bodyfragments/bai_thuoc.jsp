@@ -19,7 +19,7 @@
             <div class="col-12 col-md-5">
                 <div class="tinTuc__element--img article__element--img">
                     <img src="https://thietbidienpanasonic.com/wp-content/uploads/2018/08/bep-dien-tu-panasonic-chat-luong-300x163.jpg"
-                         alt="">
+                         >
                     <div
                             class="tinTuc__element--time article__element d-flex flex-column justify-content-center align-items-center">
                         <div class="tinTuc__element--date article__element--date">28</div>
