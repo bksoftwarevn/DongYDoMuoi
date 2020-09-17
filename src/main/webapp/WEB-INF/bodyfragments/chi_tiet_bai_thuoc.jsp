@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: viethoang
-  Date: 9/7/2020
-  Time: 8:14 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="css/chi_tiet_tuyen_dung.css">
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=305080727577465&autoLogAppEvents=1" nonce="AI6nZZbG"></script>
@@ -40,7 +34,7 @@
 
             </div>
         </div>
-        <div class="col-12 text-left align-text-bottom  mt-3 mt-md-5">
+        <div class="col-12 text-left align-text-bottom  mt-3 mt-md-5" id="tag-article">
             <h4 class="text-uppercase font-weight-bold">Mục liên quan</h4>
             <div class="text-left tinTuc__title--tagsTinTuc"
                  style="font-size: 12px; color: #007bff;"></div>

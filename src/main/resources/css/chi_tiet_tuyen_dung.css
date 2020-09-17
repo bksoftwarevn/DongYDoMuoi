@@ -3,6 +3,7 @@
 .tinTuc__title{
   font-size: var(--font-h3-size-mobile);
   padding-top: 30px;
+  color: var(--main-color);
 
 }
 .tinTuc__title--tags{
