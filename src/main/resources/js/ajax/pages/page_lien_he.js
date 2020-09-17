@@ -7,8 +7,15 @@ $(function () {
     textName = $("#input-name");
     textPhoneNumber = $("#input-phone");
     textEmail = $("#input-email");
+    let branchListSelector = $('#branches-list');
+
+
+
     InfoAdmin.fillInfo();
     InfoCustomer.init();
+
+    initBranchInfo(branchListSelector).then();
+
 });
 let InfoAdmin = {
     getCompanyInfo: async function () {
@@ -84,6 +91,7 @@ let InfoSystemAPI = {
         return ajaxPost(uri, data);
     }
 };
+
 function checkThongTinTen() {
     let rs = false;
     let size = 50;
@@ -113,5 +121,48 @@ function checkThongTinEmail() {
         hiddenError(textEmail);
     } else viewError(textEmail, INVALID_EMAIL);
     return {check: rs, val: val};
+}
+
+
+function BranchInfoController() {
+
+    this.getListBranchInfo = function () {
+        return ajaxGet(`infor-system-service/api/v1/public/branches/company/${COMPANY_ID}`);
+    };
+
+    this.generateBranchTemplate = function (data) {
+        let template = $('#hiddenBranchElement').clone().removeAttr('id').removeClass('d-none');
+        template.find('.branches__element--name').text(data.name);
+        template.find('h4').text(data.address);
+        template.find('p').html(`<span>Điện thoại: </span><a href="tel:${data.phone}">${data.phone}</a>`);
+        template.find('.branches__element--map iframe').attr('src', data.map);
+        return template;
+    };
+
+    this.mappingBranchInfo = function (listData, branchListSelector, callback) {
+        let listTemplate;
+
+        listTemplate = listData.map(rs1 => {
+            let template = '';
+            if(callback){
+                template = callback(rs1);
+            }
+            return template;
+        });
+
+
+        $('#branches-list').append(listTemplate);
+    }
+}
+
+async function initBranchInfo(branchListSelector){
+    let branchInfoController = new BranchInfoController();
+    let listData;
+    let listTemplateData;
+    listData = await branchInfoController.getListBranchInfo()
+        .then(rs=>rs)
+        .catch(err=>console.log(err));
+    branchInfoController.mappingBranchInfo(listData, branchListSelector, branchInfoController.generateBranchTemplate);
+
 }
 
