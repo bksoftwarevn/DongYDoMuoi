@@ -1486,6 +1486,17 @@ span.product-name {
 }
 
 /* ==========Popup css========== */
+/*chi tiet bai viet*/
+.tinTuc__contentTinTuc {
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.tinTuc__contentTinTuc img{
+  width: initial;
+}
+/*chi tiet bai viet*/
+
 @media screen and (max-width: 471px) {
   .product-price {
     height: 48px;
