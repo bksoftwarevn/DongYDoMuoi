@@ -12,16 +12,14 @@
     <div class="row d-none" id="hidden-chiTietTinTuc">
         <div class="col-12">
             <div class="tinTuc__element--img">
-                <img class="img-fluid" src="https://thietbidienpanasonic.com/wp-content/uploads/2018/08/bep-dien-tu-panasonic-chat-luong-1024x555.jpg"
-                     >
+                <img class="img-fluid" src="https://thietbidienpanasonic.com/wp-content/uploads/2018/08/bep-dien-tu-panasonic-chat-luong-1024x555.jpg">
             </div>
         </div>
         <div class="col-12 d-flex justify-content-between mt-3">
             <p class="tinTuc__title--autho text-left text-uppercase align-items-center font-weight-bold">được đăng
                 vào <a href="">28 tháng Tám</a> bởi Panasonic Việt Nam</p>
-            <div class="" style="font-size: 1.1rem;">
-                <span class="">Like</span>
-                <span class="">Share</span>
+            <div class="pdc-sharefb d-flex justify-content-center align-self-center">
+                <div class="fb-like" data-href="<%=request.getAttribute("url")%>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
             </div>
         </div>
         <div class="col-12">
@@ -42,8 +40,6 @@
         </div>
     </div>
     <!--end hidden element -->
-
-
     <div class="row tinTuc__comment mt-3 mt-md-5">
         <div class="fb-comments" data-order-by="reverse_time" data-href="https://haphatsmarthome.com/chi-tiet-tin-tuc?id=<%=request.getParameter("id")%>" data-numposts="5" data-width="100%"></div>
     </div>

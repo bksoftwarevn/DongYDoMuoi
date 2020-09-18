@@ -4,7 +4,6 @@ let tag;
 let size = 6;
 let idCate = 0;
 $(function () {
-    hiddenNavHero();
     localStorage.setItem('isDetail', 'false');
     let url = new URL(location.href);
     tag = url.searchParams.get('tag');
@@ -72,7 +71,7 @@ let ArticleController = {
             if (rs.totalPages < 2) {
                 $("#btn-showMoreNews").hide();
             } else {
-                $("#btn-showMoreNews").show();
+                $("#btn-showMoreNews").show().removeClass('d-none');
             }
             rs = rs.content;
             ArticleController.mappingElement(rs, endpointDetail);

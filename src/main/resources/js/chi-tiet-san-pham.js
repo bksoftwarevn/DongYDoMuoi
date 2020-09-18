@@ -1,4 +1,38 @@
 $(document).ready(function () {
+    // $("input[type='number']").inputSpinner();
+});
+
+function runProductRelatedCarousel() {
+    $(".product-related-carousel").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+        ],
+    });
+}
+
+function runListProductSlick() {
+    $("#gal1").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+    });
+}
+
+function runZoomImgProduct() {
     $("#zoom_03").elevateZoom({
         zoomType: 'inner',
         cursor: 'crosshair',
@@ -30,29 +64,4 @@ $(document).ready(function () {
             // loadingIcon: "http://www.elevateweb.co.uk/spinner.gif",
         });
     })
-    $("input[type='number']").inputSpinner();
-    $("#gal1").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        dots: false,
-    });
-    $(".product-related-carousel").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 3,
-                },
-            },
-        ],
-    });
-});
+}
