@@ -70,6 +70,7 @@ function getInforProduct() {
                         costInforProduct.find("span").text(viewPriceVND(cost - minusPrice));
                     }
                     if(quantity > 0) {
+                        groupInputQuantity.removeClass("d-none");
                         inputQuantity.attr("max", viewField(quantity));
                         btnBuyNow.attr("onclick", `addToCartHasNumber(${id}, ${quantity})`);
                     } else {
@@ -116,7 +117,7 @@ function viewPropertiesProduct(properties, quantity) {
             return trClone;
         })
     }
-    propertiesInforProduct.html(listTr);
+    propertiesInforProduct.html(listTr).removeClass("d-none");
 }
 
 function viewProductRelated(idCategory, idProduct) {

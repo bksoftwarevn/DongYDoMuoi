@@ -1,12 +1,14 @@
 package com.bksoftwarevn.dongydomuoi;
 
 import com.bksoftwarevn.dongydomuoi.filter.TransactionFilterAll;
+import com.bksoftwarevn.dongydomuoi.json.RestBuilder;
 import com.bksoftwarevn.dongydomuoi.service_impl.RestService;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,9 +22,16 @@ import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 @SpringBootApplication
 public class DongYDoMuoi implements CommandLineRunner {
+
+    @Value("${companyId}")
+    private String companyId;
 
     @Autowired
     private RestService restService;
@@ -54,22 +63,22 @@ public class DongYDoMuoi implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        TimerTask timerTask = new TimerTask() {
-//            @Override
-//            public void run() {
-//                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
-//                System.out.println("----Write SiteMap XML: "+formatter.format(new Date()));
-//                try {
-//                    Object o = restService.callPut(RestBuilder.build()
-//                            .service("infor-system-service")
-//                            .uri("api/v1/private/site-map/2"));
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        };
-//        Timer timer = new Timer();
-//        timer.schedule(timerTask, 0,24*60*60*1000);
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+                System.out.println("----Write SiteMap XML: "+formatter.format(new Date()));
+                try {
+                    Object o = restService.callPut(RestBuilder.build()
+                            .service("infor-system-service")
+                            .uri("api/v1/private/site-map/"+companyId));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(timerTask, 0,24*60*60*1000);
     }
 
     @Bean

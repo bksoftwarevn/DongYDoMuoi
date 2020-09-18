@@ -191,7 +191,7 @@ function viewToastBuyProduct() {
     productFilter(COMPANY_ID, 0, null, 0, "", 0, "sold", false, 1, 4).then(rs => {
         if(rs) {
             rs = rs.content;
-            let listNameProduct = rs.map(data => "Vừa mua " + data.name);
+            let listNameProduct = rs.map(data => "Vừa Mua " + data.name);
             activeToast(listNameProduct);
         }
     }).catch(err => {

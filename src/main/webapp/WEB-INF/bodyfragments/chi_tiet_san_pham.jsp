@@ -57,7 +57,7 @@
                         <span>Đơn vị:</span>
                         <span id="unit-infor-product"></span>
                     </p>
-                    <div class="pdc-inbut" id="group-input-quantity">
+                    <div class="pdc-inbut d-none" id="group-input-quantity">
                         <div class="bt-gr">
                             <label>Ngày sử dụng:</label>
                             <input type="number" value="0" min="1" max="" step="1" id="input-date-use"/>
@@ -70,7 +70,7 @@
                     </div>
                     <p class="pdc-parameter">Thông số kĩ thuật:</p>
                     <table class="table table-striped pdc-parameter-detail">
-                        <tbody id="properties-infor-product">
+                        <tbody id="properties-infor-product" class="d-none">
                         <tr>
                             <th></th>
                             <td></td>

@@ -26,8 +26,21 @@ public class RestService {
     @Value("${urlCDN}")
     private String urlCDN;
 
+    @Value("${urlCDNConfig}")
+    private String urlCDNConfig;
+
     public String callGetFile(String uri) {
         String url = urlCDN.concat(uri);
+        try {
+            return template.getForObject(url, String.class);
+        } catch (Exception ex) {
+            log.error("rest call get file " + url + " err {0}", ex);
+            throw ex;
+        }
+    }
+
+    public String callGetFileConfig(String uri) {
+        String url = urlCDNConfig.concat(uri);
         try {
             return template.getForObject(url, String.class);
         } catch (Exception ex) {

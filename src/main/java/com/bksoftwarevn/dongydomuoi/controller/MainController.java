@@ -257,7 +257,7 @@ public class MainController {
         try {
             response.getWriter().println("# we use BKSoftwarevn as our ecommerce platform");
             response.getWriter().println();
-            response.getWriter().println(restService.callGetFile("robot.txt"));
+            response.getWriter().println(restService.callGetFileConfig("robot.txt"));
         } catch (Exception ex) {
             ex.printStackTrace();
             response.sendRedirect("404");
@@ -272,7 +272,7 @@ public class MainController {
                 response.sendRedirect("trang-chu");
             } else {
                 response.setContentType("application/xml");
-                response.getWriter().println(restService.callGetFile(fileName));
+                response.getWriter().println(restService.callGetFileConfig(fileName));
             }
         } catch (Exception ex) {
             response.sendRedirect("404");
