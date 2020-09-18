@@ -1,12 +1,28 @@
 var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
-const TIME_RUN_TOAST = 3000;
+const TIME_RUN_TOAST = 6000;
 const COMPANY_ID = 3 ;
 const NGHIEN_CUU_TYPE = 1;
 const TUYEN_DUNG_TYPE = 2;
 const GIOI_THIEU_TYPE = 3;
 const BAI_THUOC_TYPE = 4;
+const LIST_CUSTOMER = [
+    "Ông Nguyễn Bình Minh - 0915770xxx",
+    "Bà Lê Thanh Hương - 0942458xxx",
+    "Ông Trần Đình Khang - 0822222xxx" ,
+    "Bà Nguyễn Thị Kim Anh - 0898873xxx",
+    "Ông Phạm Văn Hải - 0968.11.0xxx",
+    "Ông Nguyễn Hữu Đức - 0974575xxx",
+    "Bà Vũ Tuyết Trinh - 0978409xxx",
+    "Ông Nguyễn Nhật Quang - 098641xxx",
+    "Bà Nguyễn Thị Oanh - 0985884xxx",
+    "Ông Thân Quang Khoát - 0972441xxx",
+    "Ông Nguyễn Kiêm Hiếu - 0918209xxx",
+    "Ông Nguyễn Hồng Phương - 0986619xxx",
+    "Ông Trần Việt Trung - 0972095xxx",
+    "Ông Nguyễn Việt Hoàng - 0972085xxx"
+];
 function requireJs(listUrl) {
     if(listUrl && listUrl.length > 0) {
         let scriptNone = $("#script-none");
@@ -528,7 +544,7 @@ function runToast(text, heading) {
         showHideTransition: 'plain',
         icon: 'success',
         allowToastClose: true,
-        hideAfter: 10000,
+        hideAfter: 3000,
         stack: 5,
         position: { bottom: 85, left: 10 },
         textAlign: 'left',
@@ -539,4 +555,10 @@ function runToast(text, heading) {
         textAlign: 'left',
         loader: false,
     });
+}
+
+function activeToast(listProductName) {
+    setInterval(function (){
+        runToast(listProductName[Math.floor(Math.random() * listProductName.length)],LIST_CUSTOMER[Math.floor(Math.random() * LIST_CUSTOMER.length)]);
+    },TIME_RUN_TOAST);
 }
