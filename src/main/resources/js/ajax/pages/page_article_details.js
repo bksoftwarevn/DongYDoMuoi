@@ -9,7 +9,6 @@ $(function () {
         .then(rs=>{
             let article = {...Article};
             article.data = rs;
-            console.log(rs);
             article.endpoint = articleObject.endpoint;
             article.endpointDetail = articleObject.endpointDetail;
             let articleDetailController = {...ArticleDetailController};
