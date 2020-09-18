@@ -50,7 +50,7 @@
     </div>
     <div class="tinTuc__btnShowMoreNews row justify-content-center mt-3 mt-md-5">
         <div class="col-12 text-center" >
-            <button class="btn btn-primary" id="btn-showMoreNews">Xem Thêm</button>
+            <button class="btn btn-primary d-none" id="btn-showMoreNews">Xem Thêm</button>
         </div>
     </div>
 
