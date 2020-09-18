@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="css/lien_he.css">
 <script src="ajax/pages/page_lien_he.js"></script>
 <script src="ajax/model/ajax_bk_cdn.js"></script>
-<script src="js/lienhe.js"></script>
+<%--<script src="js/lienhe.js"></script>--%>
 
 <section id="sectionLienHe" class="lienHe">
     <div class="container">
