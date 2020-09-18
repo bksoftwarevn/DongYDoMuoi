@@ -88,17 +88,20 @@ function clickDatLichKham()  {
     if(cTen && cSDT && cDiaChi && cNote && cDate && cTime) {
         loadingBtn();
         let valBacSi = selectBS.val();
+        vDate = vDate.trim().split("/").reverse().join("-");
+        let longDate = new Date(vDate + " " + vTime).getTime();
         valBacSi = valBacSi.length === 0 ? null: valBacSi;
         let appointment = {
             address: vDiaChi,
-            gender: $("input[name='gender']").val(),
+            gender: $("input[name='sex']").val(),
             name: vTen,
             personId: valBacSi,
             phone: vSDT,
             reason: vNote,
             status: 1,
-            time: 0
+            time: longDate
         }
+        console.log(appointment);
         appointmentUpload(appointment, selectCoSo.val()).then(rs => {
             if(rs) {
                 console.log(rs);
