@@ -1,7 +1,7 @@
 var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
-const TIME_RUN_TOAST = 3000;
+const TIME_RUN_TOAST = 6000;
 const COMPANY_ID = 3 ;
 const NGHIEN_CUU_TYPE = 1;
 const TUYEN_DUNG_TYPE = 2;
@@ -20,7 +20,8 @@ const LIST_CUSTOMER = [
     "Ông Thân Quang Khoát - 0972441xxx",
     "Ông Nguyễn Kiêm Hiếu - 0918209xxx",
     "Ông Nguyễn Hồng Phương - 0986619xxx",
-    "Ông Trần Việt Trung - 0972095xxx"
+    "Ông Trần Việt Trung - 0972095xxx",
+    "Ông Nguyễn Việt Hoàng - 0972085xxx"
 ];
 function requireJs(listUrl) {
     if(listUrl && listUrl.length > 0) {
@@ -543,7 +544,7 @@ function runToast(text, heading) {
         showHideTransition: 'plain',
         icon: 'success',
         allowToastClose: true,
-        hideAfter: 10000,
+        hideAfter: 3000,
         stack: 5,
         position: { bottom: 85, left: 10 },
         textAlign: 'left',
