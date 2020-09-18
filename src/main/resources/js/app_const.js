@@ -50,7 +50,13 @@ const INVALID_EMAIL= "Định dạng email chưa chính xác";
 const INVALID_ADDRESS= "Định dạng địa chỉ chưa chính xác";
 const INVALID_PROVINCE= "Định dạng tình thành phố chưa chính xác";
 const INVALID_TEXTAREA_NOTE= "Vui lòng nhập ghi chú dưới 255 ký tự";
+const INVALID_INPUT_VALUE= "Vui lòng vui để trống";
 //END_REGEX
+
+//APPOINTMENT
+const DANGER_UPLOAD_APPOINTMENT  = "Đặt lịch khám thất bại";
+const SUCCESS_UPLOAD_APPOINTMENT  = "Đặt lịch khám thành công";
+//END_APPOINTMENT
 
 //BILL
 const DANGER_CREATE_BILL = "Không thể tạo được hóa đơn. Vui lòng thử lại!";
@@ -63,6 +69,10 @@ const DANGER_LOAD_FOOTER_NEW = "Lỗi tải thông tin tin tức";
 //INFO_COMAPNY
 const DANGER_INFO_FOOTER= "Lỗi tải bài viết thông tin công ty";
 //END_INFO_COMPANY
+
+//BRANCH_COMPANY
+const DANGER_BRANCH_COMPANY= "Lỗi tải thông tin chi nhánh công ty";
+//END_BRANCH_COMAPNY
 
 //FILE_CATEGORY
 const DANGER_FILE_CATEGORY_FOOTER = "Lỗi tải tài liệu báo giá";

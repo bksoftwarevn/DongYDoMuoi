@@ -1,5 +1,11 @@
 const URL_API_INFOR_SYSTEM_SERIVCE = 'infor-system-service/api/';
 
+//APPOINTMENT_API
+function appointmentUpload(appointment, branchId) {
+    return ajaxPost(`${URL_API_INFOR_SYSTEM_SERIVCE}v1/public/appointment/branch/${branchId}`, appointment)
+}
+//END_APPOINTMENT_API
+
 //BANK_API
 function bankFindByCompany(id) {
     return ajaxGet(`${URL_API_INFOR_SYSTEM_SERIVCE}v1/public/banks/company/${id}`);
