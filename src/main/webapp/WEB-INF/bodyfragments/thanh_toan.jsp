@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="css/thanh_toan.css">
 <script src="plugins/clipboard/clipboard.min.js"></script>
-<script src="js/thanh_toan.js"></script>
 <script src="https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/ajax_marketing_service.js"></script>
 <script src="https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/ajax_bill_service.js"></script>
-<script src="ajax/page/ajax_page_thanh_toan.js"></script>
+<script src="ajax/pages/page_thanh_toan.js"></script>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">

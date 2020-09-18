@@ -7,8 +7,9 @@ $(function () {
     textPhoneNumber = $("#input-phone");
     textEmail = $("#input-email");
     let branchListSelector = $('#branches-list');
-    InfoAdmin.fillInfo();
+    // InfoAdmin.fillInfo();
     InfoCustomer.init();
+    // initCompanyInfo(branchListSelector).then();
     initBranchInfo(branchListSelector).then();
 });
 let InfoAdmin = {
@@ -118,6 +119,43 @@ function checkThongTinEmail() {
 }
 
 
+//thong tin cong ty
+function CompanyInfoController(){
+    this.getCompanyInfo = function () {
+        return companyFindById(COMPANY_ID);
+    };
+
+    this.generateCompanyTemplate = function (data) {
+        let template = $('#hiddenBranchElement').clone().removeAttr('id').removeClass('d-none');
+        template.find('.branches__element--name').text(data.nameCompany);
+        template.find('h4').text(data.address);
+        template.find('p').html(`<span>Điện thoại: </span><a href="tel:${data.phone}">${data.phone}</a>`);
+        template.find('.branches__element--map iframe').attr('src', data.map);
+        return template;
+    };
+
+    this.mappingCompanyInfo = function (data, branchListSelector, callback) {
+        let listTemplate;
+        console.log(data);
+        if(callback){
+            listTemplate = callback(data);
+        }
+        $('#branches-list').prepend(listTemplate);
+    }
+}
+async function initCompanyInfo(companyListSelector){
+    let companyInfoController = new CompanyInfoController();
+    let listData;
+    listData = await companyInfoController.getCompanyInfo()
+        .then(rs=>rs)
+        .catch(err=>console.log(err));
+    companyInfoController.mappingCompanyInfo(listData, companyListSelector, companyInfoController.generateCompanyTemplate);
+
+}
+// end thong tin cong ty
+
+//thong tin chi nhanh
+
 function BranchInfoController() {
     this.getListBranchInfo = function () {
         return ajaxGet(`infor-system-service/api/v1/public/branches/company/${COMPANY_ID}`);
@@ -153,3 +191,4 @@ async function initBranchInfo(branchListSelector){
 
 }
 
+//thong tin chi nhanh

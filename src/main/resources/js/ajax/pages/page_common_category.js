@@ -42,7 +42,7 @@ let TemplateInfo = {
     generateInfoBranchTemplate: function(data, selector){
         let template = $(selector).clone().removeAttr('id').removeClass('d-none');
         template.find('.branch-name').text(data.name);
-        template.find('branch-phone').html(`<a href="tel:${data.phone}">SĐT: ${data.phone}</a>`);
+        template.find('.branch-phone').html(`<a href="tel:${data.phone}">SĐT: ${data.phone}</a>`);
         return template;
     }
 }
