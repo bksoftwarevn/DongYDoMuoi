@@ -61,10 +61,9 @@ function checkNote() {
 function checkDate() {
     let rs = false;
     let val = datePicker.val();
-    if (val.length > 0) {
+    if (val.length > 0 && regexDate(val)) {
         rs = true;
-        hiddenError(datePicker);
-    } else viewError(datePicker,INVALID_INPUT_VALUE);
+    } else {alertDanger(INVALID_INPUT_DATE)}
     return {check : rs, val: val};
 }
 
@@ -73,8 +72,7 @@ function checkTime() {
     let val = timePicker.val();
     if (val.length > 0) {
         rs = true;
-        hiddenError(timePicker);
-    } else viewError(timePicker,INVALID_INPUT_VALUE);
+    } else {{alertDanger(INVALID_INPUT_TIME)}}
     return {check : rs, val: val};
 }
 
@@ -86,36 +84,41 @@ function clickDatLichKham()  {
     let {check: cDate, val: vDate} = checkDate();
     let {check: cTime, val: vTime} = checkTime();
     if(cTen && cSDT && cDiaChi && cNote && cDate && cTime) {
-        loadingBtn();
         let valBacSi = selectBS.val();
         vDate = vDate.trim().split("/").reverse().join("-");
         let longDate = new Date(vDate + " " + vTime).getTime();
-        valBacSi = valBacSi.length === 0 ? null: valBacSi;
-        let appointment = {
-            address: vDiaChi,
-            gender: $("input[name='sex']").val(),
-            name: vTen,
-            personId: valBacSi,
-            phone: vSDT,
-            reason: vNote,
-            status: 1,
-            time: longDate
-        }
-        console.log(appointment);
-        appointmentUpload(appointment, selectCoSo.val()).then(rs => {
-            if(rs) {
-                console.log(rs);
-                textName.val("");
-                textPhone.val("");
-                textAddress.val("");
-                textareaReason.val("");
+        let longDateNow = new Date().getTime();
+        if(longDate > longDateNow) {
+            loadingBtn();
+            valBacSi = valBacSi.length === 0 ? null: valBacSi;
+            let appointment = {
+                address: vDiaChi,
+                gender: $("input[name='sex']").val(),
+                name: vTen,
+                personId: valBacSi,
+                phone: vSDT,
+                reason: vNote,
+                status: 1,
+                time: longDate
             }
-        }).catch(err => {
-            console.log(err);
-            alertDanger(DANGER_UPLOAD_APPOINTMENT);
-        }).finally(() => {
-            hiddenLoadingBtn();
-        })
+            appointmentUpload(appointment, selectCoSo.val()).then(rs => {
+                if(rs) {
+                    console.log(rs);
+                    textName.val("");
+                    textPhone.val("");
+                    textAddress.val("");
+                    textareaReason.val("");
+                }
+                alertSuccess(SUCCESS_UPLOAD_APPOINTMENT);
+            }).catch(err => {
+                console.log(err);
+                alertDanger(DANGER_UPLOAD_APPOINTMENT);
+            }).finally(() => {
+                hiddenLoadingBtn();
+            })
+        } else {
+            alertInfo(INVALID_INPUT_VALUE_DATE);
+        }
     }
 }
 

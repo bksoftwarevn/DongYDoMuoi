@@ -50,7 +50,9 @@ const INVALID_EMAIL= "Định dạng email chưa chính xác";
 const INVALID_ADDRESS= "Định dạng địa chỉ chưa chính xác";
 const INVALID_PROVINCE= "Định dạng tình thành phố chưa chính xác";
 const INVALID_TEXTAREA_NOTE= "Vui lòng nhập ghi chú dưới 255 ký tự";
-const INVALID_INPUT_VALUE= "Vui lòng vui để trống";
+const INVALID_INPUT_VALUE_DATE= "Vui lòng đặt lịch sau giờ hiện tại";
+const INVALID_INPUT_DATE= "Vui lòng nhập đúng định dạng ngày";
+const INVALID_INPUT_TIME= "Vui lòng nhập đúng định dạng giờ";
 //END_REGEX
 
 //APPOINTMENT
