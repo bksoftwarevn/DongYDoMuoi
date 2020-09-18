@@ -120,6 +120,29 @@ p {
   box-shadow: none !important;
 }
 
+
+.jq-toast-heading{
+  font-weight: 700 !important;
+  margin-top: 7px !important;
+}
+.jq-toast-single {
+  color: #5f5f5f;
+}
+.jq-toast-single {
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+.jq-icon-success {
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-image: url(https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/logo/logo-dong-y.png)!important;
+}
+.jq-has-icon{
+  padding: 10px 10px 10px 55px !important;
+}
+
 /*Header */
 header {
   background-color: #eee;

@@ -525,17 +525,18 @@ function runToast(text, heading) {
     $.toast({
         text: text,
         heading: heading,
-        showHideTransition: 'fade',
+        showHideTransition: 'plain',
+        icon: 'success',
         allowToastClose: true,
-        hideAfter: 3000,
+        hideAfter: 10000,
         stack: 5,
-        position: 'bottom-left',
+        position: { bottom: 85, left: 10 },
         textAlign: 'left',
         loader: true,
         loaderBg: '#fff',
-        bgColor: '#ffffff',  // Background color of the toast
-        textColor: '#000',  // Text color of the toast
-        textAlign: 'left',  // Text alignment i.e. left, right or center
-        loader: false,  // Whether to show loader or not. True by default
+        bgColor: '#fff',
+        textColor: '#404040',
+        textAlign: 'left',
+        loader: false,
     });
 }
