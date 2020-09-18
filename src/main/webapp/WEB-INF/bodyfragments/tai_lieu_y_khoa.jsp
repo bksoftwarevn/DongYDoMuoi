@@ -25,7 +25,7 @@
                 <th scope="row" class="text-center">1</th>
                 <td class="tlyk-name text-left"><a href="" target="_blank"><img src="icon/folder_page.png">Nghiên cứu
                     ứng dụng xương nhân tạo, máu tuỷ xương tự thân điều trị khớp giả xương dài chi dưới</a></td>
-                <td class="tlyk-btdl"><a download href=""><img src="https://img.icons8.com/color/48/000000/pdf.png">Tải
+                <td class="tlyk-btdl text-center"><a download href=""><img src="https://img.icons8.com/color/48/000000/pdf.png">Tải
                     về</a></td>
             </tr>
             </tbody>
