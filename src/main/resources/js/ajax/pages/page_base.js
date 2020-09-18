@@ -29,9 +29,7 @@ $(function () {
     viewNumberCart();
     keypressEnterInputSearchProduct();
     viewNavAndSelectCategorySearch();
-    setInterval(function (){
-        runToast("Vừa mua sản phẩm B","Bà A - 0966186xxx");
-    },TIME_RUN_TOAST);
+    viewToastBuyProduct();
 })
 
 //HEADER
@@ -187,4 +185,17 @@ function viewChildsCategory(listChild, idCategory) {
             viewChildsCategory(data.childs, data.id);
         })
     }
+}
+
+function viewToastBuyProduct() {
+    productFilter(COMPANY_ID, 0, null, 0, "", 0, "sold", false, 1, 4).then(rs => {
+        if(rs) {
+            rs = rs.content;
+            let listNameProduct = rs.map(data => "Vừa mua " + data.name);
+            activeToast(listNameProduct);
+        }
+    }).catch(err => {
+        console.log(err);
+        alertDanger(DANGER_LIST_PRODUCT_SOLD);
+    })
 }
