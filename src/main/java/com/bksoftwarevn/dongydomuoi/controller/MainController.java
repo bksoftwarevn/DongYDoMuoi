@@ -202,8 +202,14 @@ public class MainController {
         return "danh-muc";
     }
 
-    @GetMapping(value = {"/chi-tiet-san-pham"})
+    @GetMapping(value = {"/san-pham"})
     public String sanPham(HttpServletRequest request) {
+        request.setAttribute("title", "Sản phẩm");
+        return "san-pham";
+    }
+
+    @GetMapping(value = {"/chi-tiet-san-pham"})
+    public String chiTietSanPham(HttpServletRequest request) {
         try {
             JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
                     .service(productService)
