@@ -29,6 +29,9 @@ $(function () {
     viewNumberCart();
     keypressEnterInputSearchProduct();
     viewNavAndSelectCategorySearch();
+    setInterval(function (){
+        runToast("Vừa mua sản phẩm B","Bà A - 0966186xxx");
+    },TIME_RUN_TOAST);
 })
 
 //HEADER

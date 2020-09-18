@@ -1,6 +1,7 @@
 var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
+const TIME_RUN_TOAST = 3000;
 const COMPANY_ID = 3 ;
 const NGHIEN_CUU_TYPE = 1;
 const TUYEN_DUNG_TYPE = 2;
@@ -518,4 +519,23 @@ function getListProduct(rs) {
         productClone.removeAttr("id");
         return productClone;
     })
+}
+
+function runToast(text, heading) {
+    $.toast({
+        text: text,
+        heading: heading,
+        showHideTransition: 'fade',
+        allowToastClose: true,
+        hideAfter: 3000,
+        stack: 5,
+        position: 'bottom-left',
+        textAlign: 'left',
+        loader: true,
+        loaderBg: '#fff',
+        bgColor: '#ffffff',  // Background color of the toast
+        textColor: '#000',  // Text color of the toast
+        textAlign: 'left',  // Text alignment i.e. left, right or center
+        loader: false,  // Whether to show loader or not. True by default
+    });
 }
