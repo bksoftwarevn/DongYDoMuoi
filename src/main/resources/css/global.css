@@ -104,6 +104,10 @@ p {
 .alert {
   z-index: 3000 !important;
 }
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: var(--main-color-2) !important;
+  border-color:  var(--main-color-2) !important;
+}
 .btn-primary {
   color: #fff;
   background-color: var(--main-color);
