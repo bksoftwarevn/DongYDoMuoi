@@ -103,7 +103,6 @@ function clickDatLichKham()  {
             }
             appointmentUpload(appointment, selectCoSo.val()).then(rs => {
                 if(rs) {
-                    console.log(rs);
                     textName.val("");
                     textPhone.val("");
                     textAddress.val("");

@@ -1,7 +1,7 @@
 var FILE_PREFIX = 'https://cdn.bksoftwarevn.com/resources/micro-upload/dong-y/';
 const PREFIX_LIBRARY_JS = 'https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/';
 const TIME_ALTER = 3000;
-const TIME_RUN_TOAST = 6000;
+const TIME_RUN_TOAST = 30000;
 const COMPANY_ID = 3 ;
 const NGHIEN_CUU_TYPE = 1;
 const TUYEN_DUNG_TYPE = 2;
@@ -531,6 +531,9 @@ function getListProduct(rs) {
             productPriceClone.find("del").remove();
             productPriceClone.find("span").text("Liên Hệ");
             productClone.find(".btn-add-cart").prop('disabled', true);
+        }
+        if(data.quantity <= 0) {
+            productClone.find(".btn-add-cart").prop('disabled', true).html("Liên Hệ");
         }
         productClone.removeAttr("id");
         return productClone;
