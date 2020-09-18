@@ -24,43 +24,14 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-detail__img">
-                    <img src="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/hgQD0kFdLx/4919_0_ong_nhua_gan_xoan_hdpe_ospen.jpg"
-                         id="zoom_03"
-                         data-zoom-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/hgQD0kFdLx/4919_0_ong_nhua_gan_xoan_hdpe_ospen.jpg">
+                    <img src="" id="zoom_03" data-zoom-image="" class="img-product">
                     <div class="p-promo" id="pro-infor-product">
                         <div class="promo-sale"></div>
                         <div class="promo-gift" data-placement="bottom" data-toggle="tooltip"></div>
                     </div>
-                    <div id="gal1">
-                        <a href="#"
-                           data-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200911/hHvvXu9ONz/7168_0_b__ng_____n_led_maxlight_7w.jpg"
-                           data-zoom-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200911/hHvvXu9ONz/7168_0_b__ng_____n_led_maxlight_7w.jpg">
-                            <img id="img_01"
-                                 src="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200911/hHvvXu9ONz/7168_0_b__ng_____n_led_maxlight_7w.jpg" />
-                        </a>
-                        <a href="#"
-                           data-image="https://www.thuocdantoc.org/wp-content/uploads/2019/10/San-pham-detox-ogreen-300x225.jpeg"
-                           data-zoom-image="https://www.thuocdantoc.org/wp-content/uploads/2019/10/San-pham-detox-ogreen-300x225.jpeg">
-                            <img id="img_02"
-                                 src="https://www.thuocdantoc.org/wp-content/uploads/2019/10/San-pham-detox-ogreen-300x225.jpeg" />
-                        </a>
-                        <a href="#"
-                           data-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200911/swr7zhJgCY/7337_0_su_polymer.jpg"
-                           data-zoom-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200911/swr7zhJgCY/7337_0_su_polymer.jpg">
-                            <img id="img_03"
-                                 src="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200911/swr7zhJgCY/7337_0_su_polymer.jpg" />
-                        </a>
-                        <a href="#"
-                           data-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/Ricu6hWBHz/5143_.jpg"
-                           data-zoom-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/Ricu6hWBHz/5143_.jpg">
-                            <img id="img_04"
-                                 src="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/Ricu6hWBHz/5143_.jpg" />
-                        </a>
-                        <a href="#"
-                           data-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/HsXyaxImUE/5116_.jpg"
-                           data-zoom-image="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/HsXyaxImUE/5116_.jpg">
-                            <img id="img_05"
-                                 src="https://cdn.bksoftwarevn.com/resources/micro-upload/avhh/20200910/HsXyaxImUE/5116_.jpg" />
+                    <div id="gal1" class="list-img-product">
+                        <a href="#" data-image="" data-zoom-image="" class="temp-list-img-product d-none">
+                            <img src="" alt=""/>
                         </a>
                     </div>
                 </div>
@@ -86,8 +57,8 @@
                         <span>Đơn vị:</span>
                         <span id="unit-infor-product"></span>
                     </p>
-                    <div class="pdc-inbut">
-                        <div class="bt-gr" id="group-input-quantity">
+                    <div class="pdc-inbut" id="group-input-quantity">
+                        <div class="bt-gr">
                             <label>Ngày sử dụng:</label>
                             <input type="number" value="0" min="1" max="" step="1" id="input-date-use"/>
                         </div>

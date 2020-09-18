@@ -1,4 +1,4 @@
-var imgInforProduct, hrefImgInforProduct, promotionInforProduct, nameInforProduct, previewInforProduct , costInforProduct, statusInforProduct, propertiesInforProduct, quantityInforProduct, modelInforProduct, introductionInforProduct, catalogInforProduct, inputQuantity, btnBuyNow, listProductRelated, productTemp, unitInforProduct, inputDateUse;
+var imgInforProduct, hrefImgInforProduct, promotionInforProduct, nameInforProduct, previewInforProduct , costInforProduct, statusInforProduct, propertiesInforProduct, quantityInforProduct, modelInforProduct, introductionInforProduct, catalogInforProduct, inputQuantity, btnBuyNow, listProductRelated, productTemp, unitInforProduct, inputDateUse, groupInputQuantity, listImgProduct, tempListImgProduct;
 let idPage = null;
 $(function() {
     idPage = getPageId();
@@ -20,22 +20,28 @@ $(function() {
     previewInforProduct = $("#preview-infor-product");
     unitInforProduct = $("#unit-infor-product");
     inputDateUse = $("#input-date-use");
+    groupInputQuantity = $("#group-input-quantity");
+    listImgProduct = $(".list-img-product");
+    tempListImgProduct = $(".temp-list-img-product");
 
     getInforProduct();
 })
 
 function getInforProduct() {
     if(idPage) {
-        productFindById(idPage, true, true, false, true, true, false).then(rs => {
+        productFindById(idPage, true, true, true, true, true, false).then(rs => {
             if(rs) {
                 statisticProductIncreseView(idPage);
                 let {id, image, name, quantity, model, introduction, preview} = rs.product;
                 let {cost} = rs.costs[0];
                 let {properties, promotion} = rs;
+                let {files} = rs;
                 let {id: idCategory, attachment} = rs.categories[0];
                 imgInforProduct.attr("src", viewSrcFile(image));
+                imgInforProduct.attr("data-zoom-image", viewSrcFile(image));
                 imgInforProduct.attr("alt", viewField(name));
                 hrefImgInforProduct.attr("href", viewSrcFile(image));
+                viewListImgProduct(files, name);
                 unitInforProduct.html(viewField(rs.costs[0].unit));
                 let {minusPrice, viewTitleGift, viewDiscount} = viewPromotionCostProduct(promotion, cost);
                 //promo
@@ -66,15 +72,15 @@ function getInforProduct() {
                         inputQuantity.attr("max", viewField(quantity));
                         btnBuyNow.attr("onclick", `addToCartHasNumber(${id}, ${quantity})`);
                     } else {
-                        inputQuantity.before("<strong>Sản phẩm tạm thời hết hàng vui lòng liên hệ để biết thêm thông tin! </strong>")
-                        inputQuantity.remove();
+                        groupInputQuantity.before("<strong>Sản phẩm tạm thời hết hàng vui lòng liên hệ để biết thêm thông tin! </strong>")
+                        groupInputQuantity.remove();
                         btnBuyNow.remove();
                     }
                 } else {
                     costInforProduct.find("del").remove();
                     costInforProduct.find("span").remove();
-                    inputQuantity.before("<strong>Liên hệ để mua sản phẩm</strong>")
-                    inputQuantity.remove();
+                    groupInputQuantity.before("<strong>Liên hệ để mua sản phẩm</strong>")
+                    groupInputQuantity.remove();
                     btnBuyNow.remove();
                 }
                 //end cost
@@ -146,7 +152,23 @@ function handelInputQuantityAndDateView(value, quantity) {
     inputDateUse.change(function (){
         let val = inputDateUse.val();
         let residual = val % value;
-        let raw = val - residual;
-        inputQuantity.val(residual > 0 ? raw : );
+        let raw = (val - residual) / value;
+        inputQuantity.val(residual > 0 ? raw + 1 : raw);
     })
+}
+
+function viewListImgProduct(files) {
+    let view = "";
+    view = files.map(data => {
+        let cloneListImgProduct = tempListImgProduct.clone().removeClass("d-none");
+        cloneListImgProduct.attr("data-image", viewSrcFile(data.url));
+        cloneListImgProduct.attr("data-zoom-image", viewSrcFile(data.url));
+        let img = cloneListImgProduct.find("img");
+        img.attr("src", viewSrcFile(data.url));
+        img.attr("alt", viewField(data.name));
+        return cloneListImgProduct;
+    })
+    listImgProduct.html(view);
+    runListProductSlick();
+    runZoomImgProduct();
 }
