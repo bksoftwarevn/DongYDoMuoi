@@ -36,7 +36,7 @@
 .col-inner .inner-item h3 {
     margin: 0;
     display: block;
-    padding: 10px 15px 7px 10px;
+    padding: 10px 15px 7px 15px;
     background-color: var(--main-color);
     white-space: nowrap;
     z-index: 1;
@@ -47,6 +47,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-size: 1.4rem;
 }
 .col-inner .inner-item h3 a img{
     width: 25px;

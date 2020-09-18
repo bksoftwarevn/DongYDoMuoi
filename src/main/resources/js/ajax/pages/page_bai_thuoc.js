@@ -41,8 +41,6 @@ let CategoryController = {
                                     medicine.endpointDetail = 'chi-tiet-bai-thuoc';
                                     return MedicineTemplate.generateMedicineElementTemplate(medicine, medicineElementTemplate);
                                 });
-                            }else{
-                                templateMedicine = '';
                             }
                             return templateMedicine;
 
@@ -71,14 +69,16 @@ let MedicineTemplate = {
 let CategoryMedicineTemplate = {
     generateCategoryTemplate: function (category = {...Category}, selectorTemplate, callback) {
         let template = $(selectorTemplate).clone().removeAttr('id').removeClass('d-none');
-        template.find('h3').html(`<a href="${category.endpoint}?id=${category.data.id}"><img src="file/icon/icon-bai-thuoc.png" alt=""> <span>${category.data.name}</span></a>`);
+        template.find('h3').html(`<a href="${category.endpoint}?id=${category.data.id}"> <span>${category.data.name}</span></a>`);
         template.find('.category__link').html(`<a href="${category.endpoint}?id=${category.data.id}">Xem thêm</a>`);
         if(callback){
             let listTemplateMedicine = callback();
-            if(listTemplateMedicine.length !== 0){
+            if(typeof listTemplateMedicine !== 'undefined'){
                 listTemplateMedicine.forEach(el=>{
                     template.append(el);
                 })
+            }else{
+                template = ``;
             }
 
         }
