@@ -4,4 +4,5 @@ $(document).ready(function () {
     });
     $("#time-picker").timepicker({
     });
+    runInputSpinner();
 });

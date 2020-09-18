@@ -104,6 +104,10 @@ p {
 .alert {
   z-index: 3000 !important;
 }
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: var(--main-color-2) !important;
+  border-color:  var(--main-color-2) !important;
+}
 .btn-primary {
   color: #fff;
   background-color: var(--main-color);
@@ -1427,6 +1431,9 @@ span.product-name {
   margin-right: 5px;
   margin-top: 3px;
 }
+.tlyk-btdl{
+  text-align: center;
+}
 .tlyk-btdl a{
   display: flex;
   align-items: center;
@@ -1745,4 +1752,8 @@ span.product-name {
     transform: scale(1.5, 1.5);
     opacity: 0;
   }
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-color: #dc3545 !important;
 }

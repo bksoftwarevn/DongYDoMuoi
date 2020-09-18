@@ -2,8 +2,10 @@
 <link rel="stylesheet" href="plugins/gijgo-combined-1.9.13/css/gijgo.min.css">
 <link rel="stylesheet" href="css/datlichkham.css">
 <script src="plugins/gijgo-combined-1.9.13/js/gijgo.min.js"></script>
+<script src="plugins/inputSpinnerBootstrap/bootstrap-input-spinner.js"></script>
 <script src="js/datlichkham.js"></script>
-
+<script src="https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/ajax_edu_service.js"></script>
+<script src="ajax/pages/page_dat_lich_kham.js"></script>
 <section class="dat-lich">
     <div class="container">
         <div class="row">
@@ -14,9 +16,9 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="name">Họ Tên (*)</label>
-                            <input type="text" class="form-control" id="name" placeholder="Họ và tên">
-                            <div class="valid-feedback">
+                            <label>Họ Tên <span class="text-danger">(*)</span></label>
+                            <input type="text" class="form-control" id="text-name" placeholder="Họ và tên">
+                            <div class="invalid-feedback">
                                 Looks good!
                             </div>
                         </div>
@@ -24,59 +26,47 @@
                     <div class="col-12 col-md-6">
                         <div class="row">
                             <div class="col-6">
-                                <div class="form-group">
-                                    <label for="age">Tuổi (*)</label>
-                                    <input type="text" class="form-control" id="age" placeholder="Tuổi">
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                <div class="form-group dlk-age">
+                                    <label>Tuổi <span class="text-danger">(*)</span></label>
+                                    <input type="number" class="form-control" value="1" min="1" max="150" step="1" id="text-age" placeholder="Tuổi"/>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <label class="d-block">Giới tính</label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="sex"
-                                           id="male" value="option1">
-                                    <label class="form-check-label" for="male">Nam</label>
+                                            value="true" checked>
+                                    <label class="form-check-label">Nam</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex"
-                                           id="female" value="option2">
-                                    <label class="form-check-label" for="female">Nữ</label>
+                                    <input class="form-check-input" type="radio" name="sex" value="false">
+                                    <label class="form-check-label">Nữ</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="phone">Số điện thoại (*)</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Số điện thoại">
-                            <div class="valid-feedback">
+                            <label>Số điện thoại <span class="text-danger">(*)</span></label>
+                            <input type="text" class="form-control" id="text-phone" placeholder="Số điện thoại">
+                            <div class="invalid-feedback">
                                 Looks good!
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="coso">Chọn cơ sở</label>
-                            <select class="form-control" id="coso">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <label>Chọn cơ sở</label>
+                            <select class="form-control" id="select-coso">
+                                <option class="d-none"></option>
                             </select>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="bs">Chọn bác sĩ</label>
-                            <select class="form-control" id="bs">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <label>Chọn bác sĩ</label>
+                            <select class="form-control" id="select-bs">
+                                <option value="">Tùy chọn</option>
                             </select>
                         </div>
                     </div>
@@ -86,6 +76,9 @@
                                 <label for="date-picker">Ngày đặt lịch</label>
                                 <div class="form-group ficon">
                                     <input type="text" class="form-control" id="date-picker">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
                                     <div class="input-group-append d-none">
                                                 <span class="input-group-text" id="basic-addon1"><i
                                                         class="far fa-calendar-check"></i></span>
@@ -96,6 +89,9 @@
                                 <label for="time-picker">Chọn giờ</label>
                                 <div class="form-group ficon">
                                     <input type="text" class="form-control" id="time-picker">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
                                     <div class="input-group-append d-none">
                                                 <span class="input-group-text" id="basic-addon2"><i
                                                         class="far fa-clock"></i></span>
@@ -106,28 +102,28 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="address">Địa chỉ liên hệ</label>
-                            <input type="text" class="form-control" id="address" placeholder="Địa chỉ">
+                            <label>Địa chỉ liên hệ</label>
+                            <input type="text" class="form-control" id="text-address" placeholder="Địa chỉ">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="reason">Lí do khám</label>
-                            <textarea name="" id="reason" cols="30" rows="10"></textarea>
+                            <label>Lí do khám</label>
+                            <textarea name="" id="textarea-reason" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 text-center text-md-left">
-                        <button class="btn-primary btn-lg">Đặt lịch khám</button>
+                        <button class="btn-primary btn-lg btn-loading" onclick="clickDatLichKham()">
+                            <img src="file/icon/gifdot.gif" alt="gif-load" class="d-none">
+                            <span class="d-block">Đặt lịch khám</span>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-4 mt-5 m-md-0">
                 <div class="widget widget-calendar">
                     <h3 class="widget-title text-center">Lịch làm việc</h3>
-                    <div class="widget-content">
-                        <p>Trung tâm làm việc tất cả các ngày trong tuần</p>
-                        <p><strong>Sáng</strong>: 8h00 - 12h00</p>
-                        <p><strong>Chiều</strong>: 13h30 - 17h30</p>
+                    <div class="widget-content text-working-time">
                     </div>
                 </div>
             </div>
