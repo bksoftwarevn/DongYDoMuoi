@@ -26,9 +26,9 @@
                     <div class="col-12 col-md-6">
                         <div class="row">
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group dlk-age">
                                     <label>Tuổi <span class="text-danger">(*)</span></label>
-                                    <input type="number" class="form-control" value="1" min="1" max="150" step="1" id="text-age"/>
+                                    <input type="number" class="form-control" value="1" min="1" max="150" step="1" id="text-age" placeholder="Tuổi"/>
                                 </div>
                             </div>
                             <div class="col-6">
