@@ -17,12 +17,16 @@
 
 }
 .tinTuc__title--autho{
-  font-size: 1.1rem;
-  color: var(--text-gray2);
+  font-size: 1rem;
+  color: var(--text-gray1);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
 
+  align-items: center;
+}
+.tinTuc__previewTinTuc{
+  margin-top: 10px;
 }
 .tinTuc__element--img{
 }
