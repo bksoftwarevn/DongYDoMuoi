@@ -25,9 +25,8 @@
         <div class="col-12 d-flex justify-content-between mt-3">
             <p class="tinTuc__title--autho text-left text-uppercase align-items-center font-weight-bold">được đăng
                 vào <a href="">28 tháng Tám</a> bởi Panasonic Việt Nam</p>
-            <div class="" style="font-size: 1.1rem;">
-                <span class="">Like</span>
-                <span class="">Share</span>
+            <div class="pdc-sharefb">
+                <div class="fb-like" data-href="<%=request.getAttribute("url")%>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
             </div>
         </div>
         <div class="col-12">
