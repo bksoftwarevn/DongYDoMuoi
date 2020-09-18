@@ -2,12 +2,13 @@ let currentPage = 1;
 let sizePage = 6;
 let tag;
 let size = 6;
+let idCate = 0;
 $(function () {
     hiddenNavHero();
-
     localStorage.setItem('isDetail', 'false');
     let url = new URL(location.href);
     tag = url.searchParams.get('tag');
+    idCate = url.searchParams.get('id')?url.searchParams.get('id'): 0;
     if (tag !== null) {
         tag = StringHandle.formatBlank(tag);
     } else {
@@ -35,7 +36,7 @@ function formatTitle(type){
 let ArticleController = {
     getListTinTuc: async function (page, size, type) {
         let rs;
-        rs = await Promise.resolve(newsFilter(0, COMPANY_ID, type, "", tag, page, size))
+        rs = await Promise.resolve(newsFilter(idCate, COMPANY_ID, type, "", tag, page, size))
             .then((rs1) => rs1)
             .catch((err) => console.log(err));
         return rs;
@@ -45,7 +46,7 @@ let ArticleController = {
         let tinTucElement = $("#tinTuc__element").clone();
         tinTucElement.removeClass("d-none").removeAttr("id");
         // tinTucElement.attr('href', `chi-tiet-tin-tuc?id=${object.id}`);
-        tinTucElement.attr('href', `${endpointDetail}?id=${object.id}`);
+        tinTucElement.attr('href', `${viewAliasArticle(object.alias, endpointDetail, object.id)}`);
         tinTucElement
             .find("div.tinTuc__element--img img")
             .attr("src", viewSrcFile(object.image));
