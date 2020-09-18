@@ -6,7 +6,6 @@ $(function(){
 
     let isDoc = localStorage.getItem('isDoc') === 'true';
     if(isDoc){
-        console.log('isDoc');
         $('.tinTuc__title h2').text(`Tài liệu y khoa`);
     }
 });
