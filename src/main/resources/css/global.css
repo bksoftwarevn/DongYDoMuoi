@@ -1427,6 +1427,9 @@ span.product-name {
   margin-right: 5px;
   margin-top: 3px;
 }
+.tlyk-btdl{
+  text-align: center;
+}
 .tlyk-btdl a{
   display: flex;
   align-items: center;
