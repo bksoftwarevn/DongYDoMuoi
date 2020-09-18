@@ -295,6 +295,10 @@ async function handelCreateBill(coupon, status) {
             viewNumberCart();
             btnOrder.remove();
             btnCheckCoupon.remove();
+            let billDetails = rs.billDetails;
+            let listProductText = billDetails.map(data => data.productName + ", ").join("");
+            listProductText = listProductText.slice(0, listProductText.length - 3);
+            runToast(`Vừa mua ${listProductText}`, `${rs.bill.customerName} - ${rs.bill.customerPhone.slice(0, rs.bill.customerPhone.length - 4) + "xxx"}`);
             let view  = "";
             if(status === "2") {
                 view = `Tạo đơn hàng thành công vui lòng giữ liên lạc để nhận được hàng - Mã đơn hàng của bạn là : "<i id="bill-code">${rs.bill.code}</i>" 
