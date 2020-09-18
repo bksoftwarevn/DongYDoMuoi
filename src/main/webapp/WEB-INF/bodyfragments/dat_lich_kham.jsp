@@ -83,17 +83,17 @@
                     <div class="col-12 col-md-6">
                         <div class="row">
                             <div class="col-6">
-                                <label for="">Ngày đặt lịch</label>
+                                <label for="date-picker">Ngày đặt lịch</label>
                                 <div class="form-group ficon">
                                     <input type="text" class="form-control" id="date-picker">
                                     <div class="input-group-append d-none">
-                                                <span class="input-group-text" id="basic-addon2"><i
+                                                <span class="input-group-text" id="basic-addon1"><i
                                                         class="far fa-calendar-check"></i></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <label for="name">Chọn giờ</label>
+                                <label for="time-picker">Chọn giờ</label>
                                 <div class="form-group ficon">
                                     <input type="text" class="form-control" id="time-picker">
                                     <div class="input-group-append d-none">
@@ -112,16 +112,16 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="">Lí do khám</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <label for="reason">Lí do khám</label>
+                            <textarea name="" id="reason" cols="30" rows="10"></textarea>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 text-center text-md-left">
                         <button class="btn-primary btn-lg">Đặt lịch khám</button>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mt-5 m-md-0">
                 <div class="widget widget-calendar">
                     <h3 class="widget-title text-center">Lịch làm việc</h3>
                     <div class="widget-content">
