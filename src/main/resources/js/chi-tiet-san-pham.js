@@ -30,12 +30,15 @@ $(document).ready(function () {
             // loadingIcon: "http://www.elevateweb.co.uk/spinner.gif",
         });
     })
-    $("input[type='number']").inputSpinner();
+    // $("input[type='number']").inputSpinner();
     $("#gal1").slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         dots: false,
     });
+});
+
+function runProductRelatedCarousel() {
     $(".product-related-carousel").slick({
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -55,4 +58,4 @@ $(document).ready(function () {
             },
         ],
     });
-});
+}

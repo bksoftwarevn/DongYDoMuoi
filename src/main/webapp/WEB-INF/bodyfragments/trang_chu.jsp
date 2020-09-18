@@ -235,7 +235,7 @@
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5  order-md-1">
                 <div class="lopHoc-text text-center" id="vi-sao-1-1">
-                    <img src="" >
+                    <img src="" class="d-none">
                     <h3 class="text-vi-sao"></h3>
                     <p id="vi-sao-1-2"><span class="text-vi-sao"></span></p>
                 </div>
@@ -264,7 +264,7 @@
             </div>
             <div class="col-12 col-md-7 d-flex justify-content-center align-items-center  mb-5  order-md-4">
                 <div class="lopHoc-text text-center" id="vi-sao-2-1">
-                    <img src="" >
+                    <img src="" class="d-none">
                     <h3 class="text-vi-sao"></h3>
                     <p id="vi-sao-2-2"><span class="text-vi-sao"></span></p>
                 </div>

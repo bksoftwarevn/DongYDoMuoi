@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="css/gio_hang.css">
 <script src="plugins/inputSpinnerBootstrap/bootstrap-input-spinner.js"></script>
-<script src="js/gio_hang.js"></script>
-<script src="ajax/page/ajax_page_gio_hang.js"></script>
+<script src="ajax/pages/page_gio_hang.js"></script>
 <section class="cart">
     <div class="container">
         <div class="row">
