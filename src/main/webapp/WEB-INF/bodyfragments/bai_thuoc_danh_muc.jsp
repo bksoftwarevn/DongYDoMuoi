@@ -39,7 +39,7 @@
                         cao, giá thành phải chăng..</p>
                     <%--                    <p class="tinTuc__element--commentCount  text-uppercase">4 comments</p>--%>
                     <div class="tinTuc__element--showMoreBtn article__element--showMoreBtn d-flex d-md-none d-lg-flex">
-                        <button class="btn-showMore">Xem Thêm</button>
+                        <button class="btn-showMore">Chi Tiết</button>
                     </div>
                 </div>
             </div>
