@@ -114,6 +114,11 @@
     </definition>
     <!--Chi tiet san pham-->
     <definition name="chi-tiet-san-pham" extends="base-layout">
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/chi_tiet_san_pham.jsp"/>
+    </definition>
+
+    <!--san pham-->
+    <definition name="san-pham" extends="base-layout">
         <put-attribute name="body" value="/WEB-INF/bodyfragments/san_pham.jsp"/>
     </definition>
 

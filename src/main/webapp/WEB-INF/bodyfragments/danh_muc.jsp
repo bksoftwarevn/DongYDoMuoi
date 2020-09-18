@@ -11,7 +11,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb d-flex justify-content-center justify-content-md-start align-items-center">
                         <li class="breadcrumb-item"><a href="trang-chu">Trang chủ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Danh mục</li>
+                        <li class="breadcrumb-item active" aria-current="page"><%=request.getAttribute("title")%></li>
                     </ol>
                 </nav>
             </div>

@@ -64,6 +64,9 @@ textarea:hover, textarea:focus{
     color: #fff;
     padding: 15px;
 }
+.widget-content p a{
+    color: #fff !important;
+}
 .gj-textbox-md, .gj-textbox-md {
     border: 1px solid #ced4da !important;
     border-radius: 2px;
@@ -100,6 +103,22 @@ textarea:hover, textarea:focus{
 }
 .selected div{
     background-color: var(--main-color) !important;
+}
+.dlk-age .input-group input{
+    width: calc(100% - 38*2);
+}
+.dlk-age .input-group button{
+    border: 1px solid #ced4da !important;
+    width: 38px !important;
+    height: 38px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-loading img{
+    width: 122px;
+    height: 30px;
+    object-fit: cover;
 }
 @media screen and (min-width: 768px)  and (max-width: 991px) {
     label[for =bs], label[for =date-picker], label[for = time-picker]{
