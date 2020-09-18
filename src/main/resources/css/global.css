@@ -1525,6 +1525,7 @@ span.product-name {
 }
 .tinTuc__contentTinTuc img{
   width: initial;
+  max-width: 100%;
 }
 /*chi tiet bai viet*/
 
