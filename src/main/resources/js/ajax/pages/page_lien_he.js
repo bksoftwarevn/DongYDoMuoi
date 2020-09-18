@@ -1,21 +1,15 @@
 let textName;
 let textPhoneNumber;
 let textEmail;
-
 $(function () {
     hiddenNavHero();
     textName = $("#input-name");
     textPhoneNumber = $("#input-phone");
     textEmail = $("#input-email");
     let branchListSelector = $('#branches-list');
-
-
-
     InfoAdmin.fillInfo();
     InfoCustomer.init();
-
     initBranchInfo(branchListSelector).then();
-
 });
 let InfoAdmin = {
     getCompanyInfo: async function () {
@@ -125,11 +119,9 @@ function checkThongTinEmail() {
 
 
 function BranchInfoController() {
-
     this.getListBranchInfo = function () {
         return ajaxGet(`infor-system-service/api/v1/public/branches/company/${COMPANY_ID}`);
     };
-
     this.generateBranchTemplate = function (data) {
         let template = $('#hiddenBranchElement').clone().removeAttr('id').removeClass('d-none');
         template.find('.branches__element--name').text(data.name);
@@ -138,10 +130,8 @@ function BranchInfoController() {
         template.find('.branches__element--map iframe').attr('src', data.map);
         return template;
     };
-
     this.mappingBranchInfo = function (listData, branchListSelector, callback) {
         let listTemplate;
-
         listTemplate = listData.map(rs1 => {
             let template = '';
             if(callback){
@@ -149,12 +139,9 @@ function BranchInfoController() {
             }
             return template;
         });
-
-
         $('#branches-list').append(listTemplate);
     }
 }
-
 async function initBranchInfo(branchListSelector){
     let branchInfoController = new BranchInfoController();
     let listData;

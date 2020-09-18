@@ -1197,6 +1197,10 @@ footer .logo-area {
 }
 .product__text {
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 136px;
 }
 span.product-name {
   color: var(--text-black-1);
@@ -1205,7 +1209,6 @@ span.product-name {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 48px;
 }
 .product-price del {
   color: var(--text-black-1);

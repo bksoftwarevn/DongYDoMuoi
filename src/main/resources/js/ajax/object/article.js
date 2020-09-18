@@ -87,8 +87,8 @@ let ArticleDetailController = {
         if (!(data === '' || data === null)) {
             let listTags = data.split("|");
             let templateTags = listTags.map(data => {
-                return `<a href="${endpoint}?tag=${data}" class="text-uppercase" style="color: #007bff; font-size: 1.4rem;">${data}</a>`
-            }).join(', ');
+                return `<a href="${endpoint}?tag=${data}"  style="margin-right: 4px;color: white;font-size: 1.3rem;display: inline-block;background-color: var(--main-color);padding: 2px 7px;border-radius: 4px;text-transform: lowercase;">${data}</a>`
+            }).join('');
             return templateTags;
         }
         return '';

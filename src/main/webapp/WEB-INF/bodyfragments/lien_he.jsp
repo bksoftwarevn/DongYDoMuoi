@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="col-6 lienHe__userInfo--phone  mt-3" >
-                        <label for="input-phone"><strong><strong>Số điện thoại<span style="color: red;">(*)</span></strong></strong></label>
+                        <label for="input-phone"><strong>Số điện thoại<span style="color: red;">(*)</span></strong></label>
                         <input type="text" id="input-phone" class="form-control">
                         <div class="invalid-feedback">
                             Looks good!

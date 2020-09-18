@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="product__text">
-                            <span class="d-block text-center product-name"></span>
+                            <span class="text-center product-name"></span>
                             <div class="product-price text-center">
                                 <del></del>
                                 <span></span>
