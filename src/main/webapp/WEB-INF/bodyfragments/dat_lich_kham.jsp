@@ -4,8 +4,8 @@
 <script src="plugins/gijgo-combined-1.9.13/js/gijgo.min.js"></script>
 <script src="plugins/inputSpinnerBootstrap/bootstrap-input-spinner.js"></script>
 <script src="js/datlichkham.js"></script>
+<script src="https://cdn.bksoftwarevn.com/resources/library_js/ajax_micro_service/ajax_edu_service.js"></script>
 <script src="ajax/pages/page_dat_lich_kham.js"></script>
-
 <section class="dat-lich">
     <div class="container">
         <div class="row">
@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <label>Chọn bác sĩ</label>
                             <select class="form-control" id="select-bs">
-                                <option class="">Tùy chọn</option>
+                                <option value="">Tùy chọn</option>
                             </select>
                         </div>
                     </div>
@@ -76,6 +76,9 @@
                                 <label for="date-picker">Ngày đặt lịch</label>
                                 <div class="form-group ficon">
                                     <input type="text" class="form-control" id="date-picker">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
                                     <div class="input-group-append d-none">
                                                 <span class="input-group-text" id="basic-addon1"><i
                                                         class="far fa-calendar-check"></i></span>
@@ -86,6 +89,9 @@
                                 <label for="time-picker">Chọn giờ</label>
                                 <div class="form-group ficon">
                                     <input type="text" class="form-control" id="time-picker">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
                                     <div class="input-group-append d-none">
                                                 <span class="input-group-text" id="basic-addon2"><i
                                                         class="far fa-clock"></i></span>
@@ -107,7 +113,10 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 text-center text-md-left">
-                        <button class="btn-primary btn-lg" onclick="clickDatLichKham()">Đặt lịch khám</button>
+                        <button class="btn-primary btn-lg btn-loading" onclick="clickDatLichKham()">
+                            <img src="file/icon/gifdot.gif" alt="gif-load" class="d-none">
+                            <span class="d-block">Đặt lịch khám</span>
+                        </button>
                     </div>
                 </div>
             </div>
