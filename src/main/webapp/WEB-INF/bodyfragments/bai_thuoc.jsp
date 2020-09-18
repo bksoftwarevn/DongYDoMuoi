@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="css/bai_thuoc.css">
 <link rel="stylesheet" href="">
 <script src="ajax/pages/page_bai_thuoc.js"></script>
+
 <div class="col-12 col-md-8 col-lg-9 medicine-wrapper" id="category-medicine-box">
     <div class="row d-none" id="hidden-category-element">
         <div class="col-12 mb-5">

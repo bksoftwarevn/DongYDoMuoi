@@ -105,7 +105,10 @@ let ArticleDetailController = {
         }
 
         let templateArticle = $('#hidden-chiTietTinTuc').clone().removeClass("d-none");
-        templateArticle.find('.tinTuc__element--img img').attr('src', viewSrcFile(article.data.image));
+        templateArticle.find('.tinTuc__element--img img').attr({
+            'src': viewSrcFile(article.data.image),
+            'alt': article.data.name
+        });
         templateArticle.find('.tinTuc__title--autho').html(`được đăng
                 vào <a style="color: blue; cursor: default;" href="">${TimeUtils.formatTime(article.data.creatTime).d} tháng ${TimeUtils.formatTime(article.data.creatTime).mInNumber}</a> bởi ${article.data.author}`);
         templateArticle.find('.tinTuc__contentTinTuc').html(article.data.content);

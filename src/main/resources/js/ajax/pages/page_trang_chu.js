@@ -9,7 +9,8 @@ $(function() {
     customerCarousel = $("#customer-carousel");
     customerItemTemp = $("#customer-item-temp");
     listProductTemp = $("#list-product-temp");
-    productTemp = $("#product-temp")
+    productTemp = $("#product-temp");
+
 
     viewPopup();
     viewSlideBanner();
