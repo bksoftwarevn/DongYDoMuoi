@@ -6,9 +6,7 @@
 
 <link rel="stylesheet" href="css/tuyen_dung.css">
 <%--phan chung cho danh muc--%>
-<script src=""></script>
 <script src="ajax/pages/page_tai_lieu.js"></script>
-<script src="js/lienhe.js"></script>
 
 <div class="col-12 col-md-8 col-lg-9 ">
     <div id="list-tin-tuc">
