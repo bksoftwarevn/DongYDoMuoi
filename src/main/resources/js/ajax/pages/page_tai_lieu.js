@@ -33,8 +33,9 @@ let DocumentTemplate = {
     genTemplate: function(data, index, docSelector){
         let template = $(docSelector).clone().removeClass('d-none').removeAttr('id');
         template.find('.index').text(index + 1);
-        template.find('.name').html(`${textToIconFile(data.file)} ${data.name}</a>`);
-        template.find('link').attr('href', data.file);
+        template.find('.name').html(`<a href="${viewSrcFile(data.file)}" target="_blank"><img src="icon/folder_page.png">${data.name}</a>`);
+        template.find('.link').html(`<a download class="text-center" href="${viewSrcFile(data.file)}">${textToIconFile(data.file)} Tải
+                    về</a>`);
         return template;
     }
 };
