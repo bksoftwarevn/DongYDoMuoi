@@ -41,7 +41,6 @@ function runZoomImgProduct() {
         galleryActiveClass: "active",
         imageCrossfade: true,
         responsive: true,
-        // loadingIcon: "http://www.elevateweb.co.uk/spinner.gif",
     });
     $("#gal1 a img").on('click', function(){
         $('.zoomContainer').remove();
@@ -61,7 +60,6 @@ function runZoomImgProduct() {
             galleryActiveClass: "active",
             imageCrossfade: true,
             responsive: true,
-            // loadingIcon: "http://www.elevateweb.co.uk/spinner.gif",
         });
     })
 }
