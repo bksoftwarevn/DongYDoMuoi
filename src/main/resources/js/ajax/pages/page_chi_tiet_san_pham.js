@@ -41,17 +41,18 @@ function getInforProduct() {
                 imgInforProduct.attr("data-zoom-image", viewSrcFile(image));
                 imgInforProduct.attr("alt", viewField(name));
                 hrefImgInforProduct.attr("href", viewSrcFile(image));
+                imgInforProduct.removeClass("d-none");
                 viewListImgProduct(files, name);
                 unitInforProduct.html(viewField(rs.costs[0].unit));
                 let {minusPrice, viewTitleGift, viewDiscount} = viewPromotionCostProduct(promotion, cost);
                 //promo
                 if(viewDiscount.length > 0) {
-                    promotionInforProduct.find(".promo-sale").html(viewDiscount);
+                    promotionInforProduct.find(".promo-sale").removeClass("d-none").html(viewDiscount);
                 } else {
                     promotionInforProduct.find(".promo-sale").remove();
                 }
                 if(viewTitleGift.length > 0) {
-                    promotionInforProduct.find(".promo-gift").attr("title", viewTitleGift);
+                    promotionInforProduct.find(".promo-gift").removeClass("d-none").attr("title", viewTitleGift);
                 } else {
                     promotionInforProduct.find(".promo-gift").remove();
                 }

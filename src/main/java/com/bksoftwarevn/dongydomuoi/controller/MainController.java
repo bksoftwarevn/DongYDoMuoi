@@ -183,6 +183,7 @@ public class MainController {
 
     @GetMapping(value = {"/danh-muc"})
     public String danhMuc(HttpServletRequest request) {
+        request.setAttribute("title", "Danh mục");
         try {
             int root = Integer.parseInt(request.getParameter("root"));
             JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
@@ -210,6 +211,7 @@ public class MainController {
 
     @GetMapping(value = {"/chi-tiet-san-pham"})
     public String chiTietSanPham(HttpServletRequest request) {
+        request.setAttribute("title", "Sản phẩm");
         try {
             JSONObject jsonObject = restService.callGetJson(RestBuilder.build()
                     .service(productService)
