@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="plugins/jquery-toast/jquery.toast.min.css">
+<script src="plugins/jquery-toast/jquery.toast.min.js"></script>
 <footer>
     <section class="footer-ft">
         <div class="container">

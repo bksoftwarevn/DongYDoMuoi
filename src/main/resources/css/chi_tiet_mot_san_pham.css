@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .pd-title span {
   border-top: 1px solid #ececec;
   display: block;
@@ -36,7 +39,7 @@
 }
 .product-detail__img img{
   max-width: 100%;
-  height: 545px;
+  height: 400px;
 }
 .p-promo {
   position: absolute;
@@ -203,8 +206,7 @@
   color: var(--main-color);
 }
 #gal1 {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
 }
 #gal1 img {
   border: 1px solid #fff;
