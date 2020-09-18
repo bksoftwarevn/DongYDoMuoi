@@ -1437,6 +1437,7 @@ span.product-name {
 .tlyk-btdl a{
   display: flex;
   align-items: center;
+  justify-content: center;
   white-space: nowrap;
   text-decoration: underline;
   color: var(--main-color);
