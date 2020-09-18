@@ -12,7 +12,7 @@
                 <nav aria-label="breadcrumb ">
                     <ol class="breadcrumb d-flex justify-content-center justify-content-md-start align-items-center">
                         <li class="breadcrumb-item"><a href="trang-chu">Trang chủ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+                        <li class="breadcrumb-item active" aria-current="page"><%=request.getAttribute("title")%></li>
                     </ol>
                 </nav>
             </div>
@@ -24,10 +24,10 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-detail__img">
-                    <img src="" id="zoom_03" data-zoom-image="" class="img-product">
+                    <img src="" id="zoom_03" data-zoom-image="" class="img-product d-none">
                     <div class="p-promo" id="pro-infor-product">
-                        <div class="promo-sale"></div>
-                        <div class="promo-gift" data-placement="bottom" data-toggle="tooltip"></div>
+                        <div class="promo-sale d-none"></div>
+                        <div class="promo-gift d-none" data-placement="bottom" data-toggle="tooltip"></div>
                     </div>
                     <div id="gal1" class="list-img-product">
                         <a href="#" data-image="" data-zoom-image="" class="temp-list-img-product d-none">
