@@ -33,7 +33,7 @@ let DocumentTemplate = {
     genTemplate: function(data, index, docSelector){
         let template = $(docSelector).clone().removeClass('d-none').removeAttr('id');
         template.find('.index').text(index + 1);
-        template.find('.name').html(`<a href="" target="_blank"><img src="icon/folder_page.png">${data.name}</a>`);
+        template.find('.name').html(`${textToIconFile(data.file)} ${data.name}</a>`);
         template.find('link').attr('href', data.file);
         return template;
     }
