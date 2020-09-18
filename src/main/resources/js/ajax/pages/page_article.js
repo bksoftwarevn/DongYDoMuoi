@@ -17,7 +17,13 @@ $(function () {
 
     setTimeout(function(){
         let articleObject =  JSON.parse(localStorage.getItem('articleObject'));
-        $('.tinTuc__title h2').text(formatTitle(articleObject.type));
+        let isDoc = localStorage.getItem('isDoc') === 'true';
+        if(isDoc){
+            console.log('isDoc');
+            $('.tinTuc__title h2').text(`Tài liệu y khoa`);
+        }else{
+            $('.tinTuc__title h2').text(formatTitle(articleObject.type));
+        }
         ArticleController.initElement(currentPage, sizePage, articleObject.type, articleObject.endpointDetail);
         ArticleController.clickShowMoreNews(articleObject.endpointDetail, articleObject.type);
     }, 150);
@@ -48,7 +54,10 @@ let ArticleController = {
         tinTucElement.attr('href', `${viewAliasArticle(object.alias, endpointDetail, object.id)}`);
         tinTucElement
             .find("div.tinTuc__element--img img")
-            .attr("src", viewSrcFile(object.image));
+            .attr({
+                "src": viewSrcFile(object.image),
+                "alt": object.name
+            });
         tinTucElement
             .find("h4.tinTuc__element--name")
             .text(object.name ? object.name : "");

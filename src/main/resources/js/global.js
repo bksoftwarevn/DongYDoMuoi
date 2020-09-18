@@ -3,6 +3,7 @@ $(document).ready(function () {
     //     dots: true,
     //     infinite: true,
     // });
+    isDoc();
     $(".bars-open").click(function () {
         $("nav .nav").addClass("open");
         $("nav .shadow").addClass("open");
@@ -24,4 +25,15 @@ $(document).ready(function () {
             };
         }
     })
+
 });
+function isDoc(){
+    let url = new URL(location.href);
+    let path = url.pathname;
+    console.log(path);
+    if(path.includes('tai-lieu')){
+        localStorage.setItem('isDoc', 'true');
+    }else{
+        localStorage.setItem('isDoc', 'false');
+    };
+}
