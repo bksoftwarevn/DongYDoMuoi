@@ -101,3 +101,8 @@ textarea:hover, textarea:focus{
 .selected div{
     background-color: var(--main-color) !important;
 }
+@media screen and (min-width: 768px)  and (max-width: 991px) {
+    label[for =bs], label[for =date-picker], label[for = time-picker]{
+        height: 48px;
+    }
+}
