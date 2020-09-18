@@ -35,7 +35,7 @@
 
             </div>
         </div>
-        <div class="col-12">
+        <div class="col-12 mt-4">
             <div class="tinTuc__contentTinTuc">
 
             </div>

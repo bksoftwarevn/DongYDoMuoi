@@ -91,18 +91,18 @@
 .lienHe__userInfo--sentBtn button {
   font-size: var(--font-h3-size-mobile);
   padding: 5px 30px;
-  background: #f39c1bc2;
+  background: var(--main-color);
 
   font-weight: 700;
   text-transform: uppercase;
-  border-color: #ff9800;
+  border-color:var(--main-color);
   min-width: 200px;
 }
 .lienHe__userInfo--sentBtn button:hover,
 .lienHe__userInfo--sentBtn button:focus{
   outline: none;
-  background-color: #ff9800 !important;
-  border-color: #ff9800 !important;
+  background-color: var(--main-color-2) !important;
+  border-color: var(--main-color-2) !important;
 }
 
 /* ==============end lien he========== */
@@ -120,7 +120,7 @@
   justify-content: center;
   flex-direction: column;
   max-height: 50px;
-  background-color: var(--bg-green);
+  background-color: var(--main-color);
   border-left: 5px solid var(--bg-yellow1);
   border-radius: 5px;
   text-align: center;
@@ -129,8 +129,8 @@
   font-size: 1.4rem;
   color: var(--text-white);
 }
-.branches__element--detail{
-
+.branches__element--detail p a{
+  color: var(--main-color);
 }
 .branches__element--detail h4{
   margin-bottom: 10px;
@@ -201,6 +201,7 @@
 }
 .lienHe textarea{
   font-size: 1.4rem !important;
+  min-height: 70px;
 }
 
 .lienHe__userInfo--sentBtn button{
@@ -213,8 +214,17 @@
   padding-right: 10px;
   padding-left: 10px;
 }
-
-@media screen and(min-width: 768px) {
+input:hover, input:focus,  select:hover,select:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: var(--main-color) !important;
+}
+textarea:hover, textarea:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: var(--main-color) !important;
+}
+@media screen and (min-width: 768px) {
   .lienHe__userInfo--sentBtn button {
     font-size: 1.6rem;
   }
