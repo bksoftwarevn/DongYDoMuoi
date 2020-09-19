@@ -482,7 +482,7 @@ main {
   height: 100%;
   overflow: auto;
   transform: translateX(-15px);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
   visibility: hidden;
   z-index: -1;
