@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-detail__img">
-                    <img src="" id="zoom_03" data-zoom-image="" class="img-product d-none">
+                    <img src="" data-zoom-image="" class="img-product d-none">
                     <div class="p-promo" id="pro-infor-product">
                         <div class="promo-sale d-none"></div>
                         <div class="promo-gift d-none" data-placement="bottom" data-toggle="tooltip"></div>

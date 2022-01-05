@@ -172,5 +172,5 @@ function viewListImgProduct(files) {
     })
     listImgProduct.html(view);
     runListProductSlick();
-    runZoomImgProduct();
+    // runZoomImgProduct();
 }

@@ -64,13 +64,25 @@
 
 <!-- ============= Import Custom Plugin Body ============= -->
 <!-- Load Facebook SDK for JavaScript -->
+<!-- Messenger Plugin chat Code -->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=1239278239786334&autoLogAppEvents=1" nonce="mTaePOGM"></script>
+
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "207005126648498");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
 <script>
     window.fbAsyncInit = function() {
         FB.init({
             xfbml            : true,
-            version          : 'v8.0'
+            version          : 'v12.0'
         });
     };
 
@@ -80,14 +92,8 @@
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your Chat Plugin code -->
-<div class="fb-customerchat"
-     attribution=setup_tool
-     page_id="2114139642210452"
-     logged_in_greeting="Hi! How can we help you?"
-     logged_out_greeting="Hi! How can we help you?">
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 </div>
 </body>
 </html>
